@@ -30,7 +30,6 @@
 		84C106AB23F5496D0042A136 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C106AA23F549640042A136 /* libc++.tbd */; };
 		84C106AD23F549D30042A136 /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C106AC23F549D20042A136 /* UMCommon.framework */; };
 		84C6EB072400FD80004AC146 /* RZUMengManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6EB062400FD80004AC146 /* RZUMengManager.m */; };
-		84C6EB0A24010EBB004AC146 /* iPhoneShare@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C6EB0924010EBB004AC146 /* iPhoneShare@2x.png */; };
 		84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C6EB0B240113F3004AC146 /* iPhoneShare1.png */; };
 		84E7E7C823ED0F4A00396046 /* TrainWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E76F23ED0F4A00396046 /* TrainWelcomeViewController.m */; };
 		84E7E7CA23ED0F4A00396046 /* TrainStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E77C23ED0F4A00396046 /* TrainStringUtil.m */; };
@@ -61,7 +60,7 @@
 		2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kindeeWeb.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.release.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.release.xcconfig"; sourceTree = "<group>"; };
 		5C2C413EDFFAF0208F9C1F44 /* Pods-kindeeWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.debug.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.debug.xcconfig"; sourceTree = "<group>"; };
-		848D497723EBB98B00AF81B3 /* 育成学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "育成学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848D497723EBB98B00AF81B3 /* 新风学院H5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风学院H5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848D498023EBB98C00AF81B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -96,7 +95,6 @@
 		84C6EB042400FD80004AC146 /* UMengHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMengHeader.h; sourceTree = "<group>"; };
 		84C6EB052400FD80004AC146 /* RZUMengManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZUMengManager.h; sourceTree = "<group>"; };
 		84C6EB062400FD80004AC146 /* RZUMengManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZUMengManager.m; sourceTree = "<group>"; };
-		84C6EB0924010EBB004AC146 /* iPhoneShare@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPhoneShare@2x.png"; path = "kindeeWeb/Assets.xcassets/AppIcon.appiconset/iPhoneShare@2x.png"; sourceTree = SOURCE_ROOT; };
 		84C6EB0B240113F3004AC146 /* iPhoneShare1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneShare1.png; sourceTree = "<group>"; };
 		84C6EB0D2401256C004AC146 /* 育成学院.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "育成学院.entitlements"; sourceTree = "<group>"; };
 		84E7E76E23ED0F4A00396046 /* TrainWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainWelcomeViewController.h; sourceTree = "<group>"; };
@@ -210,7 +208,7 @@
 		848D497823EBB98B00AF81B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848D497723EBB98B00AF81B3 /* 育成学院.app */,
+				848D497723EBB98B00AF81B3 /* 新风学院H5.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -303,7 +301,6 @@
 				84C6EB042400FD80004AC146 /* UMengHeader.h */,
 				84C6EB052400FD80004AC146 /* RZUMengManager.h */,
 				84C6EB062400FD80004AC146 /* RZUMengManager.m */,
-				84C6EB0924010EBB004AC146 /* iPhoneShare@2x.png */,
 			);
 			path = UMengManager;
 			sourceTree = "<group>";
@@ -460,7 +457,7 @@
 			);
 			name = kindeeWeb;
 			productName = kindeeWeb;
-			productReference = 848D497723EBB98B00AF81B3 /* 育成学院.app */;
+			productReference = 848D497723EBB98B00AF81B3 /* 新风学院H5.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -500,7 +497,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C6EB0A24010EBB004AC146 /* iPhoneShare@2x.png in Resources */,
 				848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
@@ -754,9 +750,9 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppHoc;
-				PRODUCT_NAME = "育成学院";
-				PROVISIONING_PROFILE_SPECIFIER = kindeewebAppHoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppTest;
+				PRODUCT_NAME = "新风学院H5";
+				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -810,9 +806,9 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppHoc;
-				PRODUCT_NAME = "育成学院";
-				PROVISIONING_PROFILE_SPECIFIER = kindeewebAppHoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppTest;
+				PRODUCT_NAME = "新风学院H5";
+				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

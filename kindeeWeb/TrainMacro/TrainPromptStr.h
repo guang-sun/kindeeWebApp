@@ -15,6 +15,7 @@
 #define TrainWelComeAD          @"TRAINWELCOMEAD"   // 广告也
 #define TrainLoginRemember      @"TRAINREMEMBER"    //
 #define TrainWebHostText        @"TrainWebHostText"   // 缓存地址
+#define TrainWebHomeParam       @"TrainWebHomeParam"   // 缓存登录地址参数
 //5e44e20865b5ec273b5ae9f6
 //扫一扫
 #define TrainScanPermissionText @"请在iOS\"设置\"－\"隐私\"－\"相机\"中开启摄像头使用授权"

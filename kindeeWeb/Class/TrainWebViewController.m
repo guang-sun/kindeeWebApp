@@ -15,6 +15,7 @@
 {
  
     BOOL   _isLanjie ;
+    BOOL   _isShowBack ;
 }
 
 @property (nonatomic, strong) UIButton   *backButton ;
@@ -30,10 +31,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    if (!self.webUrl) {
-        
-        self.webUrl = @"https://demo.elearnplus.com/learn//admin/course/list/index.html";
+    NSString  *webUrl = [TrainUserDefault objectForKey:TrainWebHostText];
+    NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
+    _isShowBack = YES;
+    if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
+        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
 //        https://demo.elearnplus.com/learn//admin/course/list/index.html#/
+    }else {
+     
+        webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
+        self.webUrl = webUrl ;
     }
     
 //    UIButton  *button  = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -80,35 +87,12 @@
 
 - (void)evBackView {
     
-    [self.rzWebView goBack];
-//    [self.webViewBridge callHandler:@"back" data:@"" responseCallback:^(id responseData) {
-//        NSLog(@"1调用完JS后的回调：%@",responseData);
-//    }];
-//    [self.webViewBridge callHandler:@"dataToJs" data:@"一个111串" responseCallback:^(id responseData) {
-//           NSLog(@"2调用完JS后的回调：%@",responseData);
-//       }];
+//    [self.rzWebView goBack];
 
-//    [self rzPostValueByJS:@"window.bridge.dataToJs('11')" completionHandler:^(id obj, NSError *error) {
-//        NSLog(@"3调用完JS后的回调：%@ ==%@",obj,error);
-//
-//    }];
-//    [self rzPostValueByJS:@"getAPPDate()" completionHandler:^(id obj, NSError *error) {
-//           NSLog(@"4调用完JS后的回调：%@ ==%@",obj,error);
-//
-//       }];
+    [self.webViewBridge callHandler:@"back" data:nil responseCallback:^(id responseData) {
+                    NSLog(@"1后的回调：%@",responseData);
+      }];
 
-//    [self.webViewBridge callHandler:@"getAPPDate" data:@"11" responseCallback:^(id responseData) {
-//        NSLog(@"5调用完JS后的回调：%@ ",responseData);
-//
-//    }];
-    
-//    self.rzWebView.evaluateJavaScript("window.bridge.dataToJs('11');", completionHandler: nil)
-//    self.rzWebView.evaluateJavaScript("window.bridge.back();", completionHandler: nil)
-
-    
-//    [self rzPostValueByJS:@"back()" completionHandler:^(id obj, NSError *error) {
-//
-//    }];
     
 }
 - (void)rzwebviewLayout {
@@ -180,12 +164,19 @@
         NSLog(@"JS 传递给 OC 的参数:%@",[NSString stringWithFormat:@"分享成功:%@",tempDic]);
         
         NSString *url = tempDic[@"url"];
+        if (![url hasPrefix:@"http"]) {
+            url = [NSString stringWithFormat:@"https://%@",url];
+        }
+        
+        NSString  *params = @"/learn/admin/course/list/index.html#/index?";
         NSString *fullName = tempDic[@"fullName"];
         NSString *userId = tempDic[@"userId"];
+        NSString *uuid = tempDic[@"uuid"];
         NSString *userName = tempDic[@"userName"];
-        
+        params = [NSString stringWithFormat:@"%@username=%@&uuid=%@&user_id=%@",params,userName,uuid,userId];
         [TrainUserDefault setObject:url forKey:TrainWebHostText];
-        
+        [TrainUserDefault setObject:params forKey:TrainWebHomeParam];
+
         // 将分享的结果返回到JS中
 //        NSString *result = [NSString stringWithFormat:@"分享成功:%@,%@,%@",title,content,url];
         responseCallback(@"11");
@@ -194,6 +185,7 @@
     [self.webViewBridge registerHandler:@"ycNavBackHidden" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *tempDic = data;
         BOOL isHidden = [tempDic[@"ishidden"] boolValue];
+        _isShowBack = !isHidden;
         [self evSetNavHiddenWithhidden: isHidden];
     }];
     
@@ -203,7 +195,7 @@
 }
 
 - (void)evSetNavHiddenWithhidden:(BOOL)isHidden {
- 
+    
     if (isHidden) {
         
          UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
@@ -238,7 +230,11 @@
 - (void)webView:(WKWebView *)webView didFinishLoadNavigation:(WKNavigation *)navigation {
     NSLog(@"完成");
     _isLanjie = YES ;
-    [self evSetNavHiddenWithhidden: NO];
+    if (_isShowBack) {
+        [self evSetNavHiddenWithhidden: NO];
+    }else {
+        _isShowBack = YES ;
+    }
 
 }
 
@@ -257,12 +253,15 @@
               NSString *Url = request.URL.absoluteString ;
     NSLog(@"---url = %@", Url);
        [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
-
-    //        if (DGStringIsEmpty(weakself.navTitle)) {
                 self.navigationItem.title =  object;
-    //        }
         }];
         
+    if ([Url containsString:@"login"]) {
+        [self.navigationController setNavigationBarHidden:YES animated:YES];;
+    }else {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];;
+    }
+
 //    if (_isLanjie) {
 //          NSString *Url = request.URL.absoluteString ;
 //
