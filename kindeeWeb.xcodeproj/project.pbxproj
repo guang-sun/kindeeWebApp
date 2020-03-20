@@ -60,7 +60,7 @@
 		2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kindeeWeb.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.release.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.release.xcconfig"; sourceTree = "<group>"; };
 		5C2C413EDFFAF0208F9C1F44 /* Pods-kindeeWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.debug.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.debug.xcconfig"; sourceTree = "<group>"; };
-		848D497723EBB98B00AF81B3 /* 新风学院H5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风学院H5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848D497723EBB98B00AF81B3 /* 育成学院H5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "育成学院H5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848D498023EBB98C00AF81B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 		848D497823EBB98B00AF81B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848D497723EBB98B00AF81B3 /* 新风学院H5.app */,
+				848D497723EBB98B00AF81B3 /* 育成学院H5.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,7 +457,7 @@
 			);
 			name = kindeeWeb;
 			productName = kindeeWeb;
-			productReference = 848D497723EBB98B00AF81B3 /* 新风学院H5.app */;
+			productReference = 848D497723EBB98B00AF81B3 /* 育成学院H5.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -750,8 +750,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppTest;
-				PRODUCT_NAME = "新风学院H5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppHoc;
+				PRODUCT_NAME = "育成学院H5";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -806,8 +806,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppTest;
-				PRODUCT_NAME = "新风学院H5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.yuchengWebAppHoc;
+				PRODUCT_NAME = "育成学院H5";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
