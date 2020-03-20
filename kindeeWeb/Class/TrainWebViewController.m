@@ -14,7 +14,7 @@
 @interface TrainWebViewController ()
 {
  
-    BOOL   _isLanjie ;
+    BOOL   _isLanjie ;  // 判断是新旧页面  根据 url
     BOOL   _isShowBack ;
 }
 
@@ -35,14 +35,14 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = YES;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
+        self.webUrl = @"https://tequ.newvane.com.cn";
+//        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
 //        https://demo.elearnplus.com/learn//admin/course/list/index.html#/
     }else {
      
         webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
         self.webUrl = webUrl ;
     }
-    
 //    UIButton  *button  = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.backgroundColor = [UIColor redColor];
 //    [button setTitle:@"share" forState:UIControlStateNormal];
@@ -87,18 +87,21 @@
 
 - (void)evBackView {
     
-//    [self.rzWebView goBack];
-
-    [self.webViewBridge callHandler:@"back" data:nil responseCallback:^(id responseData) {
-                    NSLog(@"1后的回调：%@",responseData);
-      }];
+    if (_isLanjie) {
+       
+        [self.rzWebView goBack];
+    }else {
+        [self.webViewBridge callHandler:@"back" data:nil responseCallback:^(id responseData) {
+                                 NSLog(@"1后的回调：%@",responseData);
+         }];
+    }
+  
 
     
 }
 - (void)rzwebviewLayout {
     
     [self.rzWebView mas_remakeConstraints:^(MASConstraintMaker *make) {
-      
         make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(TrainNavHeight, 0, 0, 0));
 //        if (@available(iOS 11.0, *)) {
 //            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
@@ -207,9 +210,7 @@
         self.navigationItem.leftBarButtonItem = item ;
        
     }
-    
-    
-    
+ 
 }
 
 
@@ -229,7 +230,6 @@
  */
 - (void)webView:(WKWebView *)webView didFinishLoadNavigation:(WKNavigation *)navigation {
     NSLog(@"完成");
-    _isLanjie = YES ;
     if (_isShowBack) {
         [self evSetNavHiddenWithhidden: NO];
     }else {
@@ -255,23 +255,16 @@
        [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
                 self.navigationItem.title =  object;
         }];
-        
-    if ([Url containsString:@"login"]) {
-        [self.navigationController setNavigationBarHidden:YES animated:YES];;
+    if ([Url hasPrefix:@"http"]){
+        _isLanjie = YES ;
     }else {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];;
+        _isLanjie = NO ;
     }
+    if ([Url containsString:@"login"]) {
+        [self evSetNavHiddenWithhidden: YES];
+    }else {
 
-//    if (_isLanjie) {
-//          NSString *Url = request.URL.absoluteString ;
-//
-//          TrainWebViewController *webVC = [[TrainWebViewController alloc]init];
-//          webVC.webUrl = Url ;
-//
-//          [self.navigationController pushViewController:webVC   animated:YES];
-//
-//        return NO;
-//    }
+    }
     return YES;
 }
 
