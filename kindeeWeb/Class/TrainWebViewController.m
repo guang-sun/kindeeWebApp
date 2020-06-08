@@ -35,7 +35,9 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-        self.webUrl = @"https://tequ.newvane.com.cn";
+//        self.webUrl = @"https://tequ.newvane.com.cn";
+        self.webUrl = @"https://zk.newvane.com.cn/learn/admin/course/list/login.html#/";
+
 //        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
 //        https://demo.elearnplus.com/learn//admin/course/list/index.html#/
     }else {
