@@ -569,10 +569,10 @@
 //        preferences.javaScriptCanOpenWindowsAutomatically = YES ;
 //        preferences.minimumFontSize = 30.0;
         //是否允许与js进行交互，默认是YES的，如果设置为NO，js的代码就不起作用了
-              preferences.javaScriptEnabled = YES;
+        preferences.javaScriptEnabled = YES;
           
         configur.preferences = preferences;
-        configur.allowsInlineMediaPlayback = NO;
+        configur.allowsInlineMediaPlayback = YES;
       
 //        WKUserContentController *userContentController = [[WKUserContentController alloc]init];
 //        [userContentController addScriptMessageHandler:[[RZWeakScriptMessageDelegate alloc]initWithDelegate:self] name:kWKWebViewJSName];

@@ -15,7 +15,7 @@
 {
  
     BOOL   _isLanjie ;  // 判断是新旧页面  根据 url
-    BOOL   _isShowBack ;
+    __block BOOL   _isShowBack ;
 }
 
 @property (nonatomic, strong) UIButton   *backButton ;
@@ -33,7 +33,7 @@
     
     NSString  *webUrl = [TrainUserDefault objectForKey:TrainWebHostText];
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
-    _isShowBack = YES;
+    _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
         self.webUrl = @"https://tequ.newvane.com.cn";
 //        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
@@ -230,12 +230,15 @@
  */
 - (void)webView:(WKWebView *)webView didFinishLoadNavigation:(WKNavigation *)navigation {
     NSLog(@"完成");
-    if (_isShowBack) {
-        [self evSetNavHiddenWithhidden: NO];
-    }else {
-        _isShowBack = YES ;
-    }
+    NSString *Url = webView.URL.absoluteString ;
 
+    if (![[Url lowercaseString] containsString:@"login"] ) {
+        if (_isShowBack) {
+            [self evSetNavHiddenWithhidden: NO];
+        }else {
+            _isShowBack = YES ;
+        }
+    }
 }
 
 /**
@@ -252,15 +255,15 @@
 -(BOOL)webView:(WKWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(WKNavigationType)navigationType {
               NSString *Url = request.URL.absoluteString ;
     NSLog(@"---url = %@", Url);
-       [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
-                self.navigationItem.title =  object;
-        }];
+    [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
+            self.navigationItem.title =  object;
+    }];
     if ([Url hasPrefix:@"http"]){
         _isLanjie = YES ;
     }else {
         _isLanjie = NO ;
     }
-    if ([Url containsString:@"login"]) {
+    if ([[Url lowercaseString] containsString:@"login"] ) {
         [self evSetNavHiddenWithhidden: YES];
     }else {
 
