@@ -118,8 +118,10 @@
     
     [self.rzWebView loadRequest:req];
     
-}
+    
+//    [self.rzWebView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
 
+}
 
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
@@ -132,6 +134,11 @@
             
         }
     }
+//    else if ([keyPath isEqualToString:@"title"]){//网页title
+//        if (object == self.rzWebView){
+//            self.navigationItem.title = self.rzWebView.title;
+//        }
+//    }
     
     
 }
@@ -205,12 +212,12 @@
     NSLog(@" -[%@]--   加载完成 ",[self class] );
     
 //    @DGWeakObj(self);
-    [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
-
-//        if (DGStringIsEmpty(weakself.navTitle)) {
-            self.navigationItem.title =  object;
-//        }
-    }];
+//    [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
+//
+////        if (DGStringIsEmpty(weakself.navTitle)) {
+//            self.navigationItem.title =  object;
+////        }
+//    }];
     [self webView:webView didFinishLoadNavigation:navigation];
     
     
@@ -451,7 +458,8 @@
         
         [self.rzWebView removeObserver:self forKeyPath:@"estimatedProgress"];
     }
-    
+//    [self.rzWebView removeObserver:self forKeyPath:@"title"];
+
     
     
     NSLog(@"----dealloc---%@",[self class]);

@@ -29,7 +29,7 @@
     [self.window makeKeyAndVisible];
     
     [self loginUmengShare];
-    
+    sleep(2);
    
     TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
     BOOL isFlag = [welcomeVC getWelcomeAD];

@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     [self config];
 }
 
@@ -29,8 +28,10 @@
     //导航主题（系统自带的主题样式）
 //    self.navigationBar.barStyle = UIBarStyleDefault;
     //导航颜色
-  
-    UIColor *color  =  [UIColor colorWithHexString:@"#9e1d2a"];
+    [[UINavigationBar appearance] setTranslucent:NO];
+
+    UIColor *color  =  [UIColor colorWithHexString:@"#d00403"];
+//    UIColor *color  =  [UIColor colorWithRed:190/255.0 green:41/255.0 blue:28/255.0 alpha:1];
     UIColor *textcolor  =  [UIColor colorWithHexString:@"ffffff"];
     
     UINavigationBar *navigationBar = [UINavigationBar appearance];

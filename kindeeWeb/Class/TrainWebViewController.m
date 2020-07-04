@@ -10,7 +10,7 @@
 #import "RZUMengManager.h"
 #import "TrainScanViewController.h"
 #import "TrainMacroDefine.h"
-
+#import <YYKit.h>
 @interface TrainWebViewController ()
 {
  
@@ -19,6 +19,7 @@
 }
 
 @property (nonatomic, strong) UIButton   *backButton ;
+@property (nonatomic, strong) UIView   *iconButton ;
 @end
 
 @implementation TrainWebViewController
@@ -30,13 +31,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self evSetLoginNavHiddenWithhidden:YES];
+    
+    [self evInitNavgation];
+    [self evInitIconButton];
     
     NSString  *webUrl = [TrainUserDefault objectForKey:TrainWebHostText];
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-//        self.webUrl = @"https://tequ.newvane.com.cn";
-        self.webUrl = @"https://zk.newvane.com.cn/learn/admin/course/list/login.html#/";
+        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/zk/list/index.html#/login";
+//        self.webUrl = @"https://zk.newvane.com.cn";
 
 //        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
 //        https://demo.elearnplus.com/learn//admin/course/list/index.html#/
@@ -45,13 +50,15 @@
         webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
         self.webUrl = webUrl ;
     }
+//    UIColor *color  =  [UIColor colorWithHexString:@"#d00403"];
+//
 //    UIButton  *button  = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.backgroundColor = [UIColor redColor];
+//    button.backgroundColor = color;
 //    [button setTitle:@"share" forState:UIControlStateNormal];
-//    button.frame = CGRectMake(0, 110, 100, 50);
+//    button.frame = CGRectMake(0, 50, 100, 150);
 //    [button addTarget:self action:@selector(trainShareAppWithUrl) forControlEvents:UIControlEventTouchUpInside];
 //    [self.view addSubview:button];
-//
+////
 //
 //    UIButton  *button1  = [UIButton buttonWithType:UIButtonTypeCustom];
 //       button1.backgroundColor = [UIColor redColor];
@@ -66,11 +73,12 @@
 //       button2.frame = CGRectMake(0, 310, 100, 50);
 //    [button2 addTarget:self action:@selector(trainShareAppWithUrl2) forControlEvents:UIControlEventTouchUpInside];
 //       [self.view addSubview:button2];
-    
-    [self evInitNavgation];
+
     
     [self loadWebView:self.webUrl];
     [self registShareFunction];
+    [self RegeistNoticeCenter];
+
     // Do any additional setup after loading the view.
 }
 
@@ -83,8 +91,34 @@
     [button addTarget:self action:@selector(evBackView) forControlEvents:UIControlEventTouchUpInside];
     self.backButton = button ;
     
+}
 
+-(void)evInitIconButton {
     
+    UIImageView  *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"newnavce_zhou_icon"]];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    imageView.frame = CGRectMake(0, 0, 150, 40);
+    
+    UIView  *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, 44)];
+    [view addSubview:imageView];
+    self.iconButton = view ;
+    
+
+}
+
+- (void)evInitZhouIconWithHidden:(BOOL) hidden {
+    
+      if (hidden) {
+          
+           UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
+           self.navigationItem.leftBarButtonItem = item ;
+          
+      }else {
+          self.navigationItem.title = @"";
+          UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:self.iconButton];
+          self.navigationItem.leftBarButtonItem = item ;
+         
+      }
 }
 
 - (void)evBackView {
@@ -104,14 +138,76 @@
 - (void)rzwebviewLayout {
     
     [self.rzWebView mas_remakeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(TrainNavHeight, 0, 0, 0));
-//        if (@available(iOS 11.0, *)) {
-//            make.bottom.equalTo(self.view.mas_safeAreaLayoutGuideBottom);
-//        } else {
-//            // Fallback on earlier versions
-//        }
+        make.edges.equalTo(self.view).insets(UIEdgeInsetsMake(0, 0, 0, 0));
     }];
 }
+
+- (void)updateWebViewTopWithNavShow:(BOOL)isShow {
+//    CGFloat height = (isShow)? TrainNavHeight : 0 ;
+//
+//    [self.rzWebView mas_updateConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view).offset(height);
+//    }];
+//
+//    [UIView animateWithDuration:0.5 animations:^{
+//        [self.view layoutIfNeeded];
+//    }];
+    
+}
+
+-(void)RegeistNoticeCenter {
+    //将要进入全屏
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startFullScreen) name:UIWindowDidResignKeyNotification object:nil];
+    //退出全屏
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endFullScreen) name:UIWindowDidBecomeHiddenNotification object:nil];
+}
+
+-(void)startFullScreen {
+    NSLog(@"进入全屏");
+//    UIApplication *application=[UIApplication sharedApplication];
+//    [application setStatusBarOrientation: UIInterfaceOrientationLandscapeRight];
+//    application.keyWindow.transform=CGAffineTransformMakeRotation(M_PI/2);
+//    CGRect frame = [UIScreen mainScreen].applicationFrame;
+//    application.keyWindow.bounds = CGRectMake(0, 0, frame.size.height + 20, frame.size.width);
+    if (self.rzWebView.bounds.size.width < self.rzWebView.bounds.size.height) {
+
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
+
+    } else {
+
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+
+    }
+
+    
+
+   
+    
+}
+
+-(void)endFullScreen {
+    NSLog(@"退出全屏XXXX");
+//    UIApplication *application=[UIApplication sharedApplication];
+//    [application setStatusBarOrientation: UIInterfaceOrientationLandscapeRight];
+//    CGRect frame = [UIScreen mainScreen].applicationFrame;
+//    application.keyWindow.bounds = CGRectMake(0, 0, frame.size.width, frame.size.height + 20);
+//    [UIView animateWithDuration:0.25 animations:^{
+//        application.keyWindow.transform=CGAffineTransformMakeRotation(M_PI * 2);
+//    }];
+
+    if (self.rzWebView.bounds.size.width < self.rzWebView.bounds.size.height) {
+
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationLandscapeRight] forKey:@"orientation"];
+
+    } else {
+
+    [[UIDevice currentDevice] setValue:[NSNumber numberWithInteger:UIInterfaceOrientationPortrait] forKey:@"orientation"];
+
+    }
+
+   
+}
+
 
 - (void)trainShareAppWithUrl {
     
@@ -172,7 +268,9 @@
         if (![url hasPrefix:@"http"]) {
             url = [NSString stringWithFormat:@"https://%@",url];
         }
-        
+//        [self evSetLoginNavHiddenWithhidden:NO];
+        [self evInitZhouIconWithHidden:NO];
+
         NSString  *params = @"/learn/admin/course/list/index.html#/index?";
         NSString *fullName = tempDic[@"fullName"];
         NSString *userId = tempDic[@"userId"];
@@ -197,10 +295,28 @@
     [self.webViewBridge registerHandler:@"ycGotoScan" handler:^(id data, WVJBResponseCallback responseCallback) {
         [self trainShareAppWithUrl1];
     }];
+    
+    [self.webViewBridge registerHandler:@"setloginNavHidden" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [self evSetLoginNavHiddenWithhidden:YES];
+      }];
+    
+  
+   [self.webViewBridge registerHandler:@"setloginNavShow" handler:^(id data, WVJBResponseCallback responseCallback) {
+       [self evSetLoginNavHiddenWithhidden:NO];
+     }];
+       
+    [self.webViewBridge registerHandler:@"setHomeIconShow" handler:^(id data, WVJBResponseCallback responseCallback) {
+          NSDictionary *tempDic = data;
+          BOOL isHidden = [tempDic[@"isShow"] boolValue];
+        [self evInitZhouIconWithHidden:!isHidden];
+
+      }];
+    
+
 }
 
 - (void)evSetNavHiddenWithhidden:(BOOL)isHidden {
-    
+
     if (isHidden) {
         
          UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
@@ -215,7 +331,10 @@
  
 }
 
-
+- (void)evSetLoginNavHiddenWithhidden:(BOOL)isHidden {
+    [self.navigationController setNavigationBarHidden:isHidden animated:YES] ;
+    [self updateWebViewTopWithNavShow:!isHidden];
+}
 
 /**
  webView  开始加载
@@ -257,8 +376,11 @@
 -(BOOL)webView:(WKWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(WKNavigationType)navigationType {
               NSString *Url = request.URL.absoluteString ;
     NSLog(@"---url = %@", Url);
+
     [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
+        if (![object isEqual:@"首页"]) {
             self.navigationItem.title =  object;
+        }
     }];
     if ([Url hasPrefix:@"http"]){
         _isLanjie = YES ;
