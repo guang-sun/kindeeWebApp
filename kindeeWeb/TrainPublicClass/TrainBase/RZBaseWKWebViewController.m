@@ -572,7 +572,7 @@
               preferences.javaScriptEnabled = YES;
           
         configur.preferences = preferences;
-        configur.allowsInlineMediaPlayback = NO;
+        configur.allowsInlineMediaPlayback = YES;
       
 //        WKUserContentController *userContentController = [[WKUserContentController alloc]init];
 //        [userContentController addScriptMessageHandler:[[RZWeakScriptMessageDelegate alloc]initWithDelegate:self] name:kWKWebViewJSName];
