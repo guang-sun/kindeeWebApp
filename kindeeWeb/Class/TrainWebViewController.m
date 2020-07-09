@@ -243,18 +243,19 @@
 }
 
  
-- (void)trainShareAppWithUrl1 {
+- (void)trainShareAppWithUrl1:(void (^)(NSString *str))complete {
     
     TrainScanViewController *scanVC = [[TrainScanViewController alloc]init];
     @weakify(self);
     scanVC.trainScanBlock = ^(NSString *result) {
         @strongify(self);
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setObject:result forKey:@"result"];
-        
-            [self.webViewBridge callHandler:@"ycScanResult" data:dic responseCallback:^(id responseData) {
-                   NSLog(@"2调用完JS后的回调：%@",responseData);
-               }];
+//        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//        [dic setObject:result forKey:@"result"];
+        complete(result);
+//
+//            [self.webViewBridge callHandler:@"ycScanResult" data:dic responseCallback:^(id responseData) {
+//                   NSLog(@"2调用完JS后的回调：%@",responseData);
+//               }];
     };
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:scanVC];
 //    nav.navigationItem.title = @"扫一扫";
@@ -279,6 +280,8 @@
 }
 
 - (void)registShareFunction {
+    
+    @weakify(self);
     [self.webViewBridge registerHandler:@"loginUser" handler:^(id data, WVJBResponseCallback responseCallback) {
         // data 的类型与 JS中传的参数有关
         NSDictionary *tempDic = data;
@@ -290,7 +293,7 @@
             url = [NSString stringWithFormat:@"https://%@",url];
         }
 //        [self evSetLoginNavHiddenWithhidden:NO];
-        [self evInitZhouIconWithHidden:NO];
+        [weak_self evInitZhouIconWithHidden:NO];
 
         NSString  *params = @"/learn/admin/course/list/index.html#/index?";
         NSString *fullName = tempDic[@"fullName"];
@@ -310,44 +313,47 @@
         NSDictionary *tempDic = data;
         BOOL isHidden = [tempDic[@"ishidden"] boolValue];
         _isShowBack = !isHidden;
-        [self evSetNavHiddenWithhidden: isHidden];
+        [weak_self evSetNavHiddenWithhidden: isHidden];
     }];
     
     [self.webViewBridge registerHandler:@"ycGotoScan" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [self trainShareAppWithUrl1];
+        [self trainShareAppWithUrl1:^(NSString *result) {
+              NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+             [dic setObject:result forKey:@"result"];
+             responseCallback(dic) ;
+        }];
     }];
     
     [self.webViewBridge registerHandler:@"setloginNavHidden" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [self evSetLoginNavHiddenWithhidden:YES];
+        [weak_self evSetLoginNavHiddenWithhidden:YES];
       }];
     
   
    [self.webViewBridge registerHandler:@"setloginNavShow" handler:^(id data, WVJBResponseCallback responseCallback) {
-       [self evSetLoginNavHiddenWithhidden:NO];
+       [weak_self evSetLoginNavHiddenWithhidden:NO];
      }];
        
     [self.webViewBridge registerHandler:@"setHomeIconShow" handler:^(id data, WVJBResponseCallback responseCallback) {
           NSDictionary *tempDic = data;
           BOOL isHidden = [tempDic[@"isShow"] boolValue];
-        [self evInitZhouIconWithHidden:!isHidden];
+        [weak_self evInitZhouIconWithHidden:!isHidden];
 
       }];
     
-     
     [self.webViewBridge registerHandler:@"setFaceViewShow" handler:^(id data, WVJBResponseCallback responseCallback) {
        
         NSDictionary *tempDic = data;
         BOOL isHidden = ![tempDic[@"isShow"] boolValue];
 //        self.carameView.hidden = isHidden ;
         if (isHidden) {
-            [self.carmer stopCapRuning];
+            [weak_self.carmer stopCapRuning];
         }else {
-            [self.carmer startCapRuning];
+            [weak_self.carmer startCapRuning];
         }
         
       }];
     
-    @weakify(self);
+//    @weakify(self);
     [self.webViewBridge registerHandler:@"setFaceTakePhoto" handler:^(id data, WVJBResponseCallback responseCallback) {
         [weak_self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
             
@@ -357,6 +363,20 @@
             
         }];
     }];
+    
+    [self.webViewBridge registerHandler:@"setHomeWord" handler:^(id data, WVJBResponseCallback responseCallback) {
+       NSDictionary *tempDic = data;
+       NSInteger index = [tempDic[@"isShow"] integerValue];
+       if (index > 0) {
+           
+       }else {
+           
+       }
+    }];
+    
+    
+
+    
 }
 //- (void)trainTakePhotoBackToWeb:(UIImage *)image {
 //
