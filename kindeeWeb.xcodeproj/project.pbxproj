@@ -14,6 +14,8 @@
 		848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D498623EBB99000AF81B3 /* Assets.xcassets */; };
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
+		84A201F324B73E140014EC37 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A201F224B73E140014EC37 /* TrainCustomCarmer.m */; };
+		84A201F624B73E400014EC37 /* RZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84A201F424B73E400014EC37 /* RZBaseNavigationController.m */; };
 		84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068123F520CE0042A136 /* TrainScanViewController.m */; };
 		84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068423F5410B0042A136 /* TrainAlertTools.m */; };
 		84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C1068923F5445B0042A136 /* UMSocialSDKResources.bundle */; };
@@ -70,6 +72,10 @@
 		848D498923EBB99000AF81B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D498B23EBB99000AF81B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84A201F124B73E140014EC37 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
+		84A201F224B73E140014EC37 /* TrainCustomCarmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainCustomCarmer.m; sourceTree = "<group>"; };
+		84A201F424B73E400014EC37 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
+		84A201F524B73E400014EC37 /* RZBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZBaseNavigationController.h; sourceTree = "<group>"; };
 		84C1068123F520CE0042A136 /* TrainScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainScanViewController.m; sourceTree = "<group>"; };
 		84C1068223F520CE0042A136 /* TrainScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainScanViewController.h; sourceTree = "<group>"; };
 		84C1068423F5410B0042A136 /* TrainAlertTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainAlertTools.m; sourceTree = "<group>"; };
@@ -313,6 +319,8 @@
 				84E7E76D23ED0F4A00396046 /* TrainLogin */,
 				84E7E7FB23ED136000396046 /* TrainWebViewController.h */,
 				84E7E7FC23ED136000396046 /* TrainWebViewController.m */,
+				84A201F124B73E140014EC37 /* TrainCustomCarmer.h */,
+				84A201F224B73E140014EC37 /* TrainCustomCarmer.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -376,6 +384,8 @@
 		84E7E78123ED0F4A00396046 /* TrainBase */ = {
 			isa = PBXGroup;
 			children = (
+				84A201F524B73E400014EC37 /* RZBaseNavigationController.h */,
+				84A201F424B73E400014EC37 /* RZBaseNavigationController.m */,
 				84E7E7FA23ED131A00396046 /* RZBaseViewControllerProtocol.h */,
 				84E7E7F423ED12B300396046 /* RZBaseViewController.h */,
 				84E7E7F623ED12B300396046 /* RZBaseViewController.m */,
@@ -550,6 +560,7 @@
 				848D498223EBB98C00AF81B3 /* ViewController.m in Sources */,
 				84E7E7F823ED12B300396046 /* RZWeakScriptMessageDelegate.m in Sources */,
 				84E7E7DF23ED0F4A00396046 /* UIButton+Train.m in Sources */,
+				84A201F624B73E400014EC37 /* RZBaseNavigationController.m in Sources */,
 				84E7E7F723ED12B300396046 /* RZBaseWKWebViewController.m in Sources */,
 				84E7E7D323ED0F4A00396046 /* TrainNetWorkAPIClient.m in Sources */,
 				84E7E7DA23ED0F4A00396046 /* NSTimer+TrainScrollTimer.m in Sources */,
@@ -563,6 +574,7 @@
 				84C6EB072400FD80004AC146 /* RZUMengManager.m in Sources */,
 				84E7E7DD23ED0F4A00396046 /* UIAlertController+TrainWindow.m in Sources */,
 				848D497C23EBB98B00AF81B3 /* AppDelegate.m in Sources */,
+				84A201F324B73E140014EC37 /* TrainCustomCarmer.m in Sources */,
 				84E7E7F923ED12B300396046 /* RZBaseViewController.m in Sources */,
 				848D498D23EBB99000AF81B3 /* main.m in Sources */,
 				84E7E7D823ED0F4A00396046 /* UILabel+TrainCustomLabel.m in Sources */,
@@ -720,6 +732,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -776,6 +789,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

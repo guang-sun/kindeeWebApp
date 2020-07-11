@@ -8,4 +8,6 @@ target 'kindeeWeb' do
   pod 'WebViewJavascriptBridge'
 #  pod 'WechatOpenSDK'
 
+  pod 'YYKit'
+
 end
