@@ -11,7 +11,10 @@
 #import "TrainWelcomeViewController.h"
 #import <UMShare/UMShare.h>
 #import "UMengHeader.h"
+
 #import <UMCommon/UMCommon.h>
+#import "RZBaseNavigationController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -33,12 +36,12 @@
     BOOL isFlag = [welcomeVC getWelcomeAD];
     if(isFlag) {
 
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:welcomeVC];
+        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
         self.window.rootViewController = nav ;
 
     }else {
         
-        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
+        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
         self.window.rootViewController = nav;
         [welcomeVC downloadWelcomAD];
     }
