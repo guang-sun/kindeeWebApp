@@ -19,9 +19,7 @@
     AVCaptureVideoPreviewLayer * previewlayer;
     UILabel *infotext;
     UIButton *readerbackbutton;
-    UIAlertView *scanalert;
-    UIAlertView * authoralert;
-    UIAlertView * nilalert;
+ 
     UILabel *warningString;
 
 }

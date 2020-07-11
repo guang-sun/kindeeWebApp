@@ -13,6 +13,7 @@
 #import "UMengHeader.h"
 #import <UMCommon/UMCommon.h>
 #import "RZBaseNavigationController.h"
+#import "RZStartViewController.h"
 
 @interface AppDelegate ()
 
@@ -31,24 +32,47 @@
     [self loginUmengShare];
     sleep(2);
    
-    TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
-    BOOL isFlag = [welcomeVC getWelcomeAD];
-    if(isFlag) {
-
-        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
-        self.window.rootViewController = nav ;
-
-    }else {
-        
-        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
-        self.window.rootViewController = nav;
-        [welcomeVC downloadWelcomAD];
-    }
-    
+    [self rzsetAppRootView];
     
     
 
     return YES;
+}
+
+- (void)rzsetAppRootView {
+    
+    NSString  *appversion = TrainAPPVersions ;
+
+    NSString  *localVersion = [[NSUserDefaults standardUserDefaults] objectForKey:TrainLocalVersion];
+    if (TrainStringIsEmpty(localVersion) || ![localVersion isEqualToString:appversion]) {
+        
+        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[RZStartViewController alloc]init]];
+        self.window.rootViewController = nav;
+       [[NSUserDefaults standardUserDefaults] setObject:appversion forKey:TrainLocalVersion];
+        
+    }else {
+        TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
+          BOOL isFlag = [welcomeVC getWelcomeAD];
+          if(isFlag) {
+
+             RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
+             self.window.rootViewController = nav ;
+          }else {
+              [self rzSetHomeView];
+          }
+   
+    }
+
+}
+
+- (void)rzSetHomeView {
+   
+    RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
+     self.window.rootViewController = nav;
+    
+    TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
+     [welcomeVC downloadWelcomAD];
+    
 }
 
 /**

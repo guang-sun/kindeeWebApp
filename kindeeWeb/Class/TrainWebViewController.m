@@ -11,6 +11,11 @@
 #import "TrainScanViewController.h"
 #import "TrainMacroDefine.h"
 #import <YYKit.h>
+
+
+#import "TrainCustomCarmer.h"
+
+
 @interface TrainWebViewController ()
 {
  
@@ -20,6 +25,10 @@
 
 @property (nonatomic, strong) UIButton   *backButton ;
 @property (nonatomic, strong) UIView   *iconButton ;
+
+@property (nonatomic, strong) UIView   *carameView ;
+@property (nonatomic, strong) TrainCustomCarmer   *carmer ;
+
 @end
 
 @implementation TrainWebViewController
@@ -40,45 +49,21 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/zk/list/index.html#/login";
-//        self.webUrl = @"https://zk.newvane.com.cn";
+           
+//              self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/zk/list/index.html#/login";
+                self.webUrl = @"https://zk.newvane.com.cn";
+    
 
-//        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/login.html#/";
-//        https://demo.elearnplus.com/learn//admin/course/list/index.html#/
     }else {
      
         webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
         self.webUrl = webUrl ;
     }
-//    UIColor *color  =  [UIColor colorWithHexString:@"#d00403"];
-//
-//    UIButton  *button  = [UIButton buttonWithType:UIButtonTypeCustom];
-//    button.backgroundColor = color;
-//    [button setTitle:@"share" forState:UIControlStateNormal];
-//    button.frame = CGRectMake(0, 50, 100, 150);
-//    [button addTarget:self action:@selector(trainShareAppWithUrl) forControlEvents:UIControlEventTouchUpInside];
-//    [self.view addSubview:button];
-////
-//
-//    UIButton  *button1  = [UIButton buttonWithType:UIButtonTypeCustom];
-//       button1.backgroundColor = [UIColor redColor];
-//       [button1 setTitle:@"scan" forState:UIControlStateNormal];
-//       button1.frame = CGRectMake(0, 210, 100, 50);
-//    [button1 addTarget:self action:@selector(trainShareAppWithUrl1) forControlEvents:UIControlEventTouchUpInside];
-//       [self.view addSubview:button1];
-//
-//    UIButton  *button2  = [UIButton buttonWithType:UIButtonTypeCustom];
-//       button2.backgroundColor = [UIColor redColor];
-//       [button2 setTitle:@"share" forState:UIControlStateNormal];
-//       button2.frame = CGRectMake(0, 310, 100, 50);
-//    [button2 addTarget:self action:@selector(trainShareAppWithUrl2) forControlEvents:UIControlEventTouchUpInside];
-//       [self.view addSubview:button2];
-
-    
+    [self rzAddCarmarView];
     [self loadWebView:self.webUrl];
     [self registShareFunction];
     [self RegeistNoticeCenter];
-
+    
     // Do any additional setup after loading the view.
 }
 
@@ -92,6 +77,44 @@
     self.backButton = button ;
     
 }
+
+- (void)rzAddCarmarView {
+    
+    [self.view addSubview:self.carameView];
+    [self.carameView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        make.width.height.mas_equalTo(100);
+    }];
+    self.carameView.layer.cornerRadius  = 50 ;
+    self.carameView.layer.masksToBounds = YES ;
+    
+    [self.carameView layoutIfNeeded];
+    
+    self.carmer = [[TrainCustomCarmer alloc]initWithParentView:self.carameView];
+ 
+    self.carameView.hidden = YES ;
+//    [self.carmer startCapRuning];
+
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self addbutake];
+//    });
+   
+}
+
+//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self addbutake];
+//}
+-(void)addbutake {
+
+    [self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
+
+        NSData *imageData = UIImageJPEGRepresentation(originImage, 1);
+        NSString *string = imageData.base64EncodedString ;
+    }];
+
+}
+
 
 -(void)evInitIconButton {
     
@@ -158,6 +181,7 @@
 -(void)RegeistNoticeCenter {
     //将要进入全屏
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startFullScreen) name:UIWindowDidResignKeyNotification object:nil];
+//    UIWindowDidBecomeVisibleNotification   UIWindowDidResignKeyNotification UIWindowDidBecomeKeyNotification
     //退出全屏
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(endFullScreen) name:UIWindowDidBecomeHiddenNotification object:nil];
 }
@@ -222,18 +246,19 @@
 }
 
  
-- (void)trainShareAppWithUrl1 {
+- (void)trainShareAppWithUrl1:(void (^)(NSString *str))complete {
     
     TrainScanViewController *scanVC = [[TrainScanViewController alloc]init];
     @weakify(self);
     scanVC.trainScanBlock = ^(NSString *result) {
         @strongify(self);
-        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-        [dic setObject:result forKey:@"result"];
-        
-            [self.webViewBridge callHandler:@"ycScanResult" data:dic responseCallback:^(id responseData) {
-                   NSLog(@"2调用完JS后的回调：%@",responseData);
-               }];
+//        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//        [dic setObject:result forKey:@"result"];
+        complete(result);
+//
+//            [self.webViewBridge callHandler:@"ycScanResult" data:dic responseCallback:^(id responseData) {
+//                   NSLog(@"2调用完JS后的回调：%@",responseData);
+//               }];
     };
 //    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:scanVC];
 //    nav.navigationItem.title = @"扫一扫";
@@ -251,13 +276,15 @@
     }];
     
 //    [[UMSocialManager defaultManager] shareToPlatform:UMSocialPlatformType_QQ messageObject:obj currentViewController:nil completion:^(id result, NSError *error) {
-//        
+//
 //    }];
 
     
 }
 
 - (void)registShareFunction {
+    
+    @weakify(self);
     [self.webViewBridge registerHandler:@"loginUser" handler:^(id data, WVJBResponseCallback responseCallback) {
         // data 的类型与 JS中传的参数有关
         NSDictionary *tempDic = data;
@@ -269,7 +296,7 @@
             url = [NSString stringWithFormat:@"https://%@",url];
         }
 //        [self evSetLoginNavHiddenWithhidden:NO];
-        [self evInitZhouIconWithHidden:NO];
+        [weak_self evInitZhouIconWithHidden:NO];
 
         NSString  *params = @"/learn/admin/course/list/index.html#/index?";
         NSString *fullName = tempDic[@"fullName"];
@@ -289,31 +316,82 @@
         NSDictionary *tempDic = data;
         BOOL isHidden = [tempDic[@"ishidden"] boolValue];
         _isShowBack = !isHidden;
-        [self evSetNavHiddenWithhidden: isHidden];
+        [weak_self evSetNavHiddenWithhidden: isHidden];
     }];
     
     [self.webViewBridge registerHandler:@"ycGotoScan" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [self trainShareAppWithUrl1];
+        [self trainShareAppWithUrl1:^(NSString *result) {
+              NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+             [dic setObject:result forKey:@"result"];
+             responseCallback(dic) ;
+        }];
     }];
     
     [self.webViewBridge registerHandler:@"setloginNavHidden" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [self evSetLoginNavHiddenWithhidden:YES];
+        [weak_self evSetLoginNavHiddenWithhidden:YES];
       }];
     
   
    [self.webViewBridge registerHandler:@"setloginNavShow" handler:^(id data, WVJBResponseCallback responseCallback) {
-       [self evSetLoginNavHiddenWithhidden:NO];
+       [weak_self evSetLoginNavHiddenWithhidden:NO];
      }];
        
     [self.webViewBridge registerHandler:@"setHomeIconShow" handler:^(id data, WVJBResponseCallback responseCallback) {
           NSDictionary *tempDic = data;
           BOOL isHidden = [tempDic[@"isShow"] boolValue];
-        [self evInitZhouIconWithHidden:!isHidden];
+        [weak_self evInitZhouIconWithHidden:!isHidden];
 
       }];
     
+    [self.webViewBridge registerHandler:@"setFaceViewShow" handler:^(id data, WVJBResponseCallback responseCallback) {
+       
+        NSDictionary *tempDic = data;
+        BOOL isHidden = ![tempDic[@"isShow"] boolValue];
+//        self.carameView.hidden = isHidden ;
+        if (isHidden) {
+            [weak_self.carmer stopCapRuning];
+        }else {
+            [weak_self.carmer startCapRuning];
+        }
+        
+      }];
+    
+//    @weakify(self);
+    [self.webViewBridge registerHandler:@"setFaceTakePhoto" handler:^(id data, WVJBResponseCallback responseCallback) {
+        [weak_self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
+            
+            NSData *imageData = UIImageJPEGRepresentation(originImage, 1);
+            NSString *string = imageData.base64EncodedString ;
+            responseCallback(string);
+            
+        }];
+    }];
+    
+    [self.webViewBridge registerHandler:@"setHomeWord" handler:^(id data, WVJBResponseCallback responseCallback) {
+       NSDictionary *tempDic = data;
+       NSInteger index = [tempDic[@"isShow"] integerValue];
+       if (index > 0) {
+           
+       }else {
+           
+       }
+    }];
+    
+    
 
+    
 }
+//- (void)trainTakePhotoBackToWeb:(UIImage *)image {
+//
+//
+//    [self.webViewBridge callHandler:"setImagePhoto" data:string responseCallback:^(id responseData) {
+//        //        NSLog(@"testJavascriptHandler responded: %@", response);
+//
+//
+//    }];
+//
+//
+//}
 
 - (void)evSetNavHiddenWithhidden:(BOOL)isHidden {
 
@@ -434,6 +512,27 @@
 }
 
 
+- (UIView *)carameView {
+    if (!_carameView) {
+        UIView *viw = [[UIView alloc]init];
+        viw.backgroundColor = [UIColor whiteColor];
+        
+        _carameView = viw ;
+    }
+    return _carameView;
+}
+
+//- (TrainCustomCarmer *)carmer {
+//
+//    if (_carmer) {
+//        TrainCustomCarmer *car = [[TrainCustomCarmer alloc]initWithParentView:self.carameView];
+////
+//        _carmer = car;
+//    }
+//    return _carmer;
+//}
+
+
 
 /*
 #pragma mark - Navigation
@@ -446,3 +545,4 @@
 */
 
 @end
+

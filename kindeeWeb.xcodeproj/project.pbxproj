@@ -15,6 +15,14 @@
 		848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D498623EBB99000AF81B3 /* Assets.xcassets */; };
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
+		84BBEC1E24B96DEE00A9B915 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEC1D24B96DEE00A9B915 /* TrainCustomCarmer.m */; };
+		84BBEC2B24B9747000A9B915 /* app_start_mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2524B9746F00A9B915 /* app_start_mid@2x.png */; };
+		84BBEC2C24B9747000A9B915 /* app_start_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2624B9746F00A9B915 /* app_start_top@2x.png */; };
+		84BBEC2D24B9747000A9B915 /* app_start_mid@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2724B9746F00A9B915 /* app_start_mid@3x.png */; };
+		84BBEC2E24B9747000A9B915 /* app_start_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2824B9747000A9B915 /* app_start_down@3x.png */; };
+		84BBEC2F24B9747000A9B915 /* app_start_top@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2924B9747000A9B915 /* app_start_top@3x.png */; };
+		84BBEC3024B9747000A9B915 /* app_start_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2A24B9747000A9B915 /* app_start_down@2x.png */; };
+		84BBEC3324B9770400A9B915 /* RZStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEC3224B9770400A9B915 /* RZStartViewController.m */; };
 		84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068123F520CE0042A136 /* TrainScanViewController.m */; };
 		84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068423F5410B0042A136 /* TrainAlertTools.m */; };
 		84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C1068923F5445B0042A136 /* UMSocialSDKResources.bundle */; };
@@ -75,6 +83,16 @@
 		848D498923EBB99000AF81B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D498B23EBB99000AF81B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		84BBEC1C24B96DEE00A9B915 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
+		84BBEC1D24B96DEE00A9B915 /* TrainCustomCarmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainCustomCarmer.m; sourceTree = "<group>"; };
+		84BBEC2524B9746F00A9B915 /* app_start_mid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_mid@2x.png"; sourceTree = "<group>"; };
+		84BBEC2624B9746F00A9B915 /* app_start_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_top@2x.png"; sourceTree = "<group>"; };
+		84BBEC2724B9746F00A9B915 /* app_start_mid@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_mid@3x.png"; sourceTree = "<group>"; };
+		84BBEC2824B9747000A9B915 /* app_start_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_down@3x.png"; sourceTree = "<group>"; };
+		84BBEC2924B9747000A9B915 /* app_start_top@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_top@3x.png"; sourceTree = "<group>"; };
+		84BBEC2A24B9747000A9B915 /* app_start_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_down@2x.png"; sourceTree = "<group>"; };
+		84BBEC3124B9770400A9B915 /* RZStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZStartViewController.h; sourceTree = "<group>"; };
+		84BBEC3224B9770400A9B915 /* RZStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZStartViewController.m; sourceTree = "<group>"; };
 		84C1068123F520CE0042A136 /* TrainScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainScanViewController.m; sourceTree = "<group>"; };
 		84C1068223F520CE0042A136 /* TrainScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainScanViewController.h; sourceTree = "<group>"; };
 		84C1068423F5410B0042A136 /* TrainAlertTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainAlertTools.m; sourceTree = "<group>"; };
@@ -234,6 +252,12 @@
 				848D498623EBB99000AF81B3 /* Assets.xcassets */,
 				848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */,
 				848D498B23EBB99000AF81B3 /* Info.plist */,
+				84BBEC2A24B9747000A9B915 /* app_start_down@2x.png */,
+				84BBEC2824B9747000A9B915 /* app_start_down@3x.png */,
+				84BBEC2524B9746F00A9B915 /* app_start_mid@2x.png */,
+				84BBEC2724B9746F00A9B915 /* app_start_mid@3x.png */,
+				84BBEC2624B9746F00A9B915 /* app_start_top@2x.png */,
+				84BBEC2924B9747000A9B915 /* app_start_top@3x.png */,
 				848D498C23EBB99000AF81B3 /* main.m */,
 			);
 			path = kindeeWeb;
@@ -318,6 +342,8 @@
 				84E7E76D23ED0F4A00396046 /* TrainLogin */,
 				84E7E7FB23ED136000396046 /* TrainWebViewController.h */,
 				84E7E7FC23ED136000396046 /* TrainWebViewController.m */,
+				84BBEC1C24B96DEE00A9B915 /* TrainCustomCarmer.h */,
+				84BBEC1D24B96DEE00A9B915 /* TrainCustomCarmer.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -327,6 +353,8 @@
 			children = (
 				84E7E76E23ED0F4A00396046 /* TrainWelcomeViewController.h */,
 				84E7E76F23ED0F4A00396046 /* TrainWelcomeViewController.m */,
+				84BBEC3124B9770400A9B915 /* RZStartViewController.h */,
+				84BBEC3224B9770400A9B915 /* RZStartViewController.m */,
 			);
 			path = TrainLogin;
 			sourceTree = "<group>";
@@ -505,11 +533,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BBEC2E24B9747000A9B915 /* app_start_down@3x.png in Resources */,
 				848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */,
+				84BBEC2C24B9747000A9B915 /* app_start_top@2x.png in Resources */,
+				84BBEC2D24B9747000A9B915 /* app_start_mid@3x.png in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
+				84BBEC2F24B9747000A9B915 /* app_start_top@3x.png in Resources */,
+				84BBEC3024B9747000A9B915 /* app_start_down@2x.png in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
 				84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */,
+				84BBEC2B24B9747000A9B915 /* app_start_mid@2x.png in Resources */,
 				848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +581,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */,
+				84BBEC1E24B96DEE00A9B915 /* TrainCustomCarmer.m in Sources */,
 				84E7E7D923ED0F4A00396046 /* UIView+TrainLineView.m in Sources */,
 				84E7E7CC23ED0F4A00396046 /* TrainControllerUtil.m in Sources */,
 				84E7E7E023ED0F4A00396046 /* UITableView+TrainTableViewPlaceHolder.m in Sources */,
@@ -565,6 +600,7 @@
 				84E7E7D523ED0F4A00396046 /* TrainNetWorkClientBase.m in Sources */,
 				84E7E7D223ED0F4A00396046 /* TrainNetWorkConfiguration.m in Sources */,
 				84E7E7D623ED0F4A00396046 /* UISegmentedControl+Train.m in Sources */,
+				84BBEC3324B9770400A9B915 /* RZStartViewController.m in Sources */,
 				84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */,
 				84E7E7FD23ED136000396046 /* TrainWebViewController.m in Sources */,
 				84E7E7D423ED0F4A00396046 /* TrainNetWorkAPIEngine.m in Sources */,
@@ -745,7 +781,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -803,7 +839,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
