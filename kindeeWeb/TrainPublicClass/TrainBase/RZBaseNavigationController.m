@@ -30,7 +30,7 @@
     //导航颜色
     [[UINavigationBar appearance] setTranslucent:NO];
 
-    UIColor *color  =  [UIColor colorWithHexString:@"#fa5c42"];
+    UIColor *color  =  [UIColor colorWithHexString:@"#035aa3"];
 //    UIColor *color  =  [UIColor colorWithRed:190/255.0 green:41/255.0 blue:28/255.0 alpha:1];
     UIColor *textcolor  =  [UIColor colorWithHexString:@"ffffff"];
     

@@ -50,7 +50,7 @@
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
 //        self.webUrl = @"https://learning.newvane.com.cn";
-        self.webUrl = @"http://szcsot.newvane.com.cn/";
+        self.webUrl = @"https://szcsot.newvane.com.cn";
         
 //        self.webUrl = @"https://tequ.newvane.com.cn";
     }else {
@@ -455,9 +455,9 @@
     NSLog(@"---url = %@", Url);
 
     [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
-        if (![object isEqual:@"首页"]) {
+//        if (![object isEqual:@"首页"]) {
             self.navigationItem.title =  object;
-        }
+//        }
     }];
     if ([Url hasPrefix:@"http"]){
         _isLanjie = YES ;
