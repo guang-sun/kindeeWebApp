@@ -49,8 +49,11 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-        self.webUrl = @"https://learning.newvane.com.cn";
-//        self.webUrl = @"https://tequ.newvane.com.cn";
+//        self.webUrl = @"https://learning.newvane.com.cn";
+////        self.webUrl = @"https://tequ.newvane.com.cn";
+//        self.webUrl = @"https://szcsot.newvane.com.cn";
+        self.webUrl = @"https://szshigang.newvane.com.cn" ;
+        
     }else {
      
         webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
@@ -128,17 +131,20 @@
 
 - (void)evInitZhouIconWithHidden:(BOOL) hidden {
     
-      if (hidden) {
-          
-           UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
-           self.navigationItem.leftBarButtonItem = item ;
-          
-      }else {
-          self.navigationItem.title = @"";
-          UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:self.iconButton];
-          self.navigationItem.leftBarButtonItem = item ;
-         
-      }
+    UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
+      self.navigationItem.leftBarButtonItem = item ;
+            
+//      if (hidden) {
+//
+//           UIBarButtonItem *item = [[UIBarButtonItem alloc]init];
+//           self.navigationItem.leftBarButtonItem = item ;
+//
+//      }else {
+//          self.navigationItem.title = @"";
+//          UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:self.iconButton];
+//          self.navigationItem.leftBarButtonItem = item ;
+//
+//      }
 }
 
 - (void)evBackView {
@@ -453,9 +459,9 @@
     NSLog(@"---url = %@", Url);
 
     [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
-        if (![object isEqual:@"首页"]) {
+//        if (![object isEqual:@"首页"]) {
             self.navigationItem.title =  object;
-        }
+//        }
     }];
     if ([Url hasPrefix:@"http"]){
         _isLanjie = YES ;
