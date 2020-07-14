@@ -28,6 +28,7 @@
 
 @property (nonatomic, strong) UIView   *carameView ;
 @property (nonatomic, strong) TrainCustomCarmer   *carmer ;
+@property (nonatomic, assign) BOOL    isNavHidden ;
 
 @end
 
@@ -35,13 +36,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+        [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
 //    self.navigationController.navigationBar.hidden =YES;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self evSetLoginNavHiddenWithhidden:YES];
-    
+    self.isNavHidden = YES ;
+
     [self evInitNavgation];
     [self evInitIconButton];
     
@@ -49,10 +52,10 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-//        self.webUrl = @"https://learning.newvane.com.cn";
+        self.webUrl = @"https://learning.newvane.com.cn";
 ////        self.webUrl = @"https://tequ.newvane.com.cn";
 //        self.webUrl = @"https://szcsot.newvane.com.cn";
-        self.webUrl = @"https://szshigang.newvane.com.cn" ;
+//        self.webUrl = @"https://szshigang.newvane.com.cn" ;
         
     }else {
      
@@ -413,8 +416,10 @@
 }
 
 - (void)evSetLoginNavHiddenWithhidden:(BOOL)isHidden {
+    
+    self.isNavHidden = isHidden ;
     [self.navigationController setNavigationBarHidden:isHidden animated:YES] ;
-    [self updateWebViewTopWithNavShow:!isHidden];
+//    [self updateWebViewTopWithNavShow:!isHidden];
 }
 
 /**
