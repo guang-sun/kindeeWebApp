@@ -109,7 +109,7 @@
                         action:@selector(backMethod)
               forControlEvents:UIControlEventTouchUpInside];
         _backButton.tag = 99;
-        [_backButton setImage:[UIImage imageNamed:@"ev_nav_back"] forState:UIControlStateNormal];
+        [_backButton setImage:[UIImage imageNamed:@"nav_button_fanhui_2_default"] forState:UIControlStateNormal];
     }
     return _backButton;
 }

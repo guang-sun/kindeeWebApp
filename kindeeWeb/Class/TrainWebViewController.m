@@ -29,19 +29,23 @@
 @property (nonatomic, strong) UIView   *carameView ;
 @property (nonatomic, strong) TrainCustomCarmer   *carmer ;
 
+@property (nonatomic, assign) BOOL    isNavHidden ;
+
+
 @end
 
 @implementation TrainWebViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.hidden =YES;
+
+    [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self evSetLoginNavHiddenWithhidden:YES];
-    
+    self.isNavHidden = YES ;
     [self evInitNavgation];
     [self evInitIconButton];
     
@@ -63,8 +67,28 @@
     [self registShareFunction];
     [self RegeistNoticeCenter];
     
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//           [self trainShareAppWithUrl1:^(NSString *str) {
+//
+//           }];
+//    });
+    
+//    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button.backgroundColor = [UIColor redColor];
+//    [button addTarget:self action:@selector(trainScan) forControlEvents:UIControlEventTouchUpInside];
+//    button.frame = CGRectMake(110, 110, 100, 100);
+//                             [ self.view addSubview:button];
+//    
     // Do any additional setup after loading the view.
 }
+
+
+//- (void)trainScan {
+//     [self trainShareAppWithUrl1:^(NSString *str) {
+//      }];
+//}
+
 
 - (void)evInitNavgation {
  
@@ -409,8 +433,9 @@
 }
 
 - (void)evSetLoginNavHiddenWithhidden:(BOOL)isHidden {
+    self.isNavHidden = isHidden ;
     [self.navigationController setNavigationBarHidden:isHidden animated:YES] ;
-    [self updateWebViewTopWithNavShow:!isHidden];
+//    [self updateWebViewTopWithNavShow:!isHidden];
 }
 
 /**
