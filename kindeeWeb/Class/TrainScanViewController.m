@@ -42,6 +42,8 @@
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self start];
 }
 
@@ -60,7 +62,7 @@
 
 - (void)createWarningLabel
 {
-    warningString = [[UILabel alloc]initWithFrame:CGRectMake(0, TrainNavHeight + 100, TrainSCREENWIDTH, TrainSCREENWIDTH)];
+    warningString = [[UILabel alloc]initWithFrame:CGRectMake(0,   100, TrainSCREENWIDTH, TrainSCREENWIDTH)];
     warningString.center = self.view.center;
     warningString.text = TrainScanPermissionText;
     warningString.lineBreakMode = NSLineBreakByCharWrapping;
@@ -196,7 +198,7 @@
     previewlayer.videoGravity=AVLayerVideoGravityResizeAspectFill;
     
     //    previewlayer.frame=self.view.layer.frame;
-    previewlayer.frame=CGRectMake(0, TrainNavHeight, TrainSCREENWIDTH, TrainSCREENHEIGHT - TrainNavHeight);
+    previewlayer.frame=CGRectMake(0, 0, TrainSCREENWIDTH, TrainSCREENHEIGHT - TrainNavHeight);
     //    previewlayer.position=CGPointMake(ScreenWidth/2, ScreenHeight/2);
     [self.view.layer addSublayer:previewlayer];
     

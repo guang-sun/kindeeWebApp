@@ -29,18 +29,22 @@
 @property (nonatomic, strong) UIView   *carameView ;
 @property (nonatomic, strong) TrainCustomCarmer   *carmer ;
 
+@property (nonatomic, assign) BOOL    isNavHidden ;
+
 @end
 
 @implementation TrainWebViewController
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-//    self.navigationController.navigationBar.hidden =YES;
+    
+    [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self evSetLoginNavHiddenWithhidden:YES];
+    self.isNavHidden = YES ;
     
     [self evInitNavgation];
     [self evInitIconButton];
@@ -51,7 +55,7 @@
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
 //              self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/zk/list/index.html#/login";
-                self.webUrl = @"https://zk.newvane.com.cn";
+         self.webUrl = @"https://zk.newvane.com.cn";
     
 
     }else {
@@ -96,9 +100,15 @@
     self.carameView.hidden = YES ;
 //    [self.carmer startCapRuning];
 
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self addbutake];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+////        [self addbutake];
+//        
+//        [self trainShareAppWithUrl1:^(NSString *str) {
+//            
+//        }];
+//        
 //    });
+    
    
 }
 
@@ -410,8 +420,9 @@
 }
 
 - (void)evSetLoginNavHiddenWithhidden:(BOOL)isHidden {
+    self.isNavHidden = isHidden ;
     [self.navigationController setNavigationBarHidden:isHidden animated:YES] ;
-    [self updateWebViewTopWithNavShow:!isHidden];
+//    [self updateWebViewTopWithNavShow:!isHidden];
 }
 
 /**
