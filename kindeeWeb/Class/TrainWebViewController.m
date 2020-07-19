@@ -29,6 +29,9 @@
 @property (nonatomic, strong) UIView   *carameView ;
 @property (nonatomic, strong) TrainCustomCarmer   *carmer ;
 
+
+@property (nonatomic, strong) UIImageView   *imageV ;
+
 @end
 
 @implementation TrainWebViewController
@@ -98,18 +101,30 @@
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        [self addbutake];
 //    });
-   
+    
+//    UIButton *butt = [UIButton buttonWithType:UIButtonTypeCustom];
+//    butt.backgroundColor = UIColor.redColor;
+//    butt.frame = CGRectMake(0, 300, 100, 100);
+//    [butt addTarget:self action:@selector(addbutake) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:butt];
+//
+//    self.imageV =  [[UIImageView alloc]init];
+//    self.imageV.frame = CGRectMake(0, 200, 100, 100);
+//    [self.view addSubview:self.imageV];
+    
+    
 }
 
-//- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self addbutake];
-//}
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self addbutake];
+}
 -(void)addbutake {
 
     [self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
-
-        NSData *imageData = UIImageJPEGRepresentation(originImage, 1);
-        NSString *string = imageData.base64EncodedString ;
+        
+        self.imageV.image = originImage ;
+//        NSData *imageData = UIImageJPEGRepresentation(originImage, 1);
+//        NSString *string = imageData.base64EncodedString ;
     }];
 
 }

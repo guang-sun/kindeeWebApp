@@ -245,7 +245,7 @@
     } else {
          captureConnection.videoMirrored = NO;
     }
-    captureConnection.videoOrientation = self.evGetVideoOrientation ;
+    captureConnection.videoOrientation =  AVCaptureVideoOrientationPortrait ;//self.evGetVideoOrientation ;
      [self.imageOutput capturePhotoWithSettings:setting delegate:self];
     
  
@@ -254,7 +254,8 @@
 - (AVCaptureVideoOrientation )evGetVideoOrientation {
     
     UIDeviceOrientation devOri = UIDevice.currentDevice.orientation ;
-    
+    UIInterfaceOrientation deviceOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+
     AVCaptureVideoOrientation orint ;
     switch (devOri) {
         case UIDeviceOrientationPortrait:  UIDeviceOrientationFaceUp : UIDeviceOrientationFaceDown:
