@@ -245,7 +245,7 @@
     } else {
          captureConnection.videoMirrored = NO;
     }
-    captureConnection.videoOrientation = self.evGetVideoOrientation ;
+    captureConnection.videoOrientation =  AVCaptureVideoOrientationPortrait ;// self.evGetVideoOrientation ;
      [self.imageOutput capturePhotoWithSettings:setting delegate:self];
     
  
