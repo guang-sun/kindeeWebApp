@@ -66,7 +66,7 @@
 		84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		84822CCA24B0C90A00D12C73 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
 		84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainCustomCarmer.m; sourceTree = "<group>"; };
-		848D497723EBB98B00AF81B3 /* 新风学院H5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风学院H5.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848D497723EBB98B00AF81B3 /* 新风学院(试岗).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风学院(试岗).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848D498023EBB98C00AF81B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		848D497823EBB98B00AF81B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848D497723EBB98B00AF81B3 /* 新风学院H5.app */,
+				848D497723EBB98B00AF81B3 /* 新风学院(试岗).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 			);
 			name = kindeeWeb;
 			productName = kindeeWeb;
-			productReference = 848D497723EBB98B00AF81B3 /* 新风学院H5.app */;
+			productReference = 848D497723EBB98B00AF81B3 /* 新风学院(试岗).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -763,8 +763,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xinfengWebApp;
-				PRODUCT_NAME = "新风学院H5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xinfengsgWebApp;
+				PRODUCT_NAME = "新风学院(试岗)";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -820,8 +820,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xinfengWebApp;
-				PRODUCT_NAME = "新风学院H5";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xinfengsgWebApp;
+				PRODUCT_NAME = "新风学院(试岗)";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

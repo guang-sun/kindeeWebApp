@@ -52,10 +52,10 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-        self.webUrl = @"https://learning.newvane.com.cn";
+//        self.webUrl = @"https://learning.newvane.com.cn";
 ////        self.webUrl = @"https://tequ.newvane.com.cn";
 //        self.webUrl = @"https://szcsot.newvane.com.cn";
-//        self.webUrl = @"https://szshigang.newvane.com.cn" ;
+        self.webUrl = @"https://szshigang.newvane.com.cn" ;
         
     }else {
      
