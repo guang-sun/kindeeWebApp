@@ -73,7 +73,7 @@
 		848404D8248DD886004A71D3 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		848404DA2490F71F004A71D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		848404DB2490F71F004A71D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		848D497723EBB98B00AF81B3 /* 周口农商网络学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "周口农商网络学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848D497723EBB98B00AF81B3 /* 网络学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网络学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848D498023EBB98C00AF81B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -231,7 +231,7 @@
 		848D497823EBB98B00AF81B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848D497723EBB98B00AF81B3 /* 周口农商网络学院.app */,
+				848D497723EBB98B00AF81B3 /* 网络学院.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -492,7 +492,7 @@
 			);
 			name = kindeeWeb;
 			productName = kindeeWeb;
-			productReference = 848D497723EBB98B00AF81B3 /* 周口农商网络学院.app */;
+			productReference = 848D497723EBB98B00AF81B3 /* 网络学院.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -802,7 +802,7 @@
 					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zkWebAppHoc;
-				PRODUCT_NAME = "周口农商网络学院";
+				PRODUCT_NAME = "网络学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -860,7 +860,7 @@
 					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zkWebAppHoc;
-				PRODUCT_NAME = "周口农商网络学院";
+				PRODUCT_NAME = "网络学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
