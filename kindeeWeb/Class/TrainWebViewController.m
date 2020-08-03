@@ -38,6 +38,19 @@
     [super viewWillAppear:animated];
         [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
 //    self.navigationController.navigationBar.hidden =YES;
+    
+    UIScreen * sc = [UIScreen mainScreen];
+    if (@available(iOS 11.0,*)) {
+        if (sc.isCaptured) {
+            NSLog(@"正在录制-----%d",sc.isCaptured);
+            [self handleSceenShot];
+            
+        }
+    }else {
+       //ios 11之前处理 未知
+    }
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -69,6 +82,60 @@
     
     // Do any additional setup after loading the view.
 }
+
+
+- (void)trainCheckyueyu {
+    
+    if ([TrainControllerUtil isJailBroken]) {
+     
+        if (![TrainControllerUtil trainCompareFileHash]) {
+            UIAlertController * alertVc =[UIAlertController alertControllerWithTitle:@"信息提示" message:@"抱歉, 文件不完整,请下载最新版本" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction * knowAction =[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                exit(0);
+            }];
+            [alertVc addAction:knowAction];
+            [self presentViewController:alertVc animated:YES completion:nil];
+        }else {
+            
+            UIAlertController * alertVc =[UIAlertController alertControllerWithTitle:@"信息提示" message:@"抱歉, 您的手机已越狱" preferredStyle:UIAlertControllerStyleAlert];
+              UIAlertAction * knowAction =[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
+              [alertVc addAction:knowAction];
+              [self presentViewController:alertVc animated:YES completion:nil];
+        }
+    }
+}
+
+
+- (void)rtrainAddNoti {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleSceenShot) name:UIApplicationUserDidTakeScreenshotNotification object:nil];
+   //ios11之后才可以录屏
+   if (@available(iOS 11.0,*)) {
+     //检测设备
+       [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(handleSceenShot) name:UIScreenCapturedDidChangeNotification  object:nil];
+   }
+    
+}
+
+//当用户截屏了 怎么办 目前来说 只能进行提示。
+-(void)handleSceenShot {
+    UIAlertController * alertVc =[UIAlertController alertControllerWithTitle:@"信息提示" message:@"为保证用户名,密码安全,请不要截屏或录屏!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * knowAction =[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
+    [alertVc addAction:knowAction];
+    [self presentViewController:alertVc animated:YES completion:nil];
+}
+
+-(void)dealloc {
+   
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationUserDidTakeScreenshotNotification object:nil];
+    if (@available(iOS 11.0, *)) {
+          [[NSNotificationCenter defaultCenter] removeObserver:self name:UIScreenCapturedDidChangeNotification object:nil];
+      } else {
+          // Fallback on earlier versions
+      }
+}
+
+
 
 - (void)evInitNavgation {
  

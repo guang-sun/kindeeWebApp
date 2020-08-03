@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */; };
+		845A3BDD24D67D83007C0272 /* appHash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845A3BDC24D67D83007C0272 /* appHash.plist */; };
 		84822CB224B07A0800D12C73 /* RZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */; };
 		84822CCC24B0C90A00D12C73 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */; };
 		848D497C23EBB98B00AF81B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D497B23EBB98B00AF81B3 /* AppDelegate.m */; };
@@ -62,6 +63,7 @@
 		2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kindeeWeb.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.release.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.release.xcconfig"; sourceTree = "<group>"; };
 		5C2C413EDFFAF0208F9C1F44 /* Pods-kindeeWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.debug.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.debug.xcconfig"; sourceTree = "<group>"; };
+		845A3BDC24D67D83007C0272 /* appHash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appHash.plist; sourceTree = "<group>"; };
 		84822CB024B07A0800D12C73 /* RZBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZBaseNavigationController.h; sourceTree = "<group>"; };
 		84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		84822CCA24B0C90A00D12C73 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 				84C106AC23F549D20042A136 /* UMCommon.framework */,
 				84C1068723F5445B0042A136 /* share_ios_6.9.7 */,
 				84F5C11E2407C1E00099D07A /* Resources.xcassets */,
+				845A3BDC24D67D83007C0272 /* appHash.plist */,
 			);
 			path = TrainResources;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */,
+				845A3BDD24D67D83007C0272 /* appHash.plist in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,

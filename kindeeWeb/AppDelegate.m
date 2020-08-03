@@ -17,6 +17,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong)  UIVisualEffectView *effectView;
+
 @end
 
 @implementation AppDelegate
@@ -130,6 +132,34 @@
     NSLog(@"userActivity : %@",userActivity.webpageURL.description);
     return YES;
 }
+
+// 进入后台
+- (void)applicationWillResignActive:(UIApplication *)application {
+   
+    
+    [[[UIApplication sharedApplication] keyWindow] addSubview:self.effectView];
+
+}
+
+// 退出后台
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [UIView animateWithDuration:0.5 animations:^{
+           [self.effectView removeFromSuperview];
+       }];
+}
+
+- (UIVisualEffectView *)effectView {
+    if (!_effectView) {
+        // 毛玻璃view 视图
+        _effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+        // 设置模糊透明度
+        _effectView.alpha = 1.f;
+        _effectView.frame = [UIScreen mainScreen].bounds;
+    }
+    
+    return _effectView;
+}
+
 #pragma mark - UISceneSession lifecycle
 
 

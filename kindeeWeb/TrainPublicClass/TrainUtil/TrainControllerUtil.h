@@ -23,4 +23,14 @@
 //安全区域高度
 
 + (float)safeBottomHeight ;
+
+//生成资源文件名及对应的hash的字典
++(NSDictionary *)getBundleFileHash ;
+
+// 是否越狱
++ (BOOL)isJailBroken ;
+
+//判断是否修改过
++ (BOOL)trainCompareFileHash ;
+
 @end
