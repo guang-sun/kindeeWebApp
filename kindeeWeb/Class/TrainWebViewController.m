@@ -65,10 +65,10 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-//        self.webUrl = @"https://learning.newvane.com.cn";
+        self.webUrl = @"https://learning.newvane.com.cn";
 ////        self.webUrl = @"https://tequ.newvane.com.cn";
 //        self.webUrl = @"https://szcsot.newvane.com.cn";
-        self.webUrl = @"https://szshigang.newvane.com.cn" ;
+//        self.webUrl = @"https://szshigang.newvane.com.cn" ;
         
     }else {
      
@@ -80,6 +80,7 @@
     [self registShareFunction];
     [self RegeistNoticeCenter];
     
+    [self rtrainAddNoti];
     // Do any additional setup after loading the view.
 }
 
@@ -91,7 +92,7 @@
         if (![TrainControllerUtil trainCompareFileHash]) {
             UIAlertController * alertVc =[UIAlertController alertControllerWithTitle:@"信息提示" message:@"抱歉, 文件不完整,请下载最新版本" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction * knowAction =[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                exit(0);
+                [self trainCheckyueyu];
             }];
             [alertVc addAction:knowAction];
             [self presentViewController:alertVc animated:YES completion:nil];
@@ -119,7 +120,7 @@
 
 //当用户截屏了 怎么办 目前来说 只能进行提示。
 -(void)handleSceenShot {
-    UIAlertController * alertVc =[UIAlertController alertControllerWithTitle:@"信息提示" message:@"为保证用户名,密码安全,请不要截屏或录屏!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController * alertVc =[UIAlertController alertControllerWithTitle:@"信息提示" message:@"为保证数据安全,请不要截屏或录屏!" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction * knowAction =[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleDefault handler:nil];
     [alertVc addAction:knowAction];
     [self presentViewController:alertVc animated:YES completion:nil];
