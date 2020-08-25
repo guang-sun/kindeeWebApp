@@ -472,10 +472,14 @@
         }
     }];
     if ([Url hasPrefix:@"http"]){
-        _isLanjie = YES ;
+      _isLanjie = YES ;
     }else {
-        _isLanjie = NO ;
+        if (![Url hasPrefix:@"about:blank"]){
+              _isLanjie = NO ;
+       }
     }
+   
+   
     if ([[Url lowercaseString] containsString:@"login"] ) {
         [self evSetNavHiddenWithhidden: YES];
     }else {
