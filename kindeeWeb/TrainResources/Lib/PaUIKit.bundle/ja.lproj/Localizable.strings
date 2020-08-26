@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by 林文平(EX-LINWENPING002) on 2019/10/8.
+  
+*/
+"downrefresh" = "プルダウン更新";
+"releaserefresh" = "ルーズハンドリフレッシュ";
+"downRefreshloading" = "リフレッシュしてみてください";
+"PBLoadMorePullUp" = "より多くの負荷を引き上げる";
+"PBLoadMoreRelease" = "ルーズハンドローディング";
+"PBLoadMoreLoading" = "読み込み中";
+"PBLoadMoreNoData" = "これ以上コンテンツはありません";
+"PaUIKit_SignatureTips"="学習が終了したら、今すぐサインに行きます。 その後、ディレクトリの右上隅にある「署名」パッチを使用することもできます。";
+"PaUIKit_ExamSignatureTips"="試験を完了し、署名します。 また、テストの詳細ページで「署名解除」チェックインを行うこともできます。";
+"PaUIKit_InternalInformation"="内部情報、彼は無効な使用";
+"PaUIKit_FeelFreeToSign"="電子署名により、盗難防止用の透かしコピーが自動的に追加されます。お気軽に署名してください";
+"PaUIKit_ClearScreen"="画面をクリア";
+"PaUIKit_NoLongerReminder"="次回のリマインダーはもうありません";
+"PaUIKit_WatermarkAdded"="盗難防止用の透かしが署名に追加されました";
+"PaUIKit_TagTheComments"="試してみて、コメントにタグを付けてください。";
+"PBLeftDragLoadMore" = "";
+"wordMaximumLimit" = "ご入力した文字数が最大限を超えたよ";
+"delete" = "削除";
+"skip" = "スキップ";
+"successFavorite" = "収集成功";
+"sure" = "確認";
+"albumAuthore" = "アルバム認証";
+"photoPrivacyTips" = "写真にアクセスするには、システムフォトアルバムにアクセスする必要があります。[設定-プライバシー-写真]に移動して開きます。";
+"known" = "知ってる";
+"goToSet" = "セットに行く";
+"saveFail" = "保存に失敗しました";
+"saveSuccess" = "正常に保存されました";
+"favoriteMenuTips" = "「マイ-お気に入り」メニューで見つけることができます！";
+"cancel" = "キャンセル";
+"maximumImageCount" = "最大%dつの画像のみ追加できます";

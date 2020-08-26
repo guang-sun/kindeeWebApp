@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by 林文平(EX-LINWENPING002) on 2019/10/8.
+  
+*/
+"downrefresh" = "Pull down to refresh";
+"releaserefresh" = "Loose hand refresh";
+"downRefreshloading" = "Try to refreshing";
+"PBLoadMorePullUp" = "Pull up more load";
+"PBLoadMoreRelease" = "Loose hand loading";
+"PBLoadMoreLoading" = "loading…";
+"PBLoadMoreNoData" = "No more content";
+"PaUIKit_SignatureTips"="You have finished learning, go sign now. Subsequent you can also use the 'Signature' patch in the upper right corner of the directory.";
+"PaUIKit_ExamSignatureTips"="You have completed the exam and are going to sign it. You can also go through the “de-signature” check-in on the test details page.";
+"PaUIKit_InternalInformation"="Internal information, he used invalid";
+"PaUIKit_FeelFreeToSign"="Electronic signature will automatically add anti-theft watermark copy, please feel free to sign";
+"PaUIKit_ClearScreen"="Clear screen";
+"PaUIKit_NoLongerReminder"="No longer reminder next time";
+"PaUIKit_WatermarkAdded"="An anti-theft watermark has been added to your signature";
+"PaUIKit_TagTheComments"="Give it a try and tag the comments.";
+"PBLeftDragLoadMore" = "";
+"wordMaximumLimit" = "Jumlah kata yang Anda masukkan telah melampaui batas maksimum.";
+"delete" = "Hapus";
+"skip" = "Lewati";
+"successFavorite" = "Koleksi yang sukses";
+"sure" = "pastikan ";
+"albumAuthore" = "Album authorization";
+"photoPrivacyTips" = "To access a photo, you need to access the system photo album, please go to \"Settings - Privacy - Photos\" to open.";
+"known" = "I know";
+"goToSet" = "Go to set";
+"saveFail" = "Save failed";
+"saveSuccess" = "Successfully saved";
+"favoriteMenuTips" = "Anda dapat menemukannya di menu \"My - My Favorites\"!";
+"cancel" = "Cancel";
+"maximumImageCount" = "Anda hanya dapat memilih hingga %d foto";

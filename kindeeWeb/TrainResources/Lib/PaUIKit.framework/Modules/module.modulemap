@@ -1,0 +1,6 @@
+framework module PaUIKit {
+  umbrella header "PaUIKit.h"
+
+  export *
+  module * { export * }
+}
