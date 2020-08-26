@@ -19,7 +19,9 @@
     AVCaptureVideoPreviewLayer * previewlayer;
     UILabel *infotext;
     UIButton *readerbackbutton;
- 
+    UIAlertView *scanalert;
+    UIAlertView * authoralert;
+    UIAlertView * nilalert;
     UILabel *warningString;
 
 }
@@ -36,14 +38,13 @@
 -(void)viewWillDisappear:(BOOL)animated{
     
     [super viewWillDisappear:animated];
-    
     [self stop];
 
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+
     [self start];
 }
 

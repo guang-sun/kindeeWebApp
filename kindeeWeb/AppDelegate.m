@@ -12,10 +12,12 @@
 #import <UMShare/UMShare.h>
 #import "UMengHeader.h"
 #import <UMCommon/UMCommon.h>
+
 #import "RZBaseNavigationController.h"
-#import "RZStartViewController.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong)  UIVisualEffectView *effectView;
 
 @end
 
@@ -30,49 +32,26 @@
     [self.window makeKeyAndVisible];
     
     [self loginUmengShare];
-    sleep(2);
+    
    
-    [self rzsetAppRootView];
+    TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
+    BOOL isFlag = [welcomeVC getWelcomeAD];
+    if(isFlag) {
+
+        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
+        self.window.rootViewController = nav ;
+
+    }else {
+        
+        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
+        self.window.rootViewController = nav;
+        [welcomeVC downloadWelcomAD];
+    }
+    
     
     
 
     return YES;
-}
-
-- (void)rzsetAppRootView {
-    
-    NSString  *appversion = TrainAPPVersions ;
-
-    NSString  *localVersion = [[NSUserDefaults standardUserDefaults] objectForKey:TrainLocalVersion];
-    if (TrainStringIsEmpty(localVersion) || ![localVersion isEqualToString:appversion]) {
-        
-        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[RZStartViewController alloc]init]];
-        self.window.rootViewController = nav;
-       [[NSUserDefaults standardUserDefaults] setObject:appversion forKey:TrainLocalVersion];
-        
-    }else {
-        TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
-          BOOL isFlag = [welcomeVC getWelcomeAD];
-          if(isFlag) {
-
-             RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
-             self.window.rootViewController = nav ;
-          }else {
-              [self rzSetHomeView];
-          }
-   
-    }
-
-}
-
-- (void)rzSetHomeView {
-   
-    RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
-     self.window.rootViewController = nav;
-    
-    TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
-     [welcomeVC downloadWelcomAD];
-    
 }
 
 /**
@@ -153,6 +132,34 @@
     NSLog(@"userActivity : %@",userActivity.webpageURL.description);
     return YES;
 }
+
+// 进入后台
+- (void)applicationWillResignActive:(UIApplication *)application {
+   
+    
+    [[[UIApplication sharedApplication] keyWindow] addSubview:self.effectView];
+
+}
+
+// 退出后台
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [UIView animateWithDuration:0.5 animations:^{
+           [self.effectView removeFromSuperview];
+       }];
+}
+
+- (UIVisualEffectView *)effectView {
+    if (!_effectView) {
+        // 毛玻璃view 视图
+        _effectView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleLight]];
+        // 设置模糊透明度
+        _effectView.alpha = 1.f;
+        _effectView.frame = [UIScreen mainScreen].bounds;
+    }
+    
+    return _effectView;
+}
+
 #pragma mark - UISceneSession lifecycle
 
 

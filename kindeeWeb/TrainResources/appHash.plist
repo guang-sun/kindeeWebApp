@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppIcon20x20@2x.png</key>
+	<string>654556b85939694c0564d98f0d087e9b</string>
+	<key>AppIcon20x20@3x.png</key>
+	<string>58dbe21d15cf5f67d802384bb7779f59</string>
+	<key>AppIcon29x29@2x.png</key>
+	<string>190c82d6632842b0123f7c0ba607d156</string>
+	<key>AppIcon29x29@3x.png</key>
+	<string>7b65cdfeb2ad4ae904e1ebe2f0cda759</string>
+	<key>AppIcon40x40@2x.png</key>
+	<string>562ed9d918847644662c1c8318497d28</string>
+	<key>AppIcon40x40@3x.png</key>
+	<string>533d821e861cf7d0e4652ff79fcfc9fc</string>
+	<key>AppIcon60x60@2x.png</key>
+	<string>533d821e861cf7d0e4652ff79fcfc9fc</string>
+	<key>AppIcon60x60@3x.png</key>
+	<string>1da86c5fbe747a01495e5867ec460bf0</string>
+	<key>Assets.car</key>
+	<string>3671e1d6b82b305177e2bbb7776ecf07</string>
+	<key>Info.plist</key>
+	<string>55b58a5ca572137d140ff18677959611</string>
+	<key>PkgInfo</key>
+	<string>23b7d7d024abb0f558420e098800bf27</string>
+	<key>iPhoneShare1.png</key>
+	<string>4f798b13c14168ce840c4ef6c7696ecc</string>
+	<key>新风学院(试岗)</key>
+	<string>e84dcfe09dfc5c59b9c7542647f9948e</string>
+	<key>appHash.plist</key>
+	<string>8ec90ce9c7025793f15ccfd37f624908</string>
+</dict>
+</plist>
