@@ -1,0 +1,38 @@
+/*
+ Localizable.strings
+ Pods
+ 
+ Created by 林文平(EX-LINWENPING002) on 2019/10/8.
+ 
+ */
+"downrefresh" = "下拉刷新";
+"releaserefresh" = "釋放刷新";
+"downRefreshloading" = "努力刷新中";
+"PBLoadMorePullUp" = "上拉加載更多";
+"PBLoadMoreRelease" = "釋放加載";
+"PBLoadMoreLoading" = "努力加載中";
+"PBLoadMoreNoData" = "沒有更多內容啦";
+"PaUIKit_SignatureTips"="您已完成學習,快去簽名吧~後續您也可通過目錄右上角“去簽名”補簽";
+"PaUIKit_ExamSignatureTips"="您已完成考試，快去簽名吧。後續您也可通過考試詳情頁“去簽名”補簽";
+"PaUIKit_InternalInformation"="內部資料，他用無效";
+"PaUIKit_FeelFreeToSign"="電子簽名將自動添加防盜用水印文案，請放心簽署";
+"PaUIKit_ClearScreen"="清屏";
+"PaUIKit_NoLongerReminder"="下次不再提醒";
+"PaUIKit_WatermarkAdded"="已為您的簽名添加防盜用水印";
+"PaUIKit_TagTheComments"="試一試,給評論打上標籤吧";
+"PBLeftDragLoadMore" = "左滑加載更多";
+"wordMaximumLimit" = "您輸入的字數已超過最大限制啦";
+"delete" = "刪除";
+"skip" = "跳過";
+"successFavorite" = "收藏成功";
+"sure" = "確定";
+"albumAuthore" = "相冊授權";
+"photoPrivacyTips" = "選擇照片需要訪問系統相冊,請前往“設置－隱私－照片”中開啟。";
+"known" = "我知道了";
+"goToSet" = "去設置";
+"saveFail" = "保存失敗";
+"saveSuccess" = "保存成功";
+"favoriteMenuTips" = "您可以在“我的-我的收藏”菜單中找到它！";
+"cancel" = "取消";
+"maximumImageCount" = "最多只能添加%d張圖片";
+

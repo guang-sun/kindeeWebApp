@@ -1,0 +1,37 @@
+/* 
+  Localizable.strings
+  Pods
+
+  Created by 林文平(EX-LINWENPING002) on 2019/10/8.
+  
+*/
+"downrefresh" = "풀다운 새로 고침";
+"releaserefresh" = "느슨한 손 새로 고침";
+"downRefreshloading" = "새로 고침 시도";
+"PBLoadMorePullUp" = "더 많은 짐을 끌어 올리십시오";
+"PBLoadMoreRelease" = "느슨한 손 로딩";
+"PBLoadMoreLoading" = "로딩중";
+"PBLoadMoreNoData" = "더 이상 내용이 없습니다";
+"PaUIKit_SignatureTips"="학습을 마쳤으니 지금 서명하십시오. 이후 디렉토리의 오른쪽 상단에있는 '서명'패치를 사용할 수도 있습니다.";
+"PaUIKit_ExamSignatureTips"="시험을 마치고 서명 할 것입니다. 테스트 세부 사항 페이지에서 '서명 해제'체크인을 수행 할 수도 있습니다.";
+"PaUIKit_InternalInformation"="내부 정보, 그는 유효하지 않은 사용";
+"PaUIKit_FeelFreeToSign"="전자 서명은 도난 방지 워터 마크 사본을 자동으로 추가합니다. 자유롭게 서명하십시오.";
+"PaUIKit_ClearScreen"="화면 지우기";
+"PaUIKit_NoLongerReminder"="다음에 더 이상 알림";
+"PaUIKit_WatermarkAdded"="도난 방지 워터 마크가 서명에 추가되었습니다";
+"PaUIKit_TagTheComments"="그것을 시도하고 의견을 태그하십시오.";
+"PBLeftDragLoadMore" = "";
+"wordMaximumLimit" = "입력하신 글자수가 최대글자수 량을 초과하였습니다.";
+"delete" = "삭제";
+"skip" = "점프";
+"successFavorite" = "즐겨찾기에 추가 되었습니다";
+"sure" = "확인";
+"albumAuthore" = "앨범 인증";
+"photoPrivacyTips" = "사진에 액세스하려면 시스템 사진 앨범에 액세스해야합니다. \"설정-개인 정보-사진\"으로 이동하여 엽니 다.";
+"known" = "알아";
+"goToSet" = "세트로 이동";
+"saveFail" = "저장 실패";
+"saveSuccess" = "성공적으로 저장되었습니다";
+"favoriteMenuTips" = "My-My Favorites메뉴에서 찾을 수 있습니다!";
+"cancel" = "취소";
+"maximumImageCount" = "최대 %d 개의 이미지 만 추가 할 수 있습니다";

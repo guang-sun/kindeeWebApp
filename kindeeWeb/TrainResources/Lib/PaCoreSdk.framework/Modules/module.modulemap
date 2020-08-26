@@ -1,0 +1,6 @@
+framework module PaCoreSdk {
+  umbrella header "PaCoreSdk.h"
+
+  export *
+  module * { export * }
+}

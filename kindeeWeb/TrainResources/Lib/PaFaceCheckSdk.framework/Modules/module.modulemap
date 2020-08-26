@@ -1,0 +1,6 @@
+framework module PaFaceCheckSdk {
+  umbrella header "PaFaceCheckSdk.h"
+
+  export *
+  module * { export * }
+}

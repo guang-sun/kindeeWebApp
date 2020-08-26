@@ -40,6 +40,13 @@
 		84C106AD23F549D30042A136 /* UMCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C106AC23F549D20042A136 /* UMCommon.framework */; };
 		84C6EB072400FD80004AC146 /* RZUMengManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C6EB062400FD80004AC146 /* RZUMengManager.m */; };
 		84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C6EB0B240113F3004AC146 /* iPhoneShare1.png */; };
+		84CEAD6924F5543800E651C6 /* PaUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84CEAD6124F5543800E651C6 /* PaUIKit.bundle */; };
+		84CEAD6A24F5543800E651C6 /* PaFaceCheckBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84CEAD6224F5543800E651C6 /* PaFaceCheckBundle.bundle */; };
+		84CEAD6B24F5543800E651C6 /* PaCoreSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CEAD6324F5543800E651C6 /* PaCoreSdk.framework */; };
+		84CEAD6C24F5543800E651C6 /* PaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CEAD6424F5543800E651C6 /* PaUIKit.framework */; };
+		84CEAD6D24F5543800E651C6 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CEAD6624F5543800E651C6 /* libcrypto.a */; };
+		84CEAD6E24F5543800E651C6 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CEAD6724F5543800E651C6 /* libssl.a */; };
+		84CEAD6F24F5543800E651C6 /* PaFaceCheckSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84CEAD6824F5543800E651C6 /* PaFaceCheckSdk.framework */; };
 		84E7E7C823ED0F4A00396046 /* TrainWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E76F23ED0F4A00396046 /* TrainWelcomeViewController.m */; };
 		84E7E7CA23ED0F4A00396046 /* TrainStringUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E77C23ED0F4A00396046 /* TrainStringUtil.m */; };
 		84E7E7CC23ED0F4A00396046 /* TrainControllerUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E7E77F23ED0F4A00396046 /* TrainControllerUtil.m */; };
@@ -73,7 +80,7 @@
 		848404D8248DD886004A71D3 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		848404DA2490F71F004A71D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		848404DB2490F71F004A71D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		848D497723EBB98B00AF81B3 /* 网络学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网络学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848D497723EBB98B00AF81B3 /* 新风学院(试岗).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风学院(试岗).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848D498023EBB98C00AF81B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -120,6 +127,13 @@
 		84C6EB062400FD80004AC146 /* RZUMengManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZUMengManager.m; sourceTree = "<group>"; };
 		84C6EB0B240113F3004AC146 /* iPhoneShare1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhoneShare1.png; sourceTree = "<group>"; };
 		84C6EB0D2401256C004AC146 /* 育成学院.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "育成学院.entitlements"; sourceTree = "<group>"; };
+		84CEAD6124F5543800E651C6 /* PaUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaUIKit.bundle; sourceTree = "<group>"; };
+		84CEAD6224F5543800E651C6 /* PaFaceCheckBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaFaceCheckBundle.bundle; sourceTree = "<group>"; };
+		84CEAD6324F5543800E651C6 /* PaCoreSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaCoreSdk.framework; sourceTree = "<group>"; };
+		84CEAD6424F5543800E651C6 /* PaUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaUIKit.framework; sourceTree = "<group>"; };
+		84CEAD6624F5543800E651C6 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		84CEAD6724F5543800E651C6 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		84CEAD6824F5543800E651C6 /* PaFaceCheckSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaFaceCheckSdk.framework; sourceTree = "<group>"; };
 		84E7E76E23ED0F4A00396046 /* TrainWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainWelcomeViewController.h; sourceTree = "<group>"; };
 		84E7E76F23ED0F4A00396046 /* TrainWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainWelcomeViewController.m; sourceTree = "<group>"; };
 		84E7E77223ED0F4A00396046 /* TrainPromptStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainPromptStr.h; sourceTree = "<group>"; };
@@ -179,13 +193,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C1069C23F5445B0042A136 /* UShareUI.framework in Frameworks */,
+				84CEAD6B24F5543800E651C6 /* PaCoreSdk.framework in Frameworks */,
+				84CEAD6D24F5543800E651C6 /* libcrypto.a in Frameworks */,
 				84C1069D23F5445B0042A136 /* UMShare.framework in Frameworks */,
 				84C106A323F5445B0042A136 /* libWeChatSDK.a in Frameworks */,
 				84C106AD23F549D30042A136 /* UMCommon.framework in Frameworks */,
 				84C106A523F547C00042A136 /* libsqlite3.tbd in Frameworks */,
 				84C106A123F5445B0042A136 /* libSocialOfficialWeChat.a in Frameworks */,
+				84CEAD6C24F5543800E651C6 /* PaUIKit.framework in Frameworks */,
 				3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */,
+				84CEAD6F24F5543800E651C6 /* PaFaceCheckSdk.framework in Frameworks */,
 				84C106AB23F5496D0042A136 /* libc++.tbd in Frameworks */,
+				84CEAD6E24F5543800E651C6 /* libssl.a in Frameworks */,
 				84C1069F23F5445B0042A136 /* libSocialDingDing.a in Frameworks */,
 				84C106A023F5445B0042A136 /* libSocialWeChat.a in Frameworks */,
 				84C106A723F547CE0042A136 /* CoreGraphics.framework in Frameworks */,
@@ -231,7 +250,7 @@
 		848D497823EBB98B00AF81B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848D497723EBB98B00AF81B3 /* 网络学院.app */,
+				848D497723EBB98B00AF81B3 /* 新风学院(试岗).app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -334,6 +353,28 @@
 			path = UMengManager;
 			sourceTree = "<group>";
 		};
+		84CEAD6024F5543800E651C6 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				84CEAD6124F5543800E651C6 /* PaUIKit.bundle */,
+				84CEAD6224F5543800E651C6 /* PaFaceCheckBundle.bundle */,
+				84CEAD6324F5543800E651C6 /* PaCoreSdk.framework */,
+				84CEAD6424F5543800E651C6 /* PaUIKit.framework */,
+				84CEAD6524F5543800E651C6 /* OpenSSL */,
+				84CEAD6824F5543800E651C6 /* PaFaceCheckSdk.framework */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		84CEAD6524F5543800E651C6 /* OpenSSL */ = {
+			isa = PBXGroup;
+			children = (
+				84CEAD6624F5543800E651C6 /* libcrypto.a */,
+				84CEAD6724F5543800E651C6 /* libssl.a */,
+			);
+			path = OpenSSL;
+			sourceTree = "<group>";
+		};
 		84E7E76C23ED0F4A00396046 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +403,7 @@
 		84E7E77023ED0F4A00396046 /* TrainResources */ = {
 			isa = PBXGroup;
 			children = (
+				84CEAD6024F5543800E651C6 /* Lib */,
 				84C106AC23F549D20042A136 /* UMCommon.framework */,
 				84C1068723F5445B0042A136 /* share_ios_6.9.7 */,
 				84F5C11E2407C1E00099D07A /* Resources.xcassets */,
@@ -492,7 +534,7 @@
 			);
 			name = kindeeWeb;
 			productName = kindeeWeb;
-			productReference = 848D497723EBB98B00AF81B3 /* 网络学院.app */;
+			productReference = 848D497723EBB98B00AF81B3 /* 新风学院(试岗).app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -533,12 +575,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CEAD6A24F5543800E651C6 /* PaFaceCheckBundle.bundle in Resources */,
 				84BBEC2E24B9747000A9B915 /* app_start_down@3x.png in Resources */,
 				848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */,
 				84BBEC2C24B9747000A9B915 /* app_start_top@2x.png in Resources */,
 				84BBEC2D24B9747000A9B915 /* app_start_mid@3x.png in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
+				84CEAD6924F5543800E651C6 /* PaUIKit.bundle in Resources */,
 				84BBEC2F24B9747000A9B915 /* app_start_top@3x.png in Resources */,
 				84BBEC3024B9747000A9B915 /* app_start_down@2x.png in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
@@ -767,6 +811,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/UMSocialUI",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
@@ -780,6 +825,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
 				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = (
@@ -801,8 +847,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zkWebAppHoc;
-				PRODUCT_NAME = "网络学院";
+				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zksgWebAppHoc;
+				PRODUCT_NAME = "新风学院(试岗)";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -825,6 +871,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/UMSocialUI",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
@@ -838,6 +885,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
 				MARKETING_VERSION = 1.0.3;
 				OTHER_LDFLAGS = (
@@ -859,8 +907,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zkWebAppHoc;
-				PRODUCT_NAME = "网络学院";
+				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zksgWebAppHoc;
+				PRODUCT_NAME = "新风学院(试岗)";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
