@@ -11,9 +11,21 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+typedef NS_ENUM(NSInteger, PAZNFCRegulatoryErrorCode) {
+    PAZNFCRegulatoryErrorCode_Exit = -100,   //手动关闭验证页面退出
+    PAZNFCRegulatoryErrorCode_Nonentity = 10000,  //学员信息不存在
+    PAZNFCRegulatoryErrorCode_NoPermission = 10001, //非本课程参训学员
+};
+
+
 @interface PAZNRegulatoryManager : NSObject
 
+/// 扩展信息
+@property (nonatomic, strong,nullable) NSDictionary *extraInfo;
+
 + (instancetype)shareInstance;
+
++ (void)destory;
 
 /**
 初始化SDK环境

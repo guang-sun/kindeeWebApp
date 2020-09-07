@@ -65,10 +65,8 @@
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
-        self.webUrl = @"https://learning.newvane.com.cn";
-////        self.webUrl = @"https://tequ.newvane.com.cn";
-//        self.webUrl = @"https://szcsot.newvane.com.cn";
-//        self.webUrl = @"https://szshigang.newvane.com.cn" ;
+
+        self.webUrl = @"https://szshigang.newvane.com.cn" ;
         
     }else {
      
@@ -82,29 +80,31 @@
     
     [self rtrainAddNoti];
     
-    //
-    [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:PAZNRegulatorySdkEnvironmentTest appId:@"pazn"];
-
-    [[PAZNRegulatoryManager shareInstance] configUserInfo:1 userName:@"212" cardId:@"1212"];
-
-       NSString *timestamp = [PAZNRegulatoryUtils getTimestamp];
-       NSString *nonce = [PAZNRegulatoryUtils generateNonce];
-       NSString *version = [PAZNRegulatoryUtils getSDKVerion];
-
-       NSString *sign = [PAZNRegulatoryUtils generateSignWith:@"pazn" appKey:@"znapp334" version:version nonce:nonce timestamp:timestamp];
-
-       [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:@"111" timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
-           if(!error&&checkPass){
-               //校验通过
-               NSLog(@"---changg ");
-           }else{
-               //失败处理
-               NSLog(@"---fail==%@ ",error.localizedDescription);
-
-           }
-       }];
-
-        
+//    //
+//    [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:PAZNRegulatorySdkEnvironmentTest appId:@"pazn"];
+//
+//    [[PAZNRegulatoryManager shareInstance] configUserInfo:1 userName:@"212" cardId:@"1212"];
+//
+//       NSString *timestamp = [PAZNRegulatoryUtils getTimestamp];
+//       NSString *nonce = [PAZNRegulatoryUtils generateNonce];
+//       NSString *version = [PAZNRegulatoryUtils getSDKVerion];
+//
+//       NSString *sign = [PAZNRegulatoryUtils generateSignWith:@"pazn" appKey:@"znapp334" version:version nonce:nonce timestamp:timestamp];
+//
+//       [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:@"111" timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
+//
+//           [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
+//
+//           if(!error&&checkPass){
+//               //校验通过
+//               NSLog(@"---changg ");
+//           }else{
+//               //失败处理
+//               NSLog(@"---fail==%@ ",error.localizedDescription);
+//
+//           }
+//       }];
+   
         
 
     
@@ -384,8 +384,11 @@
     
 }
 
+#pragma mark - ============== 注册js 交互方法 ===================
+
 - (void)registShareFunction {
     
+    // 登录
     @weakify(self);
     [self.webViewBridge registerHandler:@"loginUser" handler:^(id data, WVJBResponseCallback responseCallback) {
         // data 的类型与 JS中传的参数有关
@@ -397,7 +400,6 @@
         if (![url hasPrefix:@"http"]) {
             url = [NSString stringWithFormat:@"https://%@",url];
         }
-//        [self evSetLoginNavHiddenWithhidden:NO];
         [weak_self evInitZhouIconWithHidden:NO];
 
         NSString  *params = @"/learn/admin/course/list/index.html#/index?";
@@ -409,11 +411,9 @@
         [TrainUserDefault setObject:url forKey:TrainWebHostText];
         [TrainUserDefault setObject:params forKey:TrainWebHomeParam];
 
-        // 将分享的结果返回到JS中
-//        NSString *result = [NSString stringWithFormat:@"分享成功:%@,%@,%@",title,content,url];
-        responseCallback(@"11");
     }];
     
+    // nav 上左侧返回按钮是否显示
     [self.webViewBridge registerHandler:@"ycNavBackHidden" handler:^(id data, WVJBResponseCallback responseCallback) {
         NSDictionary *tempDic = data;
         BOOL isHidden = [tempDic[@"ishidden"] boolValue];
@@ -421,6 +421,7 @@
         [weak_self evSetNavHiddenWithhidden: isHidden];
     }];
     
+    //  跳转到 扫码页面
     [self.webViewBridge registerHandler:@"ycGotoScan" handler:^(id data, WVJBResponseCallback responseCallback) {
         [self trainShareAppWithUrl1:^(NSString *result) {
               NSMutableDictionary *dic = [NSMutableDictionary dictionary];
@@ -429,15 +430,17 @@
         }];
     }];
     
+    // 隐藏 logo 在nav左侧
     [self.webViewBridge registerHandler:@"setloginNavHidden" handler:^(id data, WVJBResponseCallback responseCallback) {
         [weak_self evSetLoginNavHiddenWithhidden:YES];
       }];
     
-  
+    // 显示 logo 在nav左侧
    [self.webViewBridge registerHandler:@"setloginNavShow" handler:^(id data, WVJBResponseCallback responseCallback) {
        [weak_self evSetLoginNavHiddenWithhidden:NO];
      }];
        
+    //logo 在nav左侧  是否显示
     [self.webViewBridge registerHandler:@"setHomeIconShow" handler:^(id data, WVJBResponseCallback responseCallback) {
           NSDictionary *tempDic = data;
           BOOL isHidden = [tempDic[@"isShow"] boolValue];
@@ -445,6 +448,7 @@
 
       }];
     
+    // 是否显示人脸扫描的
     [self.webViewBridge registerHandler:@"setFaceViewShow" handler:^(id data, WVJBResponseCallback responseCallback) {
        
         NSDictionary *tempDic = data;
@@ -458,7 +462,7 @@
         
       }];
     
-//    @weakify(self);
+    // 拍摄照片
     [self.webViewBridge registerHandler:@"setFaceTakePhoto" handler:^(id data, WVJBResponseCallback responseCallback) {
         [weak_self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
             
@@ -469,6 +473,7 @@
         }];
     }];
     
+    //
     [self.webViewBridge registerHandler:@"setHomeWord" handler:^(id data, WVJBResponseCallback responseCallback) {
        NSDictionary *tempDic = data;
        NSInteger index = [tempDic[@"isShow"] integerValue];
@@ -479,6 +484,8 @@
        }
     }];
     
+    
+    // sdk 人脸扫描的环境配置
     [self.webViewBridge registerHandler:@"szsgInitSDK" handler:^(id data, WVJBResponseCallback responseCallback) {
            NSDictionary *tempDic = data;
            NSInteger env = [tempDic[@"Env"] integerValue] ;
@@ -487,46 +494,57 @@
            [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:env appId:appId];
 
            
-        }];
+    }];
+    
+   // sdk 人脸扫描的设置人员
+   [self.webViewBridge registerHandler:@"szsgConfigUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
+         NSDictionary *tempDic = data;
+         NSInteger cardType = [tempDic[@"idCardType"] integerValue] ;
+       NSArray *arr = @[@2,@4,@8,@16,@32,@64];
+         cardType = [arr containsObject:@(cardType)] ? cardType : 2;
+         NSString *userName = tempDic[@"userName"] ;
+         NSString *cardId = tempDic[@"cardId"] ;
+        [[PAZNRegulatoryManager shareInstance] configUserInfo:cardType userName:userName cardId:cardId];
+  
+   }];
        
-       [self.webViewBridge registerHandler:@"szsgConfigUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
-             NSDictionary *tempDic = data;
-             NSInteger cardType = [tempDic[@"idCardType"] integerValue] ;
-             NSString *userName = tempDic[@"userName"] ;
-             NSString *cardId = tempDic[@"cardId"] ;
-            [[PAZNRegulatoryManager shareInstance] configUserInfo:cardType userName:userName cardId:cardId];
-      
-       }];
-       
-       [self.webViewBridge registerHandler:@"szsgCheckBeforeTraining" handler:^(id data, WVJBResponseCallback responseCallback) {
-           NSDictionary *tempDic = data;
-           NSString *courseId = tempDic[@"courseId"] ;
-           NSString *timestamp = tempDic[@"timestamp"] ;
-           NSString *nonce = tempDic[@"nonce"] ;
-           NSString *sign = tempDic[@"sign"] ;
-           NSString *restartFlag = tempDic[@"restartFlag"] ;
-          
-           [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:courseId timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
-               
-               NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-               [dic setObject:@(checkPass) forKey:@"code"];
-               NSString  * code ;
-               NSString  * msg ;
-               if (checkPass) {
-                   code = @"0";
-                   msg = @"SUCCESS";
-               }else {
-                   code = @"-1";
-                   msg = (error.localizedDescription.length > 0) ? error.localizedDescription : @"FAIL";
-               }
-               [dic setObject:code forKey:@"code"];
-               [dic setObject:msg forKey:@"message"];
-               [dic setObject:comesBackToken forKey:@"token"];
-               responseCallback(dic) ;
-              }];
-             
+    // sdk 调起人脸检测
+   [self.webViewBridge registerHandler:@"szsgCheckBeforeTraining" handler:^(id data, WVJBResponseCallback responseCallback) {
+       NSDictionary *tempDic = data;
+       NSString *courseId = tempDic[@"courseId"] ;
+       NSString *appKey = tempDic[@"appKey"] ;
+       NSString *pazn = tempDic[@"appId"] ;
+
+       NSString *timestamp = [PAZNRegulatoryUtils getTimestamp];
+       NSString *nonce = [PAZNRegulatoryUtils generateNonce];
+       NSString *version = [PAZNRegulatoryUtils getSDKVerion];
+       NSString *sign = [PAZNRegulatoryUtils generateSignWith:pazn appKey:appKey version:version nonce:nonce timestamp:timestamp];
+      [self.navigationController setNavigationBarHidden:YES animated:YES] ;
+
+       [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:courseId timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
+           [[PAZNRegulatoryManager shareInstance] resetRegulatoryData];
+           
+           [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
+           NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+           [dic setObject:@(checkPass) forKey:@"code"];
+           NSString  * code ;
+           NSString  * msg ;
+           NSString  * token = (notEmptyStr(comesBackToken)) ;
+           if (checkPass) {
+               code = @"0";
+               msg = @"SUCCESS";
+           }else {
+               code = @"-1";
+               msg = (error.localizedDescription.length > 0) ? error.localizedDescription : @"FAIL";
+           }
+           [dic setObject:code forKey:@"code"];
+           [dic setObject:msg forKey:@"message"];
+           [dic setObject:token forKey:@"token"];
+           responseCallback(dic) ;
           }];
-       
+         
+      }];
+   
        
         
     

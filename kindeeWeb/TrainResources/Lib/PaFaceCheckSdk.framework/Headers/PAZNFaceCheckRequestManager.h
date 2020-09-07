@@ -136,6 +136,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取个人信息
 /// @param completion 完成回调
 - (void)requestNewPersonDetailWithCompletion:(void (^)(BOOL succ, NSString *msg, NSDictionary *dict))completion;
+
+- (void)getUserVerifyInfoWithCompletion:(void(^)(BOOL succ, NSDictionary *info))completion;
 @end
 
 NS_ASSUME_NONNULL_END
