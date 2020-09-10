@@ -17,13 +17,13 @@
 		848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D498623EBB99000AF81B3 /* Assets.xcassets */; };
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
-		84BDB1F725065BFF0082E0B0 /* PaUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB1EF25065BFF0082E0B0 /* PaUIKit.bundle */; };
-		84BDB1F825065BFF0082E0B0 /* PaFaceCheckBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB1F025065BFF0082E0B0 /* PaFaceCheckBundle.bundle */; };
-		84BDB1F925065BFF0082E0B0 /* PaCoreSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB1F125065BFF0082E0B0 /* PaCoreSdk.framework */; };
-		84BDB1FA25065BFF0082E0B0 /* PaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB1F225065BFF0082E0B0 /* PaUIKit.framework */; };
-		84BDB1FB25065BFF0082E0B0 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB1F425065BFF0082E0B0 /* libcrypto.a */; };
-		84BDB1FC25065BFF0082E0B0 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB1F525065BFF0082E0B0 /* libssl.a */; };
-		84BDB1FD25065C000082E0B0 /* PaFaceCheckSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB1F625065BFF0082E0B0 /* PaFaceCheckSdk.framework */; };
+		84BDB21E2509F4F00082E0B0 /* PaUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB2162509F4F00082E0B0 /* PaUIKit.bundle */; };
+		84BDB21F2509F4F00082E0B0 /* PaFaceCheckBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB2172509F4F00082E0B0 /* PaFaceCheckBundle.bundle */; };
+		84BDB2202509F4F00082E0B0 /* PaCoreSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB2182509F4F00082E0B0 /* PaCoreSdk.framework */; };
+		84BDB2212509F4F00082E0B0 /* PaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB2192509F4F00082E0B0 /* PaUIKit.framework */; };
+		84BDB2222509F4F00082E0B0 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB21B2509F4F00082E0B0 /* libcrypto.a */; };
+		84BDB2232509F4F00082E0B0 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB21C2509F4F00082E0B0 /* libssl.a */; };
+		84BDB2242509F4F00082E0B0 /* PaFaceCheckSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB21D2509F4F00082E0B0 /* PaFaceCheckSdk.framework */; };
 		84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068123F520CE0042A136 /* TrainScanViewController.m */; };
 		84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068423F5410B0042A136 /* TrainAlertTools.m */; };
 		84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C1068923F5445B0042A136 /* UMSocialSDKResources.bundle */; };
@@ -85,13 +85,13 @@
 		848D498923EBB99000AF81B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D498B23EBB99000AF81B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84BDB1EF25065BFF0082E0B0 /* PaUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaUIKit.bundle; sourceTree = "<group>"; };
-		84BDB1F025065BFF0082E0B0 /* PaFaceCheckBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaFaceCheckBundle.bundle; sourceTree = "<group>"; };
-		84BDB1F125065BFF0082E0B0 /* PaCoreSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaCoreSdk.framework; sourceTree = "<group>"; };
-		84BDB1F225065BFF0082E0B0 /* PaUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaUIKit.framework; sourceTree = "<group>"; };
-		84BDB1F425065BFF0082E0B0 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
-		84BDB1F525065BFF0082E0B0 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
-		84BDB1F625065BFF0082E0B0 /* PaFaceCheckSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaFaceCheckSdk.framework; sourceTree = "<group>"; };
+		84BDB2162509F4F00082E0B0 /* PaUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaUIKit.bundle; sourceTree = "<group>"; };
+		84BDB2172509F4F00082E0B0 /* PaFaceCheckBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaFaceCheckBundle.bundle; sourceTree = "<group>"; };
+		84BDB2182509F4F00082E0B0 /* PaCoreSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaCoreSdk.framework; sourceTree = "<group>"; };
+		84BDB2192509F4F00082E0B0 /* PaUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaUIKit.framework; sourceTree = "<group>"; };
+		84BDB21B2509F4F00082E0B0 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		84BDB21C2509F4F00082E0B0 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		84BDB21D2509F4F00082E0B0 /* PaFaceCheckSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaFaceCheckSdk.framework; sourceTree = "<group>"; };
 		84C1068123F520CE0042A136 /* TrainScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainScanViewController.m; sourceTree = "<group>"; };
 		84C1068223F520CE0042A136 /* TrainScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainScanViewController.h; sourceTree = "<group>"; };
 		84C1068423F5410B0042A136 /* TrainAlertTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainAlertTools.m; sourceTree = "<group>"; };
@@ -178,18 +178,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C1069C23F5445B0042A136 /* UShareUI.framework in Frameworks */,
-				84BDB1F925065BFF0082E0B0 /* PaCoreSdk.framework in Frameworks */,
-				84BDB1FB25065BFF0082E0B0 /* libcrypto.a in Frameworks */,
+				84BDB2202509F4F00082E0B0 /* PaCoreSdk.framework in Frameworks */,
+				84BDB2222509F4F00082E0B0 /* libcrypto.a in Frameworks */,
 				84C1069D23F5445B0042A136 /* UMShare.framework in Frameworks */,
 				84C106A323F5445B0042A136 /* libWeChatSDK.a in Frameworks */,
 				84C106AD23F549D30042A136 /* UMCommon.framework in Frameworks */,
 				84C106A523F547C00042A136 /* libsqlite3.tbd in Frameworks */,
 				84C106A123F5445B0042A136 /* libSocialOfficialWeChat.a in Frameworks */,
-				84BDB1FA25065BFF0082E0B0 /* PaUIKit.framework in Frameworks */,
+				84BDB2212509F4F00082E0B0 /* PaUIKit.framework in Frameworks */,
 				3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */,
-				84BDB1FD25065C000082E0B0 /* PaFaceCheckSdk.framework in Frameworks */,
+				84BDB2242509F4F00082E0B0 /* PaFaceCheckSdk.framework in Frameworks */,
 				84C106AB23F5496D0042A136 /* libc++.tbd in Frameworks */,
-				84BDB1FC25065BFF0082E0B0 /* libssl.a in Frameworks */,
+				84BDB2232509F4F00082E0B0 /* libssl.a in Frameworks */,
 				84C1069F23F5445B0042A136 /* libSocialDingDing.a in Frameworks */,
 				84C106A023F5445B0042A136 /* libSocialWeChat.a in Frameworks */,
 				84C106A723F547CE0042A136 /* CoreGraphics.framework in Frameworks */,
@@ -261,24 +261,24 @@
 			path = kindeeWeb;
 			sourceTree = "<group>";
 		};
-		84BDB1EE25065BFF0082E0B0 /* Lib */ = {
+		84BDB2152509F4F00082E0B0 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				84BDB1EF25065BFF0082E0B0 /* PaUIKit.bundle */,
-				84BDB1F025065BFF0082E0B0 /* PaFaceCheckBundle.bundle */,
-				84BDB1F125065BFF0082E0B0 /* PaCoreSdk.framework */,
-				84BDB1F225065BFF0082E0B0 /* PaUIKit.framework */,
-				84BDB1F325065BFF0082E0B0 /* OpenSSL */,
-				84BDB1F625065BFF0082E0B0 /* PaFaceCheckSdk.framework */,
+				84BDB2162509F4F00082E0B0 /* PaUIKit.bundle */,
+				84BDB2172509F4F00082E0B0 /* PaFaceCheckBundle.bundle */,
+				84BDB2182509F4F00082E0B0 /* PaCoreSdk.framework */,
+				84BDB2192509F4F00082E0B0 /* PaUIKit.framework */,
+				84BDB21A2509F4F00082E0B0 /* OpenSSL */,
+				84BDB21D2509F4F00082E0B0 /* PaFaceCheckSdk.framework */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
 		};
-		84BDB1F325065BFF0082E0B0 /* OpenSSL */ = {
+		84BDB21A2509F4F00082E0B0 /* OpenSSL */ = {
 			isa = PBXGroup;
 			children = (
-				84BDB1F425065BFF0082E0B0 /* libcrypto.a */,
-				84BDB1F525065BFF0082E0B0 /* libssl.a */,
+				84BDB21B2509F4F00082E0B0 /* libcrypto.a */,
+				84BDB21C2509F4F00082E0B0 /* libssl.a */,
 			);
 			path = OpenSSL;
 			sourceTree = "<group>";
@@ -380,7 +380,7 @@
 		84E7E77023ED0F4A00396046 /* TrainResources */ = {
 			isa = PBXGroup;
 			children = (
-				84BDB1EE25065BFF0082E0B0 /* Lib */,
+				84BDB2152509F4F00082E0B0 /* Lib */,
 				84C106AC23F549D20042A136 /* UMCommon.framework */,
 				84C1068723F5445B0042A136 /* share_ios_6.9.7 */,
 				84F5C11E2407C1E00099D07A /* Resources.xcassets */,
@@ -556,9 +556,9 @@
 				845A3BDD24D67D83007C0272 /* appHash.plist in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
-				84BDB1F825065BFF0082E0B0 /* PaFaceCheckBundle.bundle in Resources */,
+				84BDB21F2509F4F00082E0B0 /* PaFaceCheckBundle.bundle in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
-				84BDB1F725065BFF0082E0B0 /* PaUIKit.bundle in Resources */,
+				84BDB21E2509F4F00082E0B0 /* PaUIKit.bundle in Resources */,
 				84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */,
 				848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */,
 			);

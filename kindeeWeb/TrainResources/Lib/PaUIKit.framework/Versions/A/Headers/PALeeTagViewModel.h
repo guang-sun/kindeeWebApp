@@ -85,4 +85,5 @@ typedef NS_ENUM(NSUInteger, PALeeTagAlignment) {
 @property (nonatomic, assign) BOOL enable; // 是否可以操作
 @property (nonatomic, assign) BOOL isSelect; // 是否选中
 
+@property (nonatomic, copy) NSString * levelIconName; // 等级图标
 @end

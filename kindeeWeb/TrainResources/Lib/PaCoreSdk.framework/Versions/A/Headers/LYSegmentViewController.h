@@ -16,6 +16,9 @@
 
 @property (nonatomic, strong, readonly) UITableView                            *tableView; //!< 主列表
 
+/** 外层列表是否能滑动 */
+@property (nonatomic, assign) BOOL canScroll;
+
 @property (nonatomic, assign) LYSementRefrshingPolicy                          refreshingPolicy; //!< 下拉刷新策略
 
 @property (nonatomic, assign) CGFloat                                          ignoredTopEdge; //!< 主列表顶部忽略的距离

@@ -112,5 +112,8 @@ typedef enum{
  */
 @property (nonatomic,strong) NSDictionary      *defaultParameters;
 
+/** 网络请求类名（默认PAZNBaseRequest） */
+@property (nonatomic, strong)  NSString* requestClassName;
+
 @end
 

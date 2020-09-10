@@ -12,14 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol PAAdBannerViewDelegate <NSObject>
 
-/// 获取第一个广告，返回广告id，第一个广告自己处理展示事件
+/// 获取广告，返回广告id，第一个广告自己处理展示事件
 /// @param adBannerView - adBannerView
 /// @param containView - 广告视图
-- (NSString *)adIdOfAdBannerView:(PAAdBannerView *)adBannerView prepareForFirstAdForContainView:(UIImageView *)containView;
-/// 获取下一个广告，返回广告id
-/// @param adBannerView - adBannerView
-/// @param containView - 广告视图
-- (NSString *)adIdOfAdBannerView:(PAAdBannerView *)adBannerView prepareForNextAdForContainView:(UIImageView *)containView;
+/// @param completion - 广告加载回调（成功或者失败）
+- (NSString *)adIdOfAdBannerView:(PAAdBannerView *)adBannerView
+      prepareForAdForContainView:(UIImageView *)containView
+                  loadCompletion:(void(^)(BOOL hasLoaded,NSString *adsId))completion;
 
 /// 展示了新广告
 /// @param adBannerView - adBannerView
@@ -43,6 +42,9 @@ NS_ASSUME_NONNULL_BEGIN
 ///反馈更新了content
 - (void)adBannerView:(PAAdBannerView *)adBannerView reloadContentSizeWithAdId:(NSString *)adId;
 
+/// 广告加载失败
+/// @param adBannerView - adBannerView
+- (void)didLoadFailAdBannerView:(PAAdBannerView *)adBannerView;
 
 @end
 
@@ -64,6 +66,8 @@ typedef NS_ENUM(NSInteger, PAAdBannerViewShowStyle) {
     ///竖屏幕
     PAAdBannerView_All_Portrait = 2,
 };
+
+typedef void(^PAAdBannerLoad)(BOOL loaded,NSString *adsId);
 
 @interface PAAdBannerView : UIView
 

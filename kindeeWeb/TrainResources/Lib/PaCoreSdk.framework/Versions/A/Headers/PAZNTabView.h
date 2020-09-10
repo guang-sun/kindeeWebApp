@@ -147,5 +147,10 @@ typedef NS_ENUM(NSInteger, PAZNTabViewType)
  */
 - (void)changeStyle2;
 
+/**
+ *自定义指示图样式
+ */
+- (void)changeCustomTabHudViewWithColor:(UIColor *)color size:(CGSize)size;
+
 - (void)addBottomLine;
 @end

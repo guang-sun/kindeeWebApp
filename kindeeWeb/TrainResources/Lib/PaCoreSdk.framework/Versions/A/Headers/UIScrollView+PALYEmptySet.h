@@ -49,6 +49,8 @@
 
 @property (nonatomic, strong) UIView         *pazn_emptyCustomView; //!< 自定义view
 
+@property (nonatomic, strong) NSAttributedString       *pazn_emptyAttributedTitle; //!< 占位富文本
+
 @end
 
 @interface UITableView (PALYEmptySet)

@@ -47,6 +47,16 @@ typedef void(^PAMVAlertOrder)(PAMVAlertViewOption *option);
 
 @property (nonatomic, assign) BOOL            hideWhenTouchOutSide;
 
+@property (nonatomic, assign) CGFloat         titleTop;
+
+@property (nonatomic, assign) CGFloat         messageToTop;
+
+@property (nonatomic, assign) CGFloat         btnsToTop;
+
+@property (nonatomic, assign) CGFloat         btnsToBottom;
+
+@property (nonatomic, assign) CGFloat         btnsHeight;
+
 @end
 
 @interface PAMVAlertView : UIView

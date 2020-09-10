@@ -29,6 +29,7 @@
 
 @property (nonatomic, strong, readonly) NSString                     *segmentTitle; //!< 子视图对应的的tab标题
 
+@property (nonatomic, assign) BOOL                        canScroll;
 /**
  初始化实例
 

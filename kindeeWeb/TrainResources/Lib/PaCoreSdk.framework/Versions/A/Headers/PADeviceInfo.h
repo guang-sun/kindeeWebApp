@@ -146,6 +146,8 @@ alpha:1.0]
 #define PAPingFangTCFont(fontSize) [UIFont fontWithNameSafe:@"PingFangTC-Regular" size:fontSize]
 #define PAPingFangSC_MediumFont(fontSize) [UIFont fontWithNameSafe:@"PingFangSC-Medium" size:fontSize]
 #define PAPingFangTC_MediumFont(fontSize) [UIFont fontWithNameSafe:@"PingFangTC-Medium" size:fontSize]
+#define PAPingFangSC_SemiboldFont(fontSize) [UIFont fontWithNameSafe:@"PingFangSC-Semibold" size:fontSize]
+#define PAPingFangTC_SemiboldFont(fontSize) [UIFont fontWithNameSafe:@"PingFangTC-Semibold" size:fontSize]
 
 // 默认头像
 #define kPADefaultHeaderImage(imageUrl) \

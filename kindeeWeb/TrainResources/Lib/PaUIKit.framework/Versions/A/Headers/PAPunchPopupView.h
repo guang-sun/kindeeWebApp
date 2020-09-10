@@ -17,7 +17,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface PAPunchPopupView : PAPopupView
 
+/// 字体适应宽度
+@property (nonatomic, assign) BOOL titleFontSizeAutoFit;
+/// 标题富文本
+@property (nonatomic, strong) NSAttributedString *titleAttr;
+
 - (instancetype)initWithType:(PAPunchPopupViewType)type punchAction:(void(^)(void))block;
+- (instancetype)initWithType:(PAPunchPopupViewType)type content:(NSString *)content punchAction:(void(^)(void))block;
 
 @end
 

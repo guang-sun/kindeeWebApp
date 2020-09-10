@@ -30,6 +30,14 @@ NS_ASSUME_NONNULL_BEGIN
               withCancelBlock:(nullable void (^)(void))cancelBlock;
 
 - (instancetype)initWithTitle:(nullable NSString *)title
+                  withContent:(nullable NSString *)content
+                  withConfirm:(nullable NSString *)confirm
+                   withCancel:(nullable NSString *)cancel
+              withAutoConfirm:(BOOL)autoConfirm
+             withConfirmBlock:(nullable void (^)(void))confirmBlock
+              withCancelBlock:(nullable void (^)(void))cancelBlock;
+
+- (instancetype)initWithTitle:(nullable NSString *)title
      withRichContent:(nullable NSAttributedString *)content
      withVerticalPadding:(CGFloat)padding
      withConfirm:(nullable NSString *)confirm
@@ -51,6 +59,17 @@ withConfirmBlock:(nullable void (^)(void))confirmBlock
                    withCancel:(nullable NSString *)cancel
              withConfirmBlock:(nullable void (^)(void))confirmBlock
               withCancelBlock:(nullable void (^)(void))cancelBlock;
+
+
+- (instancetype)initWithTitle:(nullable NSString *)title
+                  withContent:(nullable NSString *)content
+                 withItemList:(NSArray *)itemList
+                    showPoint:(BOOL)showPoint
+                  withConfirm:(nullable NSString *)confirm
+                   withCancel:(nullable NSString *)cancel
+             withConfirmBlock:(nullable void (^)(void))confirmBlock
+              withCancelBlock:(nullable void (^)(void))cancelBlock;
+
 
 @end
 

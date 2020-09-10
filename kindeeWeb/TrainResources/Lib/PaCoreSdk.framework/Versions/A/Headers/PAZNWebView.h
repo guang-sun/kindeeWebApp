@@ -9,6 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <WebKit/WKScriptMessageHandler.h>
 
+typedef NS_ENUM(NSInteger, PAZNWebViewNavigationType) {
+    PAZNWebViewNavigationTypeLinkClicked,
+    PAZNWebViewNavigationTypeFormSubmitted,
+    PAZNWebViewNavigationTypeBackForward,
+    PAZNWebViewNavigationTypeReload,
+    PAZNWebViewNavigationTypeFormResubmitted,
+    PAZNWebViewNavigationTypeOther
+};
+
 @class PAZNWebView;
 
 @protocol PAZNWebViewDelegate <NSObject>
@@ -17,22 +26,18 @@
 - (void)webViewDidStartLoad:(PAZNWebView *)webView;
 - (void)webViewDidFinishLoad:(PAZNWebView *)webView;
 - (void)webView:(PAZNWebView *)webView didFailLoadWithError:(NSError *)error;
-- (BOOL)webView:(PAZNWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+- (BOOL)webView:(PAZNWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(PAZNWebViewNavigationType)navigationType;
 - (void)webViewDidPlayVideoOrAudio:(PAZNWebView *)webView;
 
 @end
 
-///无缝切换UIWebView   会根据系统版本自动选择 使用WKWebView 还是  UIWebView
 @interface PAZNWebView : UIView
 
 @property (nonatomic, weak) id<PAZNWebViewDelegate> delegate;
 
 ///内部使用的webView
 @property (nonatomic, readonly) id realWebView;
-///是否正在使用 UIWebView
-@property (nonatomic, readonly) BOOL usingUIWebView;
 
-@property (nonatomic, assign) BOOL canFF;
 ///预估网页加载进度
 @property (nonatomic, readonly) double estimatedProgress;
 
@@ -51,9 +56,6 @@
 
 ///是否根据视图大小来缩放页面  默认为YES
 @property (nonatomic, assign) BOOL scalesPageToFit;
-
-///使用UIWebView
-- (instancetype)initWithFrame:(CGRect)frame usingUIWebView:(BOOL)usingUIWebView;
 
 /**
  *  添加js回调oc通知方式，适用于 iOS8 之后
@@ -85,6 +87,7 @@
 ///不建议使用这个办法  因为会在内部等待webView 的执行结果
 - (NSString *)stringByEvaluatingJavaScriptFromString:(NSString *)javaScriptString; //__deprecated_msg("Method deprecated. Use [evaluateJavaScript:completionHandler:]");
 
-- (NSString *)currentUserAgent;
+//- (NSString *)currentUserAgent;
+- (void)currentUserAgent:(void (^)(NSString *agent))completion;
 
 @end

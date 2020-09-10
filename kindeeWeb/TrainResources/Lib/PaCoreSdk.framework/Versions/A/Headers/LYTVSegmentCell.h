@@ -25,6 +25,8 @@ typedef void(^LYSegmentParams)(LYSAttribute *params);
 
 @property (nonatomic, strong) NSArray<NSString *>                                         *pageTitles;
 
+@property (nonatomic, strong , readonly) NSArray<LYSMSubBaseViewController *>                        *controllers;
+
 @end
 
 @interface UITableView (Segment)
