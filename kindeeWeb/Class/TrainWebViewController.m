@@ -12,7 +12,6 @@
 #import "TrainMacroDefine.h"
 #import <YYKit.h>
 
-#import <PaFaceCheckSdk/PaFaceCheckSdk.h>
 
 #import "TrainCustomCarmer.h"
 
@@ -55,7 +54,7 @@
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
-         self.webUrl = @"https://szshigang.newvane.com.cn";
+         self.webUrl = @"https://skyworth.newvane.com.cn";
     
 
     }else {
@@ -67,31 +66,7 @@
     [self loadWebView:self.webUrl];
     [self registShareFunction];
     [self RegeistNoticeCenter];
-    
-//    
-//    [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:PAZNRegulatorySdkEnvironmentTest appId:@"pazn"];
-//
-//    [[PAZNRegulatoryManager shareInstance] configUserInfo:1 userName:@"212" cardId:@"1212"];
-//
-//       NSString *timestamp = [PAZNRegulatoryUtils getTimestamp];
-//       NSString *nonce = [PAZNRegulatoryUtils generateNonce];
-//       NSString *version = [PAZNRegulatoryUtils getSDKVerion];
-//
-//       NSString *sign = [PAZNRegulatoryUtils generateSignWith:@"pazn" appKey:@"znapp334" version:version nonce:nonce timestamp:timestamp];
-//       
-//       [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:@"111" timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
-//           if(!error&&checkPass){
-//               //校验通过
-//               NSLog(@"---changg ");
-//           }else{
-//               //失败处理
-//               NSLog(@"---fail==%@ ",error.localizedDescription);
-//
-//           }
-//       }];
-//    
-    
-    
+     
     
     
     
@@ -403,57 +378,57 @@
            
        }
     }];
-    
-    [self.webViewBridge registerHandler:@"szsgInitSDK" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSDictionary *tempDic = data;
-        NSInteger env = [tempDic[@"Env"] integerValue] ;
-        NSString *appId = tempDic[@"appId"] ;
-
-        [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:env appId:appId];
-
-        
-     }];
-    
-    [self.webViewBridge registerHandler:@"szsgConfigUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
-          NSDictionary *tempDic = data;
-          NSInteger cardType = [tempDic[@"idCardType"] integerValue] ;
-          NSString *userName = tempDic[@"userName"] ;
-          NSString *cardId = tempDic[@"cardId"] ;
-         [[PAZNRegulatoryManager shareInstance] configUserInfo:cardType userName:userName cardId:cardId];
-   
-    }];
-    
-    [self.webViewBridge registerHandler:@"szsgCheckBeforeTraining" handler:^(id data, WVJBResponseCallback responseCallback) {
-        NSDictionary *tempDic = data;
-        NSString *courseId = tempDic[@"courseId"] ;
-        NSString *timestamp = tempDic[@"timestamp"] ;
-        NSString *nonce = tempDic[@"nonce"] ;
-        NSString *sign = tempDic[@"sign"] ;
-        NSString *restartFlag = tempDic[@"restartFlag"] ;
-       
-        [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:courseId timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
-            
-            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
-            [dic setObject:@(checkPass) forKey:@"code"];
-            NSString  * code ;
-            NSString  * msg ;
-            if (checkPass) {
-                code = @"0";
-                msg = @"SUCCESS";
-            }else {
-                code = @"-1";
-                msg = (error.localizedDescription.length > 0) ? error.localizedDescription : @"FAIL";
-            }
-            [dic setObject:code forKey:@"code"];
-            [dic setObject:msg forKey:@"message"];
-            [dic setObject:comesBackToken forKey:@"token"];
-            responseCallback(dic) ;
-           }];
-          
-       }];
-    
-    
-     
+//
+//    [self.webViewBridge registerHandler:@"szsgInitSDK" handler:^(id data, WVJBResponseCallback responseCallback) {
+//        NSDictionary *tempDic = data;
+//        NSInteger env = [tempDic[@"Env"] integerValue] ;
+//        NSString *appId = tempDic[@"appId"] ;
+//
+//        [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:env appId:appId];
+//
+//
+//     }];
+//
+//    [self.webViewBridge registerHandler:@"szsgConfigUserInfo" handler:^(id data, WVJBResponseCallback responseCallback) {
+//          NSDictionary *tempDic = data;
+//          NSInteger cardType = [tempDic[@"idCardType"] integerValue] ;
+//          NSString *userName = tempDic[@"userName"] ;
+//          NSString *cardId = tempDic[@"cardId"] ;
+//         [[PAZNRegulatoryManager shareInstance] configUserInfo:cardType userName:userName cardId:cardId];
+//
+//    }];
+//
+//    [self.webViewBridge registerHandler:@"szsgCheckBeforeTraining" handler:^(id data, WVJBResponseCallback responseCallback) {
+//        NSDictionary *tempDic = data;
+//        NSString *courseId = tempDic[@"courseId"] ;
+//        NSString *timestamp = tempDic[@"timestamp"] ;
+//        NSString *nonce = tempDic[@"nonce"] ;
+//        NSString *sign = tempDic[@"sign"] ;
+//        NSString *restartFlag = tempDic[@"restartFlag"] ;
+//
+//        [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:courseId timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
+//
+//            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+//            [dic setObject:@(checkPass) forKey:@"code"];
+//            NSString  * code ;
+//            NSString  * msg ;
+//            if (checkPass) {
+//                code = @"0";
+//                msg = @"SUCCESS";
+//            }else {
+//                code = @"-1";
+//                msg = (error.localizedDescription.length > 0) ? error.localizedDescription : @"FAIL";
+//            }
+//            [dic setObject:code forKey:@"code"];
+//            [dic setObject:msg forKey:@"message"];
+//            [dic setObject:comesBackToken forKey:@"token"];
+//            responseCallback(dic) ;
+//           }];
+//
+//       }];
+//
+//
+//
 
     
 
@@ -535,9 +510,9 @@
     NSLog(@"---url = %@", Url);
 
     [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
-        if (![object isEqual:@"首页"]) {
+//        if (![object isEqual:@"首页"]) {
             self.navigationItem.title =  object;
-        }
+//        }
     }];
     if ([Url hasPrefix:@"http"]){
       _isLanjie = YES ;
