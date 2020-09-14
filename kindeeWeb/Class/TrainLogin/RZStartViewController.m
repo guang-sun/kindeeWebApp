@@ -42,7 +42,7 @@
    
 //    [self.view addSubview:self.nextBtn];
    
-    [self.view addSubview:self.indexPage];
+//    [self.view addSubview:self.indexPage];
     
     CGFloat  bottom = [TrainControllerUtil safeBottomHeight];
     
@@ -53,12 +53,12 @@
 //        make.width.height.mas_equalTo(40);
 //    }];
     
-    [self.indexPage mas_makeConstraints:^(MASConstraintMaker *make) {
-          
-        make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view).offset(- (bottom + 20));
-        make.height.mas_equalTo(20);
-    }];
+//    [self.indexPage mas_makeConstraints:^(MASConstraintMaker *make) {
+//
+//        make.centerX.equalTo(self.view);
+//        make.bottom.equalTo(self.view).offset(- (bottom + 20));
+//        make.height.mas_equalTo(20);
+//    }];
     
     [self.guideScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
        
@@ -93,11 +93,11 @@
             
             [imageView addSubview: self.button];
             [self.button  mas_makeConstraints:^(MASConstraintMaker *make) {
-                CGFloat  off_y = bottom + 40 ;
+                CGFloat  off_y = bottom +80 ;
                 make.bottom.equalTo(imageView).offset(- off_y);
                 make.centerX.equalTo(imageView);
                 make.width.mas_equalTo(110);
-                make.height.mas_equalTo(40);
+                make.height.mas_equalTo(80);
             }];
             
         }
@@ -163,8 +163,8 @@
     if (!_button) {
         
         UIButton  *btn = [[UIButton alloc]init];
-        [btn  setTitle:@"立即进入" forState:UIControlStateNormal];
-        [btn setTitleColor:[UIColor colorWithHexString:@"E85340"] forState:UIControlStateNormal];
+//        [btn  setTitle:@"立即进入" forState:UIControlStateNormal];
+//        [btn setTitleColor:[UIColor colorWithHexString:@"E85340"] forState:UIControlStateNormal];
         
         [btn addTarget:self action:@selector(pushToLoginView) forControlEvents:UIControlEventTouchUpInside];
         
@@ -206,7 +206,7 @@
 
 - (NSArray *)guideImageArr{
     if (!_guideImageArr) {
-        NSArray  *arr = @[@"app_welcom_1",@"app_welcom_2",@"app_welcom_3"];
+        NSArray  *arr = @[@"app_welcom_1",@"app_welcom_2"];
         _guideImageArr = arr;
     }
     return _guideImageArr;

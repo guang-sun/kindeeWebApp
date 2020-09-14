@@ -16,12 +16,6 @@
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
 		84BBEC1E24B96DEE00A9B915 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEC1D24B96DEE00A9B915 /* TrainCustomCarmer.m */; };
-		84BBEC2B24B9747000A9B915 /* app_start_mid@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2524B9746F00A9B915 /* app_start_mid@2x.png */; };
-		84BBEC2C24B9747000A9B915 /* app_start_top@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2624B9746F00A9B915 /* app_start_top@2x.png */; };
-		84BBEC2D24B9747000A9B915 /* app_start_mid@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2724B9746F00A9B915 /* app_start_mid@3x.png */; };
-		84BBEC2E24B9747000A9B915 /* app_start_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2824B9747000A9B915 /* app_start_down@3x.png */; };
-		84BBEC2F24B9747000A9B915 /* app_start_top@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2924B9747000A9B915 /* app_start_top@3x.png */; };
-		84BBEC3024B9747000A9B915 /* app_start_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BBEC2A24B9747000A9B915 /* app_start_down@2x.png */; };
 		84BBEC3324B9770400A9B915 /* RZStartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BBEC3224B9770400A9B915 /* RZStartViewController.m */; };
 		84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068123F520CE0042A136 /* TrainScanViewController.m */; };
 		84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068423F5410B0042A136 /* TrainAlertTools.m */; };
@@ -73,7 +67,7 @@
 		848404D8248DD886004A71D3 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		848404DA2490F71F004A71D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		848404DB2490F71F004A71D3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		848D497723EBB98B00AF81B3 /* 网络学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "网络学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		848D497723EBB98B00AF81B3 /* 新风商学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风商学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		848D498023EBB98C00AF81B3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -85,12 +79,6 @@
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84BBEC1C24B96DEE00A9B915 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
 		84BBEC1D24B96DEE00A9B915 /* TrainCustomCarmer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainCustomCarmer.m; sourceTree = "<group>"; };
-		84BBEC2524B9746F00A9B915 /* app_start_mid@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_mid@2x.png"; sourceTree = "<group>"; };
-		84BBEC2624B9746F00A9B915 /* app_start_top@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_top@2x.png"; sourceTree = "<group>"; };
-		84BBEC2724B9746F00A9B915 /* app_start_mid@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_mid@3x.png"; sourceTree = "<group>"; };
-		84BBEC2824B9747000A9B915 /* app_start_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_down@3x.png"; sourceTree = "<group>"; };
-		84BBEC2924B9747000A9B915 /* app_start_top@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_top@3x.png"; sourceTree = "<group>"; };
-		84BBEC2A24B9747000A9B915 /* app_start_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_start_down@2x.png"; sourceTree = "<group>"; };
 		84BBEC3124B9770400A9B915 /* RZStartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZStartViewController.h; sourceTree = "<group>"; };
 		84BBEC3224B9770400A9B915 /* RZStartViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZStartViewController.m; sourceTree = "<group>"; };
 		84C1068123F520CE0042A136 /* TrainScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainScanViewController.m; sourceTree = "<group>"; };
@@ -231,7 +219,7 @@
 		848D497823EBB98B00AF81B3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				848D497723EBB98B00AF81B3 /* 网络学院.app */,
+				848D497723EBB98B00AF81B3 /* 新风商学院.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -252,12 +240,6 @@
 				848D498623EBB99000AF81B3 /* Assets.xcassets */,
 				848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */,
 				848D498B23EBB99000AF81B3 /* Info.plist */,
-				84BBEC2A24B9747000A9B915 /* app_start_down@2x.png */,
-				84BBEC2824B9747000A9B915 /* app_start_down@3x.png */,
-				84BBEC2524B9746F00A9B915 /* app_start_mid@2x.png */,
-				84BBEC2724B9746F00A9B915 /* app_start_mid@3x.png */,
-				84BBEC2624B9746F00A9B915 /* app_start_top@2x.png */,
-				84BBEC2924B9747000A9B915 /* app_start_top@3x.png */,
 				848D498C23EBB99000AF81B3 /* main.m */,
 			);
 			path = kindeeWeb;
@@ -492,7 +474,7 @@
 			);
 			name = kindeeWeb;
 			productName = kindeeWeb;
-			productReference = 848D497723EBB98B00AF81B3 /* 网络学院.app */;
+			productReference = 848D497723EBB98B00AF81B3 /* 新风商学院.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -533,17 +515,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84BBEC2E24B9747000A9B915 /* app_start_down@3x.png in Resources */,
 				848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */,
-				84BBEC2C24B9747000A9B915 /* app_start_top@2x.png in Resources */,
-				84BBEC2D24B9747000A9B915 /* app_start_mid@3x.png in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
-				84BBEC2F24B9747000A9B915 /* app_start_top@3x.png in Resources */,
-				84BBEC3024B9747000A9B915 /* app_start_down@2x.png in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
 				84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */,
-				84BBEC2B24B9747000A9B915 /* app_start_mid@2x.png in Resources */,
 				848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -801,8 +777,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zkWebAppHoc;
-				PRODUCT_NAME = "网络学院";
+				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.xinfengsxyWebAppHoc;
+				PRODUCT_NAME = "新风商学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -859,8 +835,8 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.zkWebAppHoc;
-				PRODUCT_NAME = "网络学院";
+				PRODUCT_BUNDLE_IDENTIFIER = com.newvane.xinfengsxyWebAppHoc;
+				PRODUCT_NAME = "新风商学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

@@ -48,14 +48,14 @@
     
     [self evInitNavgation];
     [self evInitIconButton];
-    
+
     NSString  *webUrl = [TrainUserDefault objectForKey:TrainWebHostText];
     NSString  *param = [TrainUserDefault objectForKey:TrainWebHomeParam];
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
 //              self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/zk/list/index.html#/login";
-         self.webUrl = @"https://zk.newvane.com.cn";
+         self.webUrl = @"https://kecheng.newvane.com.cn";
     
 
     }else {
@@ -68,6 +68,7 @@
     [self registShareFunction];
     [self RegeistNoticeCenter];
     
+
     // Do any additional setup after loading the view.
 }
 
@@ -79,7 +80,6 @@
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft ;
     [button addTarget:self action:@selector(evBackView) forControlEvents:UIControlEventTouchUpInside];
     self.backButton = button ;
-    
 }
 
 - (void)rzAddCarmarView {
@@ -135,7 +135,7 @@
     UIView  *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 150, 44)];
     [view addSubview:imageView];
     self.iconButton = view ;
-    
+
 
 }
 
@@ -469,6 +469,8 @@
     [self.rzWebView evaluateJavaScript:@"document.title" completionHandler:^(id object, NSError * error) {
         if (![object isEqual:@"首页"]) {
             self.navigationItem.title =  object;
+        }else {
+            self.navigationItem.title =  @"";
         }
     }];
     if ([Url hasPrefix:@"http"]){

@@ -100,53 +100,5 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "224DE4E1-F575-4579-9DE0-5D7AF5336918"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kindeeWeb/Class/TrainWebViewController.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "468"
-            endingLineNumber = "468"
-            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "224DE4E1-F575-4579-9DE0-5D7AF5336918 - e419b909fa54015f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[TrainWebViewController webView:shouldStartLoadWithRequest:navigationType:]"
-                  moduleName = "&#x7f51;&#x7edc;&#x5b66;&#x9662;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/KindeeClass/webAppKindee/kindeeWeb/Class/TrainWebViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "469"
-                  endingLineNumber = "469"
-                  offsetFromSymbolStart = "182">
-               </Location>
-               <Location
-                  uuid = "224DE4E1-F575-4579-9DE0-5D7AF5336918 - fab8e9620615acc0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__76-[TrainWebViewController webView:shouldStartLoadWithRequest:navigationType:]_block_invoke"
-                  moduleName = "&#x7f51;&#x7edc;&#x5b66;&#x9662;"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/admin/Desktop/KindeeClass/webAppKindee/kindeeWeb/Class/TrainWebViewController.m"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "470"
-                  endingLineNumber = "470"
-                  offsetFromSymbolStart = "82">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

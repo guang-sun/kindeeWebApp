@@ -30,10 +30,11 @@
     //导航颜色
     [[UINavigationBar appearance] setTranslucent:NO];
 
-    UIColor *color  =  [UIColor colorWithHexString:@"#d00403"];
+    UIColor *color  =  [UIColor colorWithHexString:@"#e8e8e8"];
 //    UIColor *color  =  [UIColor colorWithRed:190/255.0 green:41/255.0 blue:28/255.0 alpha:1];
-    UIColor *textcolor  =  [UIColor colorWithHexString:@"ffffff"];
-    
+//    UIColor *textcolor  =  [UIColor colorWithHexString:@"ffffff"];
+    UIColor *textcolor  =  [UIColor colorWithHexString:@"333333"];
+
     UINavigationBar *navigationBar = [UINavigationBar appearance];
     [navigationBar setBarTintColor:color];
     [navigationBar setTintColor:textcolor];
@@ -102,7 +103,7 @@
     
     if (_backButton == nil) {
         _backButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _backButton.frame = CGRectMake(0, 0, 30, 44);
+        _backButton.frame = CGRectMake(0, 0, 300, 44);
 //        _backButton.backgroundColor = [UIColor redColor];
         _backButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         [_backButton addTarget:self
