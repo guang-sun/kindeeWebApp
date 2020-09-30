@@ -523,7 +523,6 @@
 
        [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:courseId timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
            [[PAZNRegulatoryManager shareInstance] resetRegulatoryData];
-           [PAZNRegulatoryManager destory] ;
 
            [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
            NSMutableDictionary *dic = [NSMutableDictionary dictionary];
