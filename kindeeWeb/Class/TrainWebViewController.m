@@ -54,8 +54,9 @@
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
-         self.webUrl = @"https://skyworth.newvane.com.cn";
-    
+//         self.webUrl = @"https://skyworth.newvane.com.cn";
+        self.webUrl = @"https://eln-uat.crb.cn";
+
 
     }else {
      

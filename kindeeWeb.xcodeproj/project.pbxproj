@@ -17,16 +17,7 @@
 		848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D498623EBB99000AF81B3 /* Assets.xcassets */; };
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
-		84BDB20B250902D90082E0B0 /* skyworth_logo_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB201250902D80082E0B0 /* skyworth_logo_2@2x.png */; };
-		84BDB20C250902D90082E0B0 /* skyworth_logo_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB202250902D80082E0B0 /* skyworth_logo_2@3x.png */; };
-		84BDB20D250902D90082E0B0 /* autograph@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB203250902D80082E0B0 /* autograph@2x.png */; };
-		84BDB20E250902D90082E0B0 /* background@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB204250902D80082E0B0 /* background@3x.png */; };
-		84BDB20F250902D90082E0B0 /* skyworth_logo_school@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB205250902D80082E0B0 /* skyworth_logo_school@2x.png */; };
-		84BDB210250902D90082E0B0 /* skyworth_logo_school@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB206250902D80082E0B0 /* skyworth_logo_school@3x.png */; };
-		84BDB211250902D90082E0B0 /* skyworth_logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB207250902D80082E0B0 /* skyworth_logo@3x.png */; };
-		84BDB212250902D90082E0B0 /* autograph@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB208250902D80082E0B0 /* autograph@3x.png */; };
-		84BDB213250902D90082E0B0 /* skyworth_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB209250902D80082E0B0 /* skyworth_logo@2x.png */; };
-		84BDB214250902D90082E0B0 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB20A250902D90082E0B0 /* background@2x.png */; };
+		848DCB87253C6F8D00D91E79 /* app_welcom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 848DCB86253C6F8D00D91E79 /* app_welcom.jpg */; };
 		84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068123F520CE0042A136 /* TrainScanViewController.m */; };
 		84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068423F5410B0042A136 /* TrainAlertTools.m */; };
 		84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C1068923F5445B0042A136 /* UMSocialSDKResources.bundle */; };
@@ -88,16 +79,7 @@
 		848D498923EBB99000AF81B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D498B23EBB99000AF81B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		84BDB201250902D80082E0B0 /* skyworth_logo_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyworth_logo_2@2x.png"; sourceTree = "<group>"; };
-		84BDB202250902D80082E0B0 /* skyworth_logo_2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyworth_logo_2@3x.png"; sourceTree = "<group>"; };
-		84BDB203250902D80082E0B0 /* autograph@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autograph@2x.png"; sourceTree = "<group>"; };
-		84BDB204250902D80082E0B0 /* background@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@3x.png"; sourceTree = "<group>"; };
-		84BDB205250902D80082E0B0 /* skyworth_logo_school@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyworth_logo_school@2x.png"; sourceTree = "<group>"; };
-		84BDB206250902D80082E0B0 /* skyworth_logo_school@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyworth_logo_school@3x.png"; sourceTree = "<group>"; };
-		84BDB207250902D80082E0B0 /* skyworth_logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyworth_logo@3x.png"; sourceTree = "<group>"; };
-		84BDB208250902D80082E0B0 /* autograph@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "autograph@3x.png"; sourceTree = "<group>"; };
-		84BDB209250902D80082E0B0 /* skyworth_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skyworth_logo@2x.png"; sourceTree = "<group>"; };
-		84BDB20A250902D90082E0B0 /* background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background@2x.png"; sourceTree = "<group>"; };
+		848DCB86253C6F8D00D91E79 /* app_welcom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_welcom.jpg; sourceTree = "<group>"; };
 		84C1068123F520CE0042A136 /* TrainScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainScanViewController.m; sourceTree = "<group>"; };
 		84C1068223F520CE0042A136 /* TrainScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainScanViewController.h; sourceTree = "<group>"; };
 		84C1068423F5410B0042A136 /* TrainAlertTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainAlertTools.m; sourceTree = "<group>"; };
@@ -256,16 +238,7 @@
 				848D498323EBB98C00AF81B3 /* Main.storyboard */,
 				848D498623EBB99000AF81B3 /* Assets.xcassets */,
 				848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */,
-				84BDB203250902D80082E0B0 /* autograph@2x.png */,
-				84BDB208250902D80082E0B0 /* autograph@3x.png */,
-				84BDB20A250902D90082E0B0 /* background@2x.png */,
-				84BDB204250902D80082E0B0 /* background@3x.png */,
-				84BDB201250902D80082E0B0 /* skyworth_logo_2@2x.png */,
-				84BDB202250902D80082E0B0 /* skyworth_logo_2@3x.png */,
-				84BDB205250902D80082E0B0 /* skyworth_logo_school@2x.png */,
-				84BDB206250902D80082E0B0 /* skyworth_logo_school@3x.png */,
-				84BDB209250902D80082E0B0 /* skyworth_logo@2x.png */,
-				84BDB207250902D80082E0B0 /* skyworth_logo@3x.png */,
+				848DCB86253C6F8D00D91E79 /* app_welcom.jpg */,
 				848D498B23EBB99000AF81B3 /* Info.plist */,
 				848D498C23EBB99000AF81B3 /* main.m */,
 			);
@@ -542,21 +515,12 @@
 			files = (
 				848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */,
 				845A3BDD24D67D83007C0272 /* appHash.plist in Resources */,
-				84BDB20F250902D90082E0B0 /* skyworth_logo_school@2x.png in Resources */,
-				84BDB20E250902D90082E0B0 /* background@3x.png in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
-				84BDB210250902D90082E0B0 /* skyworth_logo_school@3x.png in Resources */,
-				84BDB211250902D90082E0B0 /* skyworth_logo@3x.png in Resources */,
+				848DCB87253C6F8D00D91E79 /* app_welcom.jpg in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
-				84BDB20C250902D90082E0B0 /* skyworth_logo_2@3x.png in Resources */,
 				84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */,
 				848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */,
-				84BDB214250902D90082E0B0 /* background@2x.png in Resources */,
-				84BDB213250902D90082E0B0 /* skyworth_logo@2x.png in Resources */,
-				84BDB20D250902D90082E0B0 /* autograph@2x.png in Resources */,
-				84BDB212250902D90082E0B0 /* autograph@3x.png in Resources */,
-				84BDB20B250902D90082E0B0 /* skyworth_logo_2@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,7 +771,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.chuangweiWebApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xuehuaWebApp;
 				PRODUCT_NAME = "创维学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -864,7 +828,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.chuangweiWebApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xuehuaWebApp;
 				PRODUCT_NAME = "创维学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
