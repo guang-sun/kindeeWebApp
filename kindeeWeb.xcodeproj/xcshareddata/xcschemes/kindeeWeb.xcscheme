@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "848D497623EBB98B00AF81B3"
-               BuildableName = "&#x521b;&#x7ef4;&#x5b66;&#x9662;.app"
+               BuildableName = "&#x96ea;&#x82b1;&#x5564;&#x9152;&#x5b66;&#x9662;.app"
                BlueprintName = "kindeeWeb"
                ReferencedContainer = "container:kindeeWeb.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "848D497623EBB98B00AF81B3"
-            BuildableName = "&#x521b;&#x7ef4;&#x5b66;&#x9662;.app"
+            BuildableName = "&#x96ea;&#x82b1;&#x5564;&#x9152;&#x5b66;&#x9662;.app"
             BlueprintName = "kindeeWeb"
             ReferencedContainer = "container:kindeeWeb.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "848D497623EBB98B00AF81B3"
-            BuildableName = "&#x521b;&#x7ef4;&#x5b66;&#x9662;.app"
+            BuildableName = "&#x96ea;&#x82b1;&#x5564;&#x9152;&#x5b66;&#x9662;.app"
             BlueprintName = "kindeeWeb"
             ReferencedContainer = "container:kindeeWeb.xcodeproj">
          </BuildableReference>

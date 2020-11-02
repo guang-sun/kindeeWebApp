@@ -57,7 +57,6 @@
 //         self.webUrl = @"https://skyworth.newvane.com.cn";
         self.webUrl = @"https://eln-uat.crb.cn";
 
-
     }else {
      
         webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
