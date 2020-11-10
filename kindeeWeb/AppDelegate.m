@@ -32,26 +32,30 @@
     [self.window makeKeyAndVisible];
     sleep(1);
     [self loginUmengShare];
-    
-   
+
+    [self evAddAdView];
+
+    return YES;
+}
+
+- (void)evAddAdView {
     TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
     BOOL isFlag = [welcomeVC getWelcomeAD];
     if(isFlag) {
-
         RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
         self.window.rootViewController = nav ;
 
     }else {
-        
-        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
-        self.window.rootViewController = nav;
+        [self rzSetHomeView];
         [welcomeVC downloadWelcomAD];
     }
-    
-    
-    
+}
 
-    return YES;
+
+- (void)rzSetHomeView {
+    
+    RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
+    self.window.rootViewController = nav;
 }
 
 /**

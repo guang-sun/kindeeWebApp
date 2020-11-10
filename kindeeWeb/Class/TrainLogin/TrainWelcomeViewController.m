@@ -10,10 +10,10 @@
 #import "TrainWebViewController.h"
 
 #define  ImageFilePath   [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject] stringByAppendingString:@"welcomeImage.jpg"]
-#define  Iphone4ImagePath  [[NSBundle mainBundle]pathForResource:@"Welcom_White_4s" ofType:@"png"]
-#define  Iphone5ImagePath  [[NSBundle mainBundle]pathForResource:@"Welcom_White_5" ofType:@"png"]
-#define  Iphone6ImagePath  [[NSBundle mainBundle]pathForResource:@"Welcom_White_6" ofType:@"png"]
-#define  Iphone6pImagePath  [[NSBundle mainBundle]pathForResource:@"Welcom_White_6p" ofType:@"png"]
+#define  Welcome61  [[NSBundle mainBundle]pathForResource:@"app_welcome6_1" ofType:@"jpg"]
+#define  Welcome62  [[NSBundle mainBundle]pathForResource:@"app_welcome6_2" ofType:@"jpg"]
+#define  Welcomex1  [[NSBundle mainBundle]pathForResource:@"app_welcomex_1" ofType:@"jpg"]
+#define  Welcomex2  [[NSBundle mainBundle]pathForResource:@"app_welcomex_2" ofType:@"jpg"]
 
 
 @interface TrainWelcomeViewController ()
@@ -39,42 +39,67 @@
     [super viewWillAppear:animated];
     
     self.navigationController.navigationBar.hidden =YES;
-    if (isTouch ) {
-        [self passAd];
-    }
+//    if (isTouch ) {
+//        [self passAd];
+//    }
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     isTouch = NO;
-    NSData *data =[TrainUserDefault objectForKey:TrainWelComeAD];
-    if (data) {
-        AdInfoDic = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        
-    }
-    _adImageArr = AdInfoDic[@"startPic"];
+//    NSData *data =[TrainUserDefault objectForKey:TrainWelComeAD];
+//    if (data) {
+//        AdInfoDic = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+//
+//    }
+//    _adImageArr = AdInfoDic[@"startPic"];
     display_time = 1 ;
+    if (!TrainiPhoneX) {
+        _adImageArr = @[
+            @{@"display_time":@"3",
+              @"pic":Welcome61
+            },
+            @{@"display_time":@"3",
+              @"pic":Welcome62
+            }];
+    }else {
+
+        _adImageArr = @[
+            @{@"display_time":@"3",
+              @"pic":Welcomex1
+            },
+            @{@"display_time":@"3",
+              @"pic":Welcomex2
+            }];
+    }
+    
     allTime = 1;
     if (_adImageArr.count > 0) {
         NSDictionary  *dic =_adImageArr[0];
         allTime = [dic[@"display_time"] intValue] * (int)_adImageArr.count;
         display_time = [dic[@"display_time"] intValue];
     }
+//    defaultImageView = [[UIImageView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+//    if (TrainiPhoneX) {
+//        defaultImageView.image = [UIImage imageWithContentsOfFile:Welcomex1];
+//    }else {
+//        defaultImageView.image = [UIImage imageWithContentsOfFile:Welcome61];
+//
+//    }
+//
+//    [self.view addSubview:defaultImageView];
     
-    defaultImageView =[[UIImageView alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    [self.view addSubview:defaultImageView];
-    
-    NSFileManager  *fileManager = [NSFileManager defaultManager];
-    if ([fileManager isExecutableFileAtPath:ImageFilePath]) {
-        defaultImageView.image = [UIImage imageWithContentsOfFile:ImageFilePath];
-    }else{
-        defaultImageView.image = [UIImage imageNamed:@"启动页"];
-    }
+//    NSFileManager  *fileManager = [NSFileManager defaultManager];
+//    if ([fileManager isExecutableFileAtPath:ImageFilePath]) {
+//        defaultImageView.image = [UIImage imageWithContentsOfFile:ImageFilePath];
+//    }else{
+//        defaultImageView.image = [UIImage imageNamed:@"启动页"];
+//    }
     
     //    [self creatDefultImageView];
-    [self performSelector:@selector(afterDo) withObject:nil afterDelay:2];
+    [self creatADScrollView];
+//    [self performSelector:@selector(afterDo) withObject:nil afterDelay:2];
 }
 
 
@@ -127,7 +152,7 @@
 }
 
 - (BOOL)getWelcomeAD {
- 
+    return  YES;
     NSData *data =[TrainUserDefault objectForKey:TrainWelComeAD];
     if (data) {
        AdInfoDic = [NSKeyedUnarchiver unarchiveObjectWithData:data];
@@ -145,6 +170,7 @@
     if(TrainStringIsEmpty(TrainWelcomeURL)){
         return ;
     }
+
     NSString *url = [TrainStringUtil traindealSiteHttp:TrainWelcomeURL];
     
     [[TrainNetWorkAPIClient client] trainGetWelcomeWithBaseUrl:url Success:^(NSDictionary *dic) {
@@ -190,7 +216,8 @@
     
     [passBtn setTitle:string forState:UIControlStateNormal];
     [passBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    passBtn.backgroundColor = [UIColor colorWithWhite:0.8 alpha:0.8];
+    passBtn.backgroundColor = [UIColor colorWithWhite:0.5 alpha:0.8];
+    passBtn.titleLabel.font = [UIFont systemFontOfSize:13];
     passBtn.frame = CGRectMake(TrainSCREENWIDTH-100, 40, 70, 30);
     [passBtn addTarget:self action:@selector(passAd)  forControlEvents:UIControlEventTouchUpInside];
     passBtn.layer.cornerRadius =15.0f;
@@ -227,9 +254,9 @@
         [timer invalidate];
         timer = nil;
         isTouch = YES;
-        TrainWebViewController  *webVC =[[TrainWebViewController alloc]init];
-        webVC.webUrl = dic[@"url"];
-        [self.navigationController pushViewController:webVC animated:NO];
+//        TrainWebViewController  *webVC =[[TrainWebViewController alloc]init];
+//        webVC.webUrl = dic[@"url"];
+//        [self.navigationController pushViewController:webVC animated:NO];
         
     }
 }
@@ -241,8 +268,8 @@
     if(allTime == display_time * 2){
         [_scrollView setContentOffset:CGPointMake(TrainSCREENWIDTH * 1, 0) animated:NO];
     }else if(allTime == display_time * 1){
-        [_scrollView setContentOffset:CGPointMake(TrainSCREENWIDTH * (_adImageArr.count - 1), 0) animated:NO];
-    }else if(allTime ==0){
+        [_scrollView setContentOffset:CGPointMake(TrainSCREENWIDTH * (_adImageArr.count - 1), 0) animated:YES];
+    }else if(allTime == 0){
         [self passAd];
     }
     NSString  *string = [NSString stringWithFormat:@"跳过(%ds)",allTime];
@@ -254,8 +281,12 @@
     [timer invalidate];
     timer = nil;
     
-    TrainWebViewController *loginVC =[[TrainWebViewController alloc]init];
-    [self.navigationController pushViewController: loginVC animated:YES];
+    AppDelegate  *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    [appdelegate rzSetHomeView];
+
+//    
+//    TrainWebViewController *loginVC =[[TrainWebViewController alloc]init];
+//    [self.navigationController pushViewController: loginVC animated:YES];
    
     
 }
