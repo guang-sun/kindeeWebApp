@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */; };
 		845A3BDD24D67D83007C0272 /* appHash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845A3BDC24D67D83007C0272 /* appHash.plist */; };
+		847D2BFA255BE0BB00AFB58A /* app_welcom_new.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 847D2BF9255BE0BB00AFB58A /* app_welcom_new.jpg */; };
 		84822CB224B07A0800D12C73 /* RZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */; };
 		84822CCC24B0C90A00D12C73 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */; };
 		848D497C23EBB98B00AF81B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D497B23EBB98B00AF81B3 /* AppDelegate.m */; };
@@ -17,7 +18,6 @@
 		848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D498623EBB99000AF81B3 /* Assets.xcassets */; };
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
-		848DCB87253C6F8D00D91E79 /* app_welcom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 848DCB86253C6F8D00D91E79 /* app_welcom.jpg */; };
 		84C1068323F520CE0042A136 /* TrainScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068123F520CE0042A136 /* TrainScanViewController.m */; };
 		84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1068423F5410B0042A136 /* TrainAlertTools.m */; };
 		84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C1068923F5445B0042A136 /* UMSocialSDKResources.bundle */; };
@@ -65,6 +65,7 @@
 		3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.release.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.release.xcconfig"; sourceTree = "<group>"; };
 		5C2C413EDFFAF0208F9C1F44 /* Pods-kindeeWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.debug.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.debug.xcconfig"; sourceTree = "<group>"; };
 		845A3BDC24D67D83007C0272 /* appHash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appHash.plist; sourceTree = "<group>"; };
+		847D2BF9255BE0BB00AFB58A /* app_welcom_new.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_welcom_new.jpg; sourceTree = "<group>"; };
 		84822CB024B07A0800D12C73 /* RZBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZBaseNavigationController.h; sourceTree = "<group>"; };
 		84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		84822CCA24B0C90A00D12C73 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		848D498923EBB99000AF81B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D498B23EBB99000AF81B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		848DCB86253C6F8D00D91E79 /* app_welcom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = app_welcom.jpg; sourceTree = "<group>"; };
 		84C1068123F520CE0042A136 /* TrainScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainScanViewController.m; sourceTree = "<group>"; };
 		84C1068223F520CE0042A136 /* TrainScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrainScanViewController.h; sourceTree = "<group>"; };
 		84C1068423F5410B0042A136 /* TrainAlertTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrainAlertTools.m; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 				848D498323EBB98C00AF81B3 /* Main.storyboard */,
 				848D498623EBB99000AF81B3 /* Assets.xcassets */,
 				848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */,
-				848DCB86253C6F8D00D91E79 /* app_welcom.jpg */,
+				847D2BF9255BE0BB00AFB58A /* app_welcom_new.jpg */,
 				848D498B23EBB99000AF81B3 /* Info.plist */,
 				848D498C23EBB99000AF81B3 /* main.m */,
 			);
@@ -517,9 +517,9 @@
 				845A3BDD24D67D83007C0272 /* appHash.plist in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
-				848DCB87253C6F8D00D91E79 /* app_welcom.jpg in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
 				84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */,
+				847D2BFA255BE0BB00AFB58A /* app_welcom_new.jpg in Resources */,
 				848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
