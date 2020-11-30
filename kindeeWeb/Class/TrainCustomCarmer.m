@@ -7,6 +7,8 @@
 //
 
 #import "TrainCustomCarmer.h"
+#import "TrainAlertTools.h"
+#import "TrainControllerUtil.h"
 
 //#import "UIImage+DJResize.h"
 
@@ -56,11 +58,53 @@
     self.session = [[AVCaptureSession alloc] init];
     self.previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:self.session];
     self.previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+    //判断是否有相机权限
+    NSString *mediaType = AVMediaTypeVideo;//读取媒体类型
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:mediaType];//读取设备授权状态
+    if(authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied  ){
+        
+        [self evShowAlert];
+    
+    } else if(authStatus == AVAuthorizationStatusNotDetermined) {
+        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+            if (granted) {
+                [self addPhoneCamera];
+            } else {
+                [self evShowAlert];
+            }
+        }];
+        
+    }else {
+        
+        [self addPhoneCamera];
+    }
+    
+}
+
+
+- (void)evOpenPhotoAuto {
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:nil completionHandler:^(BOOL success) {
+            
+    }];
+    
+}
+
+- (void)evShowAlert {
+    NSString *errorStr = @"应用相机未授权,请在iPhone的“设置-隐私-相机”选项中";
+    [TrainAlertTools showAlertWith:[TrainControllerUtil getTrainCurrentVC] title:@"" message:errorStr callbackBlock:^(NSInteger btnIndex) {
+        
+        if (btnIndex == 0) {
+            [self evOpenPhotoAuto];
+        }
+    } cancelButtonTitle:nil destructiveButtonTitle:@"去设置" otherButtonTitles: nil, nil];
+    
+}
+- (void)addPhoneCamera {
     //加入输入设备（前置或后置摄像头）
     [self addVideoInputFrontCamera:AVCaptureDevicePositionFront];
     //加入输出设备
     [self addStillImageOutput];
-
 }
 
  /**

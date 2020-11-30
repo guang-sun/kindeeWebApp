@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */; };
 		845A3BDD24D67D83007C0272 /* appHash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845A3BDC24D67D83007C0272 /* appHash.plist */; };
+		84690E5D2572152D006488F1 /* TrainFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690E5C2572152D006488F1 /* TrainFaceView.m */; };
+		84690E7F2572157A006488F1 /* ASFVideoProcessor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 84690E622572157A006488F1 /* ASFVideoProcessor.mm */; };
+		84690E882572157A006488F1 /* ASFCameraController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690E772572157A006488F1 /* ASFCameraController.m */; };
+		84690E892572157A006488F1 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690E7A2572157A006488F1 /* Utility.m */; };
+		84690E8A2572157A006488F1 /* GLKitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690E7C2572157A006488F1 /* GLKitView.m */; };
+		84690E8B2572157A006488F1 /* ColorFormatUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690E7D2572157A006488F1 /* ColorFormatUtil.m */; };
+		84690E9225722596006488F1 /* ArcSoftFaceEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84690E5925721188006488F1 /* ArcSoftFaceEngine.framework */; };
+		84690E9325722596006488F1 /* ArcSoftFaceEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84690E5925721188006488F1 /* ArcSoftFaceEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84690EA6257225DD006488F1 /* ASFRManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690E97257225DD006488F1 /* ASFRManager.m */; };
+		84690EA9257225DD006488F1 /* FSDKFR.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84690E9E257225DD006488F1 /* FSDKFR.xcdatamodeld */; };
+		84690EAC257225DD006488F1 /* ASFRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690EA4257225DD006488F1 /* ASFRPerson.m */; };
+		84690EAD257225DD006488F1 /* ASFRCDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690EA5257225DD006488F1 /* ASFRCDManager.m */; };
+		84690EB025723C9B006488F1 /* UIImage+imageFace.m in Sources */ = {isa = PBXBuildFile; fileRef = 84690EAF25723C9B006488F1 /* UIImage+imageFace.m */; };
 		84822CB224B07A0800D12C73 /* RZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */; };
 		84822CCC24B0C90A00D12C73 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */; };
 		848D497C23EBB98B00AF81B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D497B23EBB98B00AF81B3 /* AppDelegate.m */; };
@@ -66,11 +79,55 @@
 		84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84F5C11E2407C1E00099D07A /* Resources.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		84690E9425722596006488F1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				84690E9325722596006488F1 /* ArcSoftFaceEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2FCF6876E6F943EC43C91333 /* libPods-kindeeWeb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kindeeWeb.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.release.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.release.xcconfig"; sourceTree = "<group>"; };
 		5C2C413EDFFAF0208F9C1F44 /* Pods-kindeeWeb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kindeeWeb.debug.xcconfig"; path = "Target Support Files/Pods-kindeeWeb/Pods-kindeeWeb.debug.xcconfig"; sourceTree = "<group>"; };
 		845A3BDC24D67D83007C0272 /* appHash.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appHash.plist; sourceTree = "<group>"; };
+		84690E5925721188006488F1 /* ArcSoftFaceEngine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ArcSoftFaceEngine.framework; sourceTree = "<group>"; };
+		84690E5B2572152D006488F1 /* TrainFaceView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainFaceView.h; sourceTree = "<group>"; };
+		84690E5C2572152D006488F1 /* TrainFaceView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainFaceView.m; sourceTree = "<group>"; };
+		84690E622572157A006488F1 /* ASFVideoProcessor.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ASFVideoProcessor.mm; sourceTree = "<group>"; };
+		84690E632572157A006488F1 /* ASFVideoProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFVideoProcessor.h; sourceTree = "<group>"; };
+		84690E762572157A006488F1 /* ASFCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFCameraController.h; sourceTree = "<group>"; };
+		84690E772572157A006488F1 /* ASFCameraController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFCameraController.m; sourceTree = "<group>"; };
+		84690E792572157A006488F1 /* GLKitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLKitView.h; sourceTree = "<group>"; };
+		84690E7A2572157A006488F1 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		84690E7B2572157A006488F1 /* ColorFormatUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorFormatUtil.h; sourceTree = "<group>"; };
+		84690E7C2572157A006488F1 /* GLKitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLKitView.m; sourceTree = "<group>"; };
+		84690E7D2572157A006488F1 /* ColorFormatUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorFormatUtil.m; sourceTree = "<group>"; };
+		84690E7E2572157A006488F1 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		84690E96257225DD006488F1 /* AFRCDVersion+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFRCDVersion+CoreDataClass.h"; sourceTree = "<group>"; };
+		84690E97257225DD006488F1 /* ASFRManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRManager.m; sourceTree = "<group>"; };
+		84690E98257225DD006488F1 /* AFRCDVersion+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFRCDVersion+CoreDataProperties.m"; sourceTree = "<group>"; };
+		84690E99257225DD006488F1 /* AFRCDPerson+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFRCDPerson+CoreDataProperties.h"; sourceTree = "<group>"; };
+		84690E9A257225DD006488F1 /* AFRCDPerson+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFRCDPerson+CoreDataClass.m"; sourceTree = "<group>"; };
+		84690E9B257225DD006488F1 /* ASFRCDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFRCDManager.h; sourceTree = "<group>"; };
+		84690E9C257225DD006488F1 /* ASFRPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFRPerson.h; sourceTree = "<group>"; };
+		84690E9D257225DD006488F1 /* ASFRManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASFRManager.h; sourceTree = "<group>"; };
+		84690E9F257225DD006488F1 /* FSDKFR.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FSDKFR.xcdatamodel; sourceTree = "<group>"; };
+		84690EA0257225DD006488F1 /* AFRCDVersion+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFRCDVersion+CoreDataClass.m"; sourceTree = "<group>"; };
+		84690EA1257225DD006488F1 /* AFRCDPerson+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFRCDPerson+CoreDataClass.h"; sourceTree = "<group>"; };
+		84690EA2257225DD006488F1 /* AFRCDPerson+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFRCDPerson+CoreDataProperties.m"; sourceTree = "<group>"; };
+		84690EA3257225DD006488F1 /* AFRCDVersion+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFRCDVersion+CoreDataProperties.h"; sourceTree = "<group>"; };
+		84690EA4257225DD006488F1 /* ASFRPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRPerson.m; sourceTree = "<group>"; };
+		84690EA5257225DD006488F1 /* ASFRCDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASFRCDManager.m; sourceTree = "<group>"; };
+		84690EAE25723C9B006488F1 /* UIImage+imageFace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+imageFace.h"; sourceTree = "<group>"; };
+		84690EAF25723C9B006488F1 /* UIImage+imageFace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+imageFace.m"; sourceTree = "<group>"; };
 		84822CB024B07A0800D12C73 /* RZBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZBaseNavigationController.h; sourceTree = "<group>"; };
 		84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		84822CCA24B0C90A00D12C73 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
@@ -188,6 +245,7 @@
 				84BDB2212509F4F00082E0B0 /* PaUIKit.framework in Frameworks */,
 				3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */,
 				84BDB2242509F4F00082E0B0 /* PaFaceCheckSdk.framework in Frameworks */,
+				84690E9225722596006488F1 /* ArcSoftFaceEngine.framework in Frameworks */,
 				84C106AB23F5496D0042A136 /* libc++.tbd in Frameworks */,
 				84BDB2232509F4F00082E0B0 /* libssl.a in Frameworks */,
 				84C1069F23F5445B0042A136 /* libSocialDingDing.a in Frameworks */,
@@ -220,6 +278,72 @@
 				3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		84690E602572155B006488F1 /* TrainFaceEngine */ = {
+			isa = PBXGroup;
+			children = (
+				84690E95257225DD006488F1 /* database */,
+				84690E5925721188006488F1 /* ArcSoftFaceEngine.framework */,
+				84690E752572157A006488F1 /* camera */,
+				84690E612572157A006488F1 /* engine */,
+				84690E782572157A006488F1 /* util */,
+			);
+			path = TrainFaceEngine;
+			sourceTree = "<group>";
+		};
+		84690E612572157A006488F1 /* engine */ = {
+			isa = PBXGroup;
+			children = (
+				84690E622572157A006488F1 /* ASFVideoProcessor.mm */,
+				84690E632572157A006488F1 /* ASFVideoProcessor.h */,
+			);
+			path = engine;
+			sourceTree = "<group>";
+		};
+		84690E752572157A006488F1 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				84690E762572157A006488F1 /* ASFCameraController.h */,
+				84690E772572157A006488F1 /* ASFCameraController.m */,
+			);
+			path = camera;
+			sourceTree = "<group>";
+		};
+		84690E782572157A006488F1 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				84690E7B2572157A006488F1 /* ColorFormatUtil.h */,
+				84690E7D2572157A006488F1 /* ColorFormatUtil.m */,
+				84690E792572157A006488F1 /* GLKitView.h */,
+				84690E7C2572157A006488F1 /* GLKitView.m */,
+				84690E7E2572157A006488F1 /* Utility.h */,
+				84690E7A2572157A006488F1 /* Utility.m */,
+			);
+			path = util;
+			sourceTree = "<group>";
+		};
+		84690E95257225DD006488F1 /* database */ = {
+			isa = PBXGroup;
+			children = (
+				84690E96257225DD006488F1 /* AFRCDVersion+CoreDataClass.h */,
+				84690E97257225DD006488F1 /* ASFRManager.m */,
+				84690E98257225DD006488F1 /* AFRCDVersion+CoreDataProperties.m */,
+				84690E99257225DD006488F1 /* AFRCDPerson+CoreDataProperties.h */,
+				84690E9A257225DD006488F1 /* AFRCDPerson+CoreDataClass.m */,
+				84690E9B257225DD006488F1 /* ASFRCDManager.h */,
+				84690E9C257225DD006488F1 /* ASFRPerson.h */,
+				84690E9D257225DD006488F1 /* ASFRManager.h */,
+				84690E9E257225DD006488F1 /* FSDKFR.xcdatamodeld */,
+				84690EA0257225DD006488F1 /* AFRCDVersion+CoreDataClass.m */,
+				84690EA1257225DD006488F1 /* AFRCDPerson+CoreDataClass.h */,
+				84690EA2257225DD006488F1 /* AFRCDPerson+CoreDataProperties.m */,
+				84690EA3257225DD006488F1 /* AFRCDVersion+CoreDataProperties.h */,
+				84690EA4257225DD006488F1 /* ASFRPerson.m */,
+				84690EA5257225DD006488F1 /* ASFRCDManager.m */,
+			);
+			name = database;
+			path = "../../../../../../Downloads/ARCSOFT_ARCFACE_IOS_V3.0 (3)/samplecode/ArcSoftFaceEngineDemo/ArcSoftFaceEngineDemo/database";
 			sourceTree = "<group>";
 		};
 		848D496E23EBB98B00AF81B3 = {
@@ -364,6 +488,10 @@
 				84E7E7FC23ED136000396046 /* TrainWebViewController.m */,
 				84822CCA24B0C90A00D12C73 /* TrainCustomCarmer.h */,
 				84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */,
+				84690E5B2572152D006488F1 /* TrainFaceView.h */,
+				84690E5C2572152D006488F1 /* TrainFaceView.m */,
+				84690EAE25723C9B006488F1 /* UIImage+imageFace.h */,
+				84690EAF25723C9B006488F1 /* UIImage+imageFace.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -380,6 +508,7 @@
 		84E7E77023ED0F4A00396046 /* TrainResources */ = {
 			isa = PBXGroup;
 			children = (
+				84690E602572155B006488F1 /* TrainFaceEngine */,
 				84BDB2152509F4F00082E0B0 /* Lib */,
 				84C106AC23F549D20042A136 /* UMCommon.framework */,
 				84C1068723F5445B0042A136 /* share_ios_6.9.7 */,
@@ -505,6 +634,7 @@
 				848D497323EBB98B00AF81B3 /* Sources */,
 				848D497423EBB98B00AF81B3 /* Frameworks */,
 				848D497523EBB98B00AF81B3 /* Resources */,
+				84690E9425722596006488F1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -600,15 +730,22 @@
 				84822CCC24B0C90A00D12C73 /* TrainCustomCarmer.m in Sources */,
 				84E7E7D923ED0F4A00396046 /* UIView+TrainLineView.m in Sources */,
 				84E7E7CC23ED0F4A00396046 /* TrainControllerUtil.m in Sources */,
+				84690E892572157A006488F1 /* Utility.m in Sources */,
+				84690E8B2572157A006488F1 /* ColorFormatUtil.m in Sources */,
 				84E7E7E023ED0F4A00396046 /* UITableView+TrainTableViewPlaceHolder.m in Sources */,
 				84E7E7DB23ED0F4A00396046 /* NSString+TrainStringColor.m in Sources */,
 				84E7E7D723ED0F4A00396046 /* UIScrollView+TrainScrollTouch.m in Sources */,
 				84E7E7DC23ED0F4A00396046 /* UIImage+Train.m in Sources */,
+				84690EAD257225DD006488F1 /* ASFRCDManager.m in Sources */,
 				84E7E7DE23ED0F4A00396046 /* UIView+RZNib.m in Sources */,
 				84822CB224B07A0800D12C73 /* RZBaseNavigationController.m in Sources */,
 				84E7E7C823ED0F4A00396046 /* TrainWelcomeViewController.m in Sources */,
 				848D498223EBB98C00AF81B3 /* ViewController.m in Sources */,
+				84690EA6257225DD006488F1 /* ASFRManager.m in Sources */,
 				84E7E7F823ED12B300396046 /* RZWeakScriptMessageDelegate.m in Sources */,
+				84690E882572157A006488F1 /* ASFCameraController.m in Sources */,
+				84690E7F2572157A006488F1 /* ASFVideoProcessor.mm in Sources */,
+				84690E8A2572157A006488F1 /* GLKitView.m in Sources */,
 				84E7E7DF23ED0F4A00396046 /* UIButton+Train.m in Sources */,
 				84E7E7F723ED12B300396046 /* RZBaseWKWebViewController.m in Sources */,
 				84E7E7D323ED0F4A00396046 /* TrainNetWorkAPIClient.m in Sources */,
@@ -617,14 +754,18 @@
 				84E7E7D223ED0F4A00396046 /* TrainNetWorkConfiguration.m in Sources */,
 				84E7E7D623ED0F4A00396046 /* UISegmentedControl+Train.m in Sources */,
 				84C1068623F5410B0042A136 /* TrainAlertTools.m in Sources */,
+				84690EB025723C9B006488F1 /* UIImage+imageFace.m in Sources */,
 				84E7E7FD23ED136000396046 /* TrainWebViewController.m in Sources */,
+				84690E5D2572152D006488F1 /* TrainFaceView.m in Sources */,
 				84E7E7D423ED0F4A00396046 /* TrainNetWorkAPIEngine.m in Sources */,
 				84E7E7CA23ED0F4A00396046 /* TrainStringUtil.m in Sources */,
 				84C6EB072400FD80004AC146 /* RZUMengManager.m in Sources */,
 				84E7E7DD23ED0F4A00396046 /* UIAlertController+TrainWindow.m in Sources */,
+				84690EA9257225DD006488F1 /* FSDKFR.xcdatamodeld in Sources */,
 				848D497C23EBB98B00AF81B3 /* AppDelegate.m in Sources */,
 				84E7E7F923ED12B300396046 /* RZBaseViewController.m in Sources */,
 				848D498D23EBB99000AF81B3 /* main.m in Sources */,
+				84690EAC257225DD006488F1 /* ASFRPerson.m in Sources */,
 				84E7E7D823ED0F4A00396046 /* UILabel+TrainCustomLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -778,6 +919,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/TrainFaceEngine",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
@@ -793,7 +935,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -837,6 +979,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/TrainFaceEngine",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
@@ -852,7 +995,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -901,6 +1044,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84690E9E257225DD006488F1 /* FSDKFR.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84690E9F257225DD006488F1 /* FSDKFR.xcdatamodel */,
+			);
+			currentVersion = 84690E9F257225DD006488F1 /* FSDKFR.xcdatamodel */;
+			path = FSDKFR.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 848D496F23EBB98B00AF81B3 /* Project object */;
 }

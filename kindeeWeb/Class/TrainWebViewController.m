@@ -14,9 +14,10 @@
 
 #import <PaFaceCheckSdk/PaFaceCheckSdk.h>
 #import "TrainCustomCarmer.h"
+#import <ArcSoftFaceEngine/ArcSoftFaceEngine.h>
 
-
-@interface TrainWebViewController ()
+#import "TrainFaceView.h"
+@interface TrainWebViewController ()<TrainFaceImageDelegate>
 {
  
     BOOL   _isLanjie ;  // 判断是新旧页面  根据 url
@@ -30,6 +31,9 @@
 @property (nonatomic, strong) TrainCustomCarmer   *carmer ;
 @property (nonatomic, assign) BOOL    isNavHidden ;
 
+
+@property (nonatomic, strong) TrainFaceView    *faceView ;
+
 @end
 
 @implementation TrainWebViewController
@@ -39,16 +43,16 @@
         [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
 //    self.navigationController.navigationBar.hidden =YES;
     
-    UIScreen * sc = [UIScreen mainScreen];
-    if (@available(iOS 11.0,*)) {
-        if (sc.isCaptured) {
-            NSLog(@"正在录制-----%d",sc.isCaptured);
-            [self handleSceenShot];
-            
-        }
-    }else {
-       //ios 11之前处理 未知
-    }
+//    UIScreen * sc = [UIScreen mainScreen];
+//    if (@available(iOS 11.0,*)) {
+//        if (sc.isCaptured) {
+//            NSLog(@"正在录制-----%d",sc.isCaptured);
+//            [self handleSceenShot];
+//
+//        }
+//    }else {
+//       //ios 11之前处理 未知
+//    }
     
     
 }
@@ -67,7 +71,8 @@
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
 
         self.webUrl = @"https://szshigang.newvane.com.cn" ;
-        
+//        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/index.html#/index" ;
+    
     }else {
      
         webUrl = [NSString stringWithFormat:@"%@%@",webUrl,param];
@@ -78,40 +83,55 @@
     [self registShareFunction];
     [self RegeistNoticeCenter];
     
-    [self rtrainAddNoti];
+    // 注册检查录屏的通知
+//    [self rtrainAddNoti];
+ 
+    [self registerFaceSDK];
     
-//    //
-//    [[PAZNRegulatoryManager shareInstance] initSdkWithEnvironment:PAZNRegulatorySdkEnvironmentTest appId:@"pazn"];
-//
-//    [[PAZNRegulatoryManager shareInstance] configUserInfo:1 userName:@"212" cardId:@"1212"];
-//
-//       NSString *timestamp = [PAZNRegulatoryUtils getTimestamp];
-//       NSString *nonce = [PAZNRegulatoryUtils generateNonce];
-//       NSString *version = [PAZNRegulatoryUtils getSDKVerion];
-//
-//       NSString *sign = [PAZNRegulatoryUtils generateSignWith:@"pazn" appKey:@"znapp334" version:version nonce:nonce timestamp:timestamp];
-//
-//       [[PAZNRegulatoryManager shareInstance] checkBeforeTraining:@"111" timestamp:timestamp nonce:nonce sign:sign currentVC:self completion:^(NSError * _Nonnull error, BOOL checkPass, NSString * _Nonnull comesBackToken) {
-//
-//           [self evSetLoginNavHiddenWithhidden:self.isNavHidden];
-//
-//           if(!error&&checkPass){
-//               //校验通过
-//               NSLog(@"---changg ");
-//           }else{
-//               //失败处理
-//               NSLog(@"---fail==%@ ",error.localizedDescription);
-//
-//           }
-//       }];
-   
-        
-
     
+//    [self.faceView showFaceView];
+//    UIButton  *button = [UIButton buttonWithType:UIButtonTypeCustom];
+//    button .frame = CGRectMake(0, 200, 200, 100);
+//    button.backgroundColor = UIColor.redColor;
+//    [button addTarget:self action:@selector(evAddTouch) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:button];
     
     // Do any additional setup after loading the view.
 }
 
+-(void)evAddTouch {
+    [self.faceView showFaceView];
+
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.faceView showFaceView];
+
+}
+
+
+- (void)registerFaceSDK {
+    NSString *appid = @"ai7nr8wt6pboTuEXatp9a7jcr2Rvpop7bFQ8b9cqPjR";
+    NSString *sdkkey = @"9VQLku4c5YNABCL5AmGRUn39JZkaDMzjZ87t97etiKiD";
+    ArcSoftFaceEngine *engine = [[ArcSoftFaceEngine alloc] init];
+    MRESULT mr = [engine activeWithAppId:appid SDKKey:sdkkey];
+//    if (mr == ASF_MOK) {
+//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"SDK激活成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//        [self presentViewController:alertController animated:YES completion:nil];
+//        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        }]];
+//    } else if(mr == MERR_ASF_ALREADY_ACTIVATED){
+//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"SDK已激活" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//        [self presentViewController:alertController animated:YES completion:nil];
+//        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        }]];
+//    } else {
+//        NSString *result = [NSString stringWithFormat:@"SDK激活失败：%ld", mr];
+//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:result message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//        [self presentViewController:alertController animated:YES completion:nil];
+//        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+//        }]];
+//    }
+}
 
 - (void)trainCheckyueyu {
     
@@ -455,9 +475,12 @@
         BOOL isHidden = ![tempDic[@"isShow"] boolValue];
 //        self.carameView.hidden = isHidden ;
         if (isHidden) {
-            [weak_self.carmer stopCapRuning];
+            [self.faceView showFaceView];
+//            [weak_self.carmer stopCapRuning];
         }else {
-            [weak_self.carmer startCapRuning];
+            [self.faceView dismissFaceView];
+
+//            [weak_self.carmer startCapRuning];
         }
         
       }];
@@ -483,7 +506,6 @@
            
        }
     }];
-    
     
     // sdk 人脸扫描的环境配置
     [self.webViewBridge registerHandler:@"szsgInitSDK" handler:^(id data, WVJBResponseCallback responseCallback) {
@@ -545,7 +567,11 @@
          
       }];
    
-       
+    [self.webViewBridge registerHandler:@"szsgFaceImage" handler:^(id data, WVJBResponseCallback responseCallback) {
+        NSLog(@"Get user information from ObjC: %@", data);
+        //JS反馈给OC
+        responseCallback(@"注册");
+    }];
         
     
     
@@ -684,6 +710,26 @@
     
 }
 
+- (void)trainFacceInfo:(UIImage *)image {
+    if (image) {
+        
+        NSData *imageData = UIImageJPEGRepresentation(image, 1);
+        NSString *string = imageData.base64EncodedString ;
+        [self.webViewBridge callHandler:@"szsgFaceImage" data:string responseCallback:^(id responseData) {
+        }];
+    }
+}
+
+#pragma mark - ============== setter/ getter ===================
+
+- (TrainFaceView *)faceView {
+    if (!_faceView) {
+        TrainFaceView *view = [[TrainFaceView alloc]init];
+        view.delegate = self ;
+        _faceView  = view;
+    }
+    return _faceView;
+}
 
 - (UIView *)carameView {
     if (!_carameView) {
