@@ -140,7 +140,7 @@ typedef void (^trainEngineBlock)(CGFloat progress);
                                                                  options:kNilOptions
                                                                    error:nil];
             if (!result) {
-                result = [TrainStringUtil  trainDicWithData:data];
+//                result = [TrainStringUtil  trainDicWithData:data];
             }
             TrainNSLog(@"Train: dic = %@\n error =%@",result,error);
           
