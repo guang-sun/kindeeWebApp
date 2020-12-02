@@ -79,11 +79,10 @@
     if (! TrainDictIsEmpty(dic)) {
         [mudic setDictionary:dic];
     }
-
-    
-    [mudic setObject:TrainAPPVersions forKey:@"appVersion"];
+//    [mudic setObject:TrainAPPVersions forKey:@"appVersion"];
     [mudic setObject:(@"IOS") forKey:@"systemType"];
-    
+    [mudic setObject:(@"Y") forKey:@"webApp"];
+
     return mudic;
     
 }

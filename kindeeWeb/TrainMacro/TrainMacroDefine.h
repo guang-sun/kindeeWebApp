@@ -198,8 +198,7 @@
 #define TrainContentFont        12.0f
 
 #define TrainIpText             @"101.201.48.193"
-#define TrainHostText           @"e.learnking.net"
-
+#define TrainHostText           @"szshigang.newvane.com.cn"
 
 //@"elearnplus.com"
 

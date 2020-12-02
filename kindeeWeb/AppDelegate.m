@@ -14,6 +14,7 @@
 #import <UMCommon/UMCommon.h>
 
 #import "RZBaseNavigationController.h"
+#import "TrainAlertTools.h"
 
 @interface AppDelegate ()
 
@@ -32,7 +33,7 @@
     [self.window makeKeyAndVisible];
     
     [self loginUmengShare];
-    
+    [self getAppUpdate];
    
     TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
     BOOL isFlag = [welcomeVC getWelcomeAD];
@@ -114,7 +115,73 @@
   
 }
 
+#pragma mark - ======  app 更新  =============
+/*
+     apkUrl = 1;
+     content = 1;
+     isUpdate = 1;
+     updateTime = "2019-12-25 15:45:13.0000";
+     version = 1;
+     versionCode = 1;
+ */
 
+- (void)getAppUpdate {
+    
+    @weakify(self);
+    [[TrainNetWorkAPIClient client] trainGetAppUpdateWithsuccess:^(NSDictionary *dic) {
+        NSString  *appVersion = TrainAPPVersions ;;
+        NSComparisonResult ss  = [dic[@"appVersion"] compare:appVersion options:NSLiteralSearch] ;
+        if(ss == NSOrderedDescending){
+            [weak_self rzCompareVersion:dic];
+        }
+    } andFailure:^(NSInteger errorCode, NSString *errorMsg) {
+        
+    } ];
+}
+
+- (void)rzCompareVersion:(NSDictionary *)dic {
+    
+    @weakify(self);
+    NSString *msg = dic[@"updateContent"];
+    NSString *title = dic[@"message"];
+    title = (TrainStringIsEmpty(title)) ? @"更新提示" : title;
+    NSString *url = dic[@"appUrl"];
+    UIViewController  *viewVC = [TrainControllerUtil getTrainCurrentVC];
+    if ([dic[@"isUpdate"] boolValue]) {
+        
+        @weakify(self);
+        [TrainAlertTools showAlertWith:viewVC title:@"强制更新" message:msg callbackBlock:^(NSInteger btnIndex) {
+            if(btnIndex == 0) {
+                [weak_self zwbp_openAppStoreWithURL:url];
+                [weak_self rzCompareVersion:dic] ;
+            }
+            
+        } cancelButtonTitle:nil destructiveButtonTitle:@"更新" otherButtonTitles:nil, nil];
+      
+    }else {
+    
+       [ TrainAlertTools showAlertWith:viewVC title:@"更新提示" message:msg callbackBlock:^(NSInteger btnIndex) {
+            
+            if (btnIndex == 1) {
+                
+                [weak_self zwbp_openAppStoreWithURL:url];
+            }
+        } cancelButtonTitle:@"取消" destructiveButtonTitle:@"更新" otherButtonTitles:nil, nil];
+    }
+}
+
+- (void)zwbp_openAppStoreWithURL:(NSString *)appUrl {
+    
+    NSURL* url = [NSURL URLWithString:appUrl];
+    UIApplication *application = [UIApplication sharedApplication];
+    if([application canOpenURL:url])
+    {
+       [application openURL:url options:@{} completionHandler:^(BOOL success) {
+        }];
+        
+    }else {
+    }
+}
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
