@@ -37,7 +37,11 @@
 
 +(NSString *)trainGetAppUpdateInfo;
 
+/**
+ *  欢迎页
+ */
 
++(NSString *)trainGetWelcomeAd;
 
 
 

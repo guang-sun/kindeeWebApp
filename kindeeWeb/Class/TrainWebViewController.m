@@ -70,8 +70,8 @@
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
 
-        self.webUrl = @"https://szshigang.newvane.com.cn" ;
-//        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/index.html#/index" ;
+//        self.webUrl = @"https://szshigang.newvane.com.cn" ;
+        self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/list/index.html#/index" ;
     
     }else {
      

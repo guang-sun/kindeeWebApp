@@ -50,4 +50,15 @@
                           andFailure:(defaultFailureBlock)failure;
 
 
+/**
+ 欢迎页
+ @param url 站点
+ 
+ */
+- (void)trainGetWelcomeWithBaseUrl:(NSString *)url
+                         Success:(defaultSuccessBlock)success
+                      andFailure:(defaultFailureBlock)failure;
+
+
+
 @end

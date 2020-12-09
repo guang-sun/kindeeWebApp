@@ -36,9 +36,9 @@
                          andFailure:(defaultFailureBlock)failure
 {
     
-    TrainNetWorkConfiguration   *netConf = [[TrainNetWorkConfiguration defaultConfiguration] init];
+//    TrainNetWorkConfiguration   *netConf = [[TrainNetWorkConfiguration defaultConfiguration] init];
     
-    NSString *urlPath = [self trainCreatBaseURL:[TrainNetWorkConfiguration trainGetAppUpdate]];
+    NSString *urlPath = [self trainCreatBaseURL:[TrainNetWorkConfiguration trainGetAppUpdateInfo]];
     
     NSDictionary  *dic = [self trainAddCommonParameters:nil andUserName:nil];
     
@@ -46,5 +46,25 @@
     [self trainBaseNetWorkWithURl:urlPath parameters:dic Success:success andFailure:failure];
     
 }
+/**
+ 欢迎页
+ @param url 站点
+ 
+ */
+- (void)trainGetWelcomeWithBaseUrl:(NSString *)url
+                           Success:(defaultSuccessBlock)success
+                        andFailure:(defaultFailureBlock)failure{
+    
+    TrainNetWorkConfiguration   *netConf = [[TrainNetWorkConfiguration defaultConfiguration] initWithHostString:url];
+    TrainNSLog(@"-======%@",netConf.hostString);
+    
+    NSString *urlPath = [self trainCreatBaseURL:[TrainNetWorkConfiguration trainGetWelcomeAd]];
+    NSDictionary  *dic = [self trainAddCommonParameters:nil andUserName:nil];
+    
+    [self trainBaseNetWorkWithURl:urlPath parameters:dic Success:success andFailure:failure];
+    
+}
+
+
 
 @end

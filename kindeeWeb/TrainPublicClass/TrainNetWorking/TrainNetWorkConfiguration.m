@@ -39,6 +39,15 @@ static TrainNetWorkConfiguration *defaultConfiguration = nil;
     return @"/center/update";
 }
 
+/**
+ *  欢迎页
+ */
+
++(NSString *)trainGetWelcomeAd{
+    
+    return @"/app/user/getStartPage.action";
+    
+}
 
 
 
