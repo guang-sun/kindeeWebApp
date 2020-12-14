@@ -16,6 +16,7 @@
 
 #import "UIImage+imageFace.h"
 
+
 //当前屏幕宽高
 #define kScreenWidth    ([UIScreen mainScreen].bounds.size.width)
 #define kScreenHeight   ([UIScreen mainScreen].bounds.size.height)
@@ -145,7 +146,6 @@ float const ALERT_WIDTH              = 300.0f ;
     [self.videoProcessor initProcessor];
     
     self.cameraController = [[ASFCameraController alloc]init];
-//    self.cameraController.
     self.cameraController.delegate = self;
     [self.cameraController setupCaptureSession:videoOrientation];
 }
@@ -165,8 +165,7 @@ float const ALERT_WIDTH              = 300.0f ;
     } completion:^(BOOL finished) {
         self.alpha = 1;
         [self.actView stopAnimating];
-
-        [self resetFaceCheck];
+        [self resetFaceCheckStart];
     }];
 }
 
@@ -186,15 +185,24 @@ float const ALERT_WIDTH              = 300.0f ;
 - (void)resetFaceCheck {
      _isPhone = NO;
     [self.cameraController startCaptureSession];
-    [self.videoProcessor initProcessor];
-    self.statusText = @"正在检测...";
+    self.statusText = @"检测失败,请重新检测...";
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _isPhone = YES ;
+        [self.actView stopAnimating];
+
     });
 }
 
-     
-     
+- (void)resetFaceCheckStart {
+     _isPhone = NO;
+    [self.cameraController startCaptureSession];
+    self.statusText = @"正在检测...";
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _isPhone = YES ;
+        [self.actView stopAnimating];
+
+    });
+}
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection
 {
@@ -206,16 +214,16 @@ float const ALERT_WIDTH              = 300.0f ;
         for (NSUInteger face = 0; face < arrayFaceInfo.count; face++) {
 
             ASFVideoFaceInfo *faceInfo = [arrayFaceInfo objectAtIndex:face];
-            if (faceInfo.liveness && _isPhone) {
+//            self.statusText = @"已检测到人脸,正在验证是否活体";
+            if (faceInfo.liveness == 1 && _isPhone) {
                 self.statusText = @"已检测到人脸,请等待...";
                 CIImage *image = [CIImage imageWithCVPixelBuffer:cameraFrame];
-                UIImage  *ia = [UIImage imageWithCIImage:image];
+                UIImage  *img = [UIImage imageWithCIImage:image];
+                
                 [self.actView startAnimating];
                 [self.cameraController stopCaptureSession];
-                [self.videoProcessor uninitProcessor];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [self evUploadIUseriMage:ia];
-                    [self dismissFaceView];
+                    [self evUploadIUseriMage:img];
                 });
             
             }

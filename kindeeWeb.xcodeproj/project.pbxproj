@@ -30,6 +30,7 @@
 		848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 848D498623EBB99000AF81B3 /* Assets.xcassets */; };
 		848D498A23EBB99000AF81B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498823EBB99000AF81B3 /* LaunchScreen.storyboard */; };
 		848D498D23EBB99000AF81B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498C23EBB99000AF81B3 /* main.m */; };
+		849E0B12258100D100CAA7A3 /* UIImage+RZExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E0B10258100D100CAA7A3 /* UIImage+RZExtension.m */; };
 		84BDB21E2509F4F00082E0B0 /* PaUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB2162509F4F00082E0B0 /* PaUIKit.bundle */; };
 		84BDB21F2509F4F00082E0B0 /* PaFaceCheckBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84BDB2172509F4F00082E0B0 /* PaFaceCheckBundle.bundle */; };
 		84BDB2202509F4F00082E0B0 /* PaCoreSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BDB2182509F4F00082E0B0 /* PaCoreSdk.framework */; };
@@ -142,6 +143,8 @@
 		848D498923EBB99000AF81B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		848D498B23EBB99000AF81B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		848D498C23EBB99000AF81B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		849E0B10258100D100CAA7A3 /* UIImage+RZExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZExtension.m"; sourceTree = "<group>"; };
+		849E0B11258100D100CAA7A3 /* UIImage+RZExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZExtension.h"; sourceTree = "<group>"; };
 		84BDB2162509F4F00082E0B0 /* PaUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaUIKit.bundle; sourceTree = "<group>"; };
 		84BDB2172509F4F00082E0B0 /* PaFaceCheckBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaFaceCheckBundle.bundle; sourceTree = "<group>"; };
 		84BDB2182509F4F00082E0B0 /* PaCoreSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaCoreSdk.framework; sourceTree = "<group>"; };
@@ -589,6 +592,8 @@
 		84E7E79523ED0F4A00396046 /* TrainCategory */ = {
 			isa = PBXGroup;
 			children = (
+				849E0B11258100D100CAA7A3 /* UIImage+RZExtension.h */,
+				849E0B10258100D100CAA7A3 /* UIImage+RZExtension.m */,
 				84E7E7A923ED0F4A00396046 /* NSString+TrainStringColor.h */,
 				84E7E79F23ED0F4A00396046 /* NSString+TrainStringColor.m */,
 				84E7E7AA23ED0F4A00396046 /* NSTimer+TrainScrollTimer.h */,
@@ -749,6 +754,7 @@
 				84E7E7DF23ED0F4A00396046 /* UIButton+Train.m in Sources */,
 				84E7E7F723ED12B300396046 /* RZBaseWKWebViewController.m in Sources */,
 				84E7E7D323ED0F4A00396046 /* TrainNetWorkAPIClient.m in Sources */,
+				849E0B12258100D100CAA7A3 /* UIImage+RZExtension.m in Sources */,
 				84E7E7DA23ED0F4A00396046 /* NSTimer+TrainScrollTimer.m in Sources */,
 				84E7E7D523ED0F4A00396046 /* TrainNetWorkClientBase.m in Sources */,
 				84E7E7D223ED0F4A00396046 /* TrainNetWorkConfiguration.m in Sources */,
@@ -925,7 +931,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -937,7 +943,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -985,7 +991,7 @@
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -997,7 +1003,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",

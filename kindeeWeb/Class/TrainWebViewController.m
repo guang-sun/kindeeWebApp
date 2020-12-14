@@ -17,6 +17,9 @@
 #import <ArcSoftFaceEngine/ArcSoftFaceEngine.h>
 
 #import "TrainFaceView.h"
+#import "UIImage+RZExtension.h"
+
+
 @interface TrainWebViewController ()<TrainFaceImageDelegate>
 {
  
@@ -99,14 +102,14 @@
     // Do any additional setup after loading the view.
 }
 
--(void)evAddTouch {
-    [self.faceView showFaceView];
-
-}
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.faceView showFaceView];
-
-}
+//-(void)evAddTouch {
+//    [self.faceView showFaceView];
+//
+//}
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self.faceView showFaceView];
+//
+//}
 
 
 - (void)registerFaceSDK {
@@ -114,23 +117,7 @@
     NSString *sdkkey = @"9VQLku4c5YNABCL5AmGRUn39JZkaDMzjZ87t97etiKiD";
     ArcSoftFaceEngine *engine = [[ArcSoftFaceEngine alloc] init];
     MRESULT mr = [engine activeWithAppId:appid SDKKey:sdkkey];
-//    if (mr == ASF_MOK) {
-//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"SDK激活成功" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//        }]];
-//    } else if(mr == MERR_ASF_ALREADY_ACTIVATED){
-//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:@"SDK已激活" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//        }]];
-//    } else {
-//        NSString *result = [NSString stringWithFormat:@"SDK激活失败：%ld", mr];
-//        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:result message:@"" preferredStyle:UIAlertControllerStyleAlert];
-//        [self presentViewController:alertController animated:YES completion:nil];
-//        [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-//        }]];
-//    }
+
 }
 
 - (void)trainCheckyueyu {
@@ -333,13 +320,6 @@
 
 -(void)endFullScreen {
     NSLog(@"退出全屏XXXX");
-//    UIApplication *application=[UIApplication sharedApplication];
-//    [application setStatusBarOrientation: UIInterfaceOrientationLandscapeRight];
-//    CGRect frame = [UIScreen mainScreen].applicationFrame;
-//    application.keyWindow.bounds = CGRectMake(0, 0, frame.size.width, frame.size.height + 20);
-//    [UIView animateWithDuration:0.25 animations:^{
-//        application.keyWindow.transform=CGAffineTransformMakeRotation(M_PI * 2);
-//    }];
 
     if (self.rzWebView.bounds.size.width < self.rzWebView.bounds.size.height) {
 
@@ -473,13 +453,11 @@
        
         NSDictionary *tempDic = data;
         BOOL isHidden = ![tempDic[@"isShow"] boolValue];
-//        self.carameView.hidden = isHidden ;
-        if (isHidden) {
+        if (!isHidden) {
             [self.faceView showFaceView];
 //            [weak_self.carmer stopCapRuning];
         }else {
             [self.faceView dismissFaceView];
-
 //            [weak_self.carmer startCapRuning];
         }
         
@@ -487,13 +465,16 @@
     
     // 拍摄照片
     [self.webViewBridge registerHandler:@"setFaceTakePhoto" handler:^(id data, WVJBResponseCallback responseCallback) {
-        [weak_self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
-            
-            NSData *imageData = UIImageJPEGRepresentation(originImage, 1);
-            NSString *string = imageData.base64EncodedString ;
-            responseCallback(string);
-            
-        }];
+        
+        [self.faceView resetFaceCheck];
+//        [weak_self.carmer takePhotoWithImageBlock:^(UIImage *originImage) {
+//
+//            NSData *imageData = UIImageJPEGRepresentation(originImage, 1);
+//            NSString *string = imageData.base64EncodedString ;
+//            responseCallback(string);
+//
+//        }];
+        
     }];
     
     //
@@ -713,7 +694,7 @@
 - (void)trainFacceInfo:(UIImage *)image {
     if (image) {
         
-        NSData *imageData = UIImageJPEGRepresentation(image, 1);
+        NSData *imageData = [image compressImageMaxFileSize:500];// UIImageJPEGRepresentation(image, 1);
         NSString *string = imageData.base64EncodedString ;
         [self.webViewBridge callHandler:@"szsgFaceImage" data:string responseCallback:^(id responseData) {
         }];
