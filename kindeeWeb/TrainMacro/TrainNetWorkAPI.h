@@ -33,8 +33,7 @@
 //#define TrainIP    @"https://101.201.48.193"
 //#define TrainIP    @"http://10.42.0.72:8080"
 //#define TrainIP    @"http://192.168.11.127:8080"
-#define TrainUpdateText      @"https://lhrcb.newvane.com.cn"
-
+#define TrainUpdateText      @"https://gdotc.kingno.com.cn"
 
 #else
 
@@ -43,7 +42,7 @@
 
 #define TrainWelcomeURL   [TrainUserDefault objectForKey:TrainWebHostText]
 #define TrainIP           TrainWelcomeURL
-#define TrainUpdateText     @"https://lhrcb.newvane.com.cn"
+#define TrainUpdateText     @"https://gdotc.kingno.com.cn"
 
 
 #endif
