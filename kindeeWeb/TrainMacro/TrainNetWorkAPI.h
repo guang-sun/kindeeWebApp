@@ -33,7 +33,7 @@
 //#define TrainIP    @"https://101.201.48.193"
 //#define TrainIP    @"http://10.42.0.72:8080"
 //#define TrainIP    @"http://192.168.11.127:8080"
-
+#define TrainUpdateText      @"https://eln.crb.cn"
 
 #else
 //#define TrainWelcomeURL   @"http://123.56.137.187:9999"
@@ -42,7 +42,7 @@
 #define TrainWelcomeURL   [TrainUserDefault objectForKey:TrainWebHostText]
 #define TrainIP           TrainWelcomeURL
 
-
+#define TrainUpdateText      @"https://eln.crb.cn"
 #endif
 
 

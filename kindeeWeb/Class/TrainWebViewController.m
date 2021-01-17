@@ -55,7 +55,8 @@
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
 //         self.webUrl = @"https://skyworth.newvane.com.cn";
-        self.webUrl = @"https://eln-uat.crb.cn";
+//        self.webUrl = @"https://eln-uat.crb.cn";
+        self.webUrl =  TrainUpdateText ;//@"https://lhrcb.newvane.com.cn";
 
     }else {
      
