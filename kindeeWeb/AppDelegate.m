@@ -15,7 +15,6 @@
 
 #import "RZBaseNavigationController.h"
 #import "TrainAlertTools.h"
-
 @interface AppDelegate ()
 
 @property (nonatomic, strong)  UIVisualEffectView *effectView;
@@ -33,26 +32,30 @@
     [self.window makeKeyAndVisible];
     sleep(1);
     [self loginUmengShare];
-    
-   
+    [self getAppUpdate];
+    [self evAddAdView];
+
+    return YES;
+}
+
+- (void)evAddAdView {
     TrainWelcomeViewController *welcomeVC = [[TrainWelcomeViewController alloc]init];
     BOOL isFlag = [welcomeVC getWelcomeAD];
     if(isFlag) {
-
         RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:welcomeVC];
         self.window.rootViewController = nav ;
 
     }else {
-        
-        RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
-        self.window.rootViewController = nav;
+        [self rzSetHomeView];
         [welcomeVC downloadWelcomAD];
     }
-    
-    
-    
+}
 
-    return YES;
+
+- (void)rzSetHomeView {
+    
+    RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
+    self.window.rootViewController = nav;
 }
 
 /**
@@ -75,7 +78,6 @@
     [self configUSharePlatforms];
     
     [self confitUShareSettings];
-    [self getAppUpdate];
     
 }
 
@@ -98,8 +100,6 @@
  
 }
 
-
-
 - (void)configUSharePlatforms
 {
     /* 设置微信的appKey和appSecret */
@@ -117,6 +117,7 @@
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_DingDing appKey:dingding_AppID  appSecret:dingding_AppSecret redirectURL:@""];
   
 }
+
 #pragma mark - ======  app 更新  =============
 /*
      apkUrl = 1;
@@ -184,7 +185,6 @@
     }else {
     }
 }
-
 
 
 

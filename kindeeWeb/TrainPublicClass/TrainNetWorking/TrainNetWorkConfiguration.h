@@ -29,19 +29,19 @@
  *
  ****************************/
 
+
 #pragma   mark - 更新
 /**
  *  更新
  */
-
 +(NSString *)trainGetAppUpdateInfo;
+
+
 /**
  *  欢迎页
  */
 
 +(NSString *)trainGetWelcomeAd;
-
-
 
 
 @end

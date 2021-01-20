@@ -586,7 +586,7 @@
 //        [userContentController addScriptMessageHandler:[[RZWeakScriptMessageDelegate alloc]initWithDelegate:self] name:kWKWebViewJSName];
         WKWebView *wkWebView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:configur];
         
-        wkWebView.allowsBackForwardNavigationGestures = YES;  // 允许左滑返回上个页面
+        wkWebView.allowsBackForwardNavigationGestures = NO;  // 允许左滑返回上个页面
         //重点(当然需要遵守协议，不然会有警告)（当然遵守了这个你就可以侧滑返回上个页面了）
         wkWebView.navigationDelegate = self;
 

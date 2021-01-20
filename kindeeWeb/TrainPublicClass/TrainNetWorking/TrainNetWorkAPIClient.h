@@ -16,12 +16,8 @@
 #pragma mark - webView
 
 
-/**
- 更新
-  */
 -(void)trainGetAppUpdateWithsuccess:(defaultSuccessBlock)success
                          andFailure:(defaultFailureBlock)failure;
-
 
 /**
  欢迎页
@@ -31,7 +27,6 @@
 - (void)trainGetWelcomeWithBaseUrl:(NSString *)url
                          Success:(defaultSuccessBlock)success
                       andFailure:(defaultFailureBlock)failure;
-
 
 
 

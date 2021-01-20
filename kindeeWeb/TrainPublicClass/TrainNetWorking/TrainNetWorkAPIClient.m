@@ -31,7 +31,10 @@
     
 }
 
-- (void)trainGetAppUpdateWithsuccess:(defaultSuccessBlock)success andFailure:(defaultFailureBlock)failure {
+
+-(void)trainGetAppUpdateWithsuccess:(defaultSuccessBlock)success
+                         andFailure:(defaultFailureBlock)failure
+{
     
     TrainNetWorkConfiguration   *netConf = [[TrainNetWorkConfiguration defaultConfiguration] init];
     
@@ -39,7 +42,6 @@
         netConf = [[TrainNetWorkConfiguration defaultConfiguration] initWithHostString:@""];
     }
     
-//    NSString *urlPath = [self trainCreatBaseURL:[TrainNetWorkConfiguration trainGetAppUpdate]];
     NSString *urlPath = [self trainCreatBaseURL:[TrainNetWorkConfiguration trainGetAppUpdateInfo]];
     
     NSDictionary  *dic = [self trainAddCommonParameters:nil andUserName:nil];
@@ -48,6 +50,8 @@
     [self trainBaseNetWorkWithURl:urlPath parameters:dic Success:success andFailure:failure];
     
 }
+
+
 
 
 /**
@@ -68,9 +72,5 @@
     [self trainBaseNetWorkWithURl:urlPath parameters:dic Success:success andFailure:failure];
     
 }
-
-
-
-
 
 @end

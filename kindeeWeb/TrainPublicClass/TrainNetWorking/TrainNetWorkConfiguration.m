@@ -19,7 +19,6 @@ static TrainNetWorkConfiguration *defaultConfiguration = nil;
     dispatch_once(&onceToken, ^{
     
         defaultConfiguration = [[TrainNetWorkConfiguration alloc] initWithHostString:TrainUpdateText];
-        
     });
     return defaultConfiguration;
 }
@@ -35,9 +34,9 @@ static TrainNetWorkConfiguration *defaultConfiguration = nil;
  
 }
 
+
 +(NSString *)trainGetAppUpdateInfo{
     return @"/center/update";
-
 }
 
 
@@ -50,7 +49,5 @@ static TrainNetWorkConfiguration *defaultConfiguration = nil;
     return @"/app/user/getStartPage.action";
     
 }
-
-
 
 @end
