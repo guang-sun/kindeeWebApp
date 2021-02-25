@@ -54,8 +54,8 @@
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
-//              self.webUrl = @"https://demo.elearnplus.com/learn/admin/course/zk/list/index.html#/login";
-         self.webUrl = @"https://zk.newvane.com.cn";
+//        self.webUrl = @"https://zk.newvane.com.cn";
+        self.webUrl = @"https://zk.learnking.net";
     
 
     }else {
