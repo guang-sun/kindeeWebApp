@@ -36,7 +36,7 @@ static TrainNetWorkConfiguration *defaultConfiguration = nil;
 }
 
 +(NSString *)trainGetAppUpdateInfo{
-    return @"/center/update";
+    return @"/app/center/update";
 
 }
 

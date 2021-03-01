@@ -85,7 +85,7 @@
         [self passAd];
     }
     
-    [self downloadWelcomAD];
+//    [self downloadWelcomAD];
 }
 
 -(void)creatDefultImageView{
@@ -121,7 +121,7 @@
             [self passAd];
         }
         
-        [self downloadWelcomAD];
+//        [self downloadWelcomAD];
 
     }];
 }

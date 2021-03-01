@@ -364,7 +364,8 @@ typedef void (^trainEngineBlock)(CGFloat progress);
 - (void)trainPostRequest:(NSString *)urlString parameters:(NSString *)parameters finished:(TrainAPIFinishedBlock)finished{
     TrainNSLog(@"path == %@?%@ ===POST",urlString,parameters);
     
-    [self trainBaseRequestMethod:@"POST" andUrl:urlString andParameters:parameters andFinish:finished];
+   
+    [self trainBaseRequestMethod:@"GET" andUrl:urlString andParameters:parameters andFinish:finished];
 }
 
 

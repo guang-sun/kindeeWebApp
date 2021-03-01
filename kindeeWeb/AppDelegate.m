@@ -46,7 +46,7 @@
         
         RZBaseNavigationController *nav = [[RZBaseNavigationController alloc]initWithRootViewController:[[TrainWebViewController alloc]init]];
         self.window.rootViewController = nav;
-        [welcomeVC downloadWelcomAD];
+//        [welcomeVC downloadWelcomAD];
     }
     
     
@@ -129,13 +129,37 @@
 
 - (void)getAppUpdate {
     
+    NSString *string =  [TrainUserDefault objectForKey:@"TrainWebHomeParam"];
+    if (TrainStringIsEmpty(string)) {
+        return;
+    }
+    __block NSString *userName = @"";
+    NSArray *arr = [ string componentsSeparatedByString:@"?"];
+    if (arr.count > 1) {
+        NSArray *params = [ arr[1] componentsSeparatedByString:@"&"];
+        [params enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([obj hasPrefix:@"username"]) {
+                NSArray *userArr  = [obj componentsSeparatedByString:@"="];
+                if (userArr.count > 1) {
+                    userName = userArr[1];
+                }
+            }
+        }];
+    }
+    if (TrainStringIsEmpty(userName)) {
+        return;
+    }
     @weakify(self);
     [[TrainNetWorkAPIClient client] trainGetAppUpdateWithsuccess:^(NSDictionary *dic) {
-        NSString  *appVersion = TrainAPPVersions ;;
-        NSComparisonResult ss  = [dic[@"appVersion"] compare:appVersion options:NSLiteralSearch] ;
-        if(ss == NSOrderedDescending){
-            [weak_self rzCompareVersion:dic];
+        NSLog(@"====dic==%@",dic);
+        NSString  *appVersion = TrainAPPVersions ;
+        if(!TrainStringIsEmpty(dic[@"appVersion"])){
+            NSComparisonResult ss  = [dic[@"appVersion"] compare:appVersion options:NSLiteralSearch] ;
+            if(ss == NSOrderedDescending){
+                [weak_self rzCompareVersion:dic];
+            }
         }
+        
     } andFailure:^(NSInteger errorCode, NSString *errorMsg) {
         
     } ];

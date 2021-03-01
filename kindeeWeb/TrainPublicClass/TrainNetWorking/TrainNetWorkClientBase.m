@@ -79,11 +79,13 @@
     if (! TrainDictIsEmpty(dic)) {
         [mudic setDictionary:dic];
     }
-
     
     [mudic setObject:TrainAPPVersions forKey:@"appVersion"];
     [mudic setObject:(@"IOS") forKey:@"systemType"];
     [mudic setObject:(@"Y") forKey:@"webApp"];
+    if (!TrainStringIsEmpty(userName)) {
+        [mudic setObject:userName forKey:@"username"];
+    }
     
     return mudic;
     
