@@ -11,6 +11,13 @@
 		845A3BDD24D67D83007C0272 /* appHash.plist in Resources */ = {isa = PBXBuildFile; fileRef = 845A3BDC24D67D83007C0272 /* appHash.plist */; };
 		84822CB224B07A0800D12C73 /* RZBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */; };
 		84822CCC24B0C90A00D12C73 /* TrainCustomCarmer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */; };
+		84885F5526044444007FC5A9 /* PaUIKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84885F4D26044444007FC5A9 /* PaUIKit.bundle */; };
+		84885F5626044444007FC5A9 /* PaFaceCheckBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84885F4E26044444007FC5A9 /* PaFaceCheckBundle.bundle */; };
+		84885F5726044444007FC5A9 /* PaCoreSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84885F4F26044444007FC5A9 /* PaCoreSdk.framework */; };
+		84885F5826044444007FC5A9 /* PaUIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84885F5026044444007FC5A9 /* PaUIKit.framework */; };
+		84885F5926044444007FC5A9 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84885F5226044444007FC5A9 /* libcrypto.a */; };
+		84885F5A26044444007FC5A9 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84885F5326044444007FC5A9 /* libssl.a */; };
+		84885F5B26044444007FC5A9 /* PaFaceCheckSdk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84885F5426044444007FC5A9 /* PaFaceCheckSdk.framework */; };
 		848D497C23EBB98B00AF81B3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D497B23EBB98B00AF81B3 /* AppDelegate.m */; };
 		848D498223EBB98C00AF81B3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848D498123EBB98C00AF81B3 /* ViewController.m */; };
 		848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 848D498323EBB98C00AF81B3 /* Main.storyboard */; };
@@ -68,6 +75,13 @@
 		84822CB124B07A0800D12C73 /* RZBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZBaseNavigationController.m; sourceTree = "<group>"; };
 		84822CCA24B0C90A00D12C73 /* TrainCustomCarmer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrainCustomCarmer.h; sourceTree = "<group>"; };
 		84822CCB24B0C90A00D12C73 /* TrainCustomCarmer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrainCustomCarmer.m; sourceTree = "<group>"; };
+		84885F4D26044444007FC5A9 /* PaUIKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaUIKit.bundle; sourceTree = "<group>"; };
+		84885F4E26044444007FC5A9 /* PaFaceCheckBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PaFaceCheckBundle.bundle; sourceTree = "<group>"; };
+		84885F4F26044444007FC5A9 /* PaCoreSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaCoreSdk.framework; sourceTree = "<group>"; };
+		84885F5026044444007FC5A9 /* PaUIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaUIKit.framework; sourceTree = "<group>"; };
+		84885F5226044444007FC5A9 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcrypto.a; sourceTree = "<group>"; };
+		84885F5326044444007FC5A9 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libssl.a; sourceTree = "<group>"; };
+		84885F5426044444007FC5A9 /* PaFaceCheckSdk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PaFaceCheckSdk.framework; sourceTree = "<group>"; };
 		848D497723EBB98B00AF81B3 /* 新风学院.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "新风学院.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		848D497A23EBB98B00AF81B3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		848D497B23EBB98B00AF81B3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -164,13 +178,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C1069C23F5445B0042A136 /* UShareUI.framework in Frameworks */,
+				84885F5726044444007FC5A9 /* PaCoreSdk.framework in Frameworks */,
+				84885F5926044444007FC5A9 /* libcrypto.a in Frameworks */,
 				84C1069D23F5445B0042A136 /* UMShare.framework in Frameworks */,
 				84C106A323F5445B0042A136 /* libWeChatSDK.a in Frameworks */,
 				84C106AD23F549D30042A136 /* UMCommon.framework in Frameworks */,
 				84C106A523F547C00042A136 /* libsqlite3.tbd in Frameworks */,
 				84C106A123F5445B0042A136 /* libSocialOfficialWeChat.a in Frameworks */,
+				84885F5826044444007FC5A9 /* PaUIKit.framework in Frameworks */,
 				3047F80EDFC82DADAF8EC453 /* libPods-kindeeWeb.a in Frameworks */,
+				84885F5B26044444007FC5A9 /* PaFaceCheckSdk.framework in Frameworks */,
 				84C106AB23F5496D0042A136 /* libc++.tbd in Frameworks */,
+				84885F5A26044444007FC5A9 /* libssl.a in Frameworks */,
 				84C1069F23F5445B0042A136 /* libSocialDingDing.a in Frameworks */,
 				84C106A023F5445B0042A136 /* libSocialWeChat.a in Frameworks */,
 				84C106A723F547CE0042A136 /* CoreGraphics.framework in Frameworks */,
@@ -201,6 +220,28 @@
 				3A81EEFD0AD9E4C003545853 /* Pods-kindeeWeb.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		84885F4C26044444007FC5A9 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				84885F4D26044444007FC5A9 /* PaUIKit.bundle */,
+				84885F4E26044444007FC5A9 /* PaFaceCheckBundle.bundle */,
+				84885F4F26044444007FC5A9 /* PaCoreSdk.framework */,
+				84885F5026044444007FC5A9 /* PaUIKit.framework */,
+				84885F5126044444007FC5A9 /* OpenSSL */,
+				84885F5426044444007FC5A9 /* PaFaceCheckSdk.framework */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		84885F5126044444007FC5A9 /* OpenSSL */ = {
+			isa = PBXGroup;
+			children = (
+				84885F5226044444007FC5A9 /* libcrypto.a */,
+				84885F5326044444007FC5A9 /* libssl.a */,
+			);
+			path = OpenSSL;
 			sourceTree = "<group>";
 		};
 		848D496E23EBB98B00AF81B3 = {
@@ -339,6 +380,7 @@
 		84E7E77023ED0F4A00396046 /* TrainResources */ = {
 			isa = PBXGroup;
 			children = (
+				84885F4C26044444007FC5A9 /* Lib */,
 				84C106AC23F549D20042A136 /* UMCommon.framework */,
 				84C1068723F5445B0042A136 /* share_ios_6.9.7 */,
 				84F5C11E2407C1E00099D07A /* Resources.xcassets */,
@@ -514,7 +556,9 @@
 				845A3BDD24D67D83007C0272 /* appHash.plist in Resources */,
 				84C1069B23F5445B0042A136 /* UMSocialSDKResources.bundle in Resources */,
 				84F5C11F2407C1E00099D07A /* Resources.xcassets in Resources */,
+				84885F5626044444007FC5A9 /* PaFaceCheckBundle.bundle in Resources */,
 				848D498723EBB99000AF81B3 /* Assets.xcassets in Resources */,
+				84885F5526044444007FC5A9 /* PaUIKit.bundle in Resources */,
 				84C6EB0C240113F3004AC146 /* iPhoneShare1.png in Resources */,
 				848D498523EBB98C00AF81B3 /* Main.storyboard in Resources */,
 			);
@@ -733,6 +777,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/UMSocialUI",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
@@ -746,8 +791,9 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
@@ -790,6 +836,7 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/UMSocialUI",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/kindeeWeb/TrainMacro/TrainPrefix.pch";
 				INFOPLIST_FILE = kindeeWeb/Info.plist;
@@ -803,8 +850,9 @@
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/DingDing",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat",
 					"$(PROJECT_DIR)/kindeeWeb/TrainResources/share_ios_6.9.7/SocialLibraries/WeChat/WechatSDK",
+					"$(PROJECT_DIR)/kindeeWeb/TrainResources/Lib/OpenSSL",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-all_load",
