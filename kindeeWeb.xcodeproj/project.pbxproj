@@ -771,7 +771,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xuehuaWebAppUat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xuehuaWebApp;
 				PRODUCT_NAME = "雪花啤酒学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -828,7 +828,7 @@
 					"-framework",
 					"\"UIKit\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xuehuaWebAppUat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kindee.xuehuaWebApp;
 				PRODUCT_NAME = "雪花啤酒学院";
 				PROVISIONING_PROFILE_SPECIFIER = yuchengDisAny;
 				TARGETED_DEVICE_FAMILY = 1;
