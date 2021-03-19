@@ -486,6 +486,19 @@
     NSLog(@"完成");
     NSString *Url = webView.URL.absoluteString ;
 
+    NSDictionary *dic = @{@"mobile":@(YES)};
+    [self.webViewBridge callHandler:@"rzWebFromPhone" data:dic responseCallback:^(id responseData) {
+         NSLog(@"1后的回调：%@",responseData);
+     }];
+    
+//    [self rzPostValueByJS:@"" completionHandler:^(id obj, NSError *error) {
+//
+//    }];
+//
+//    [self.rzWebView evaluateJavaScript:@"" completionHandler:^(id _Nullable, NSError * _Nullable error) {
+//
+//    }]
+    
     if (![[Url lowercaseString] containsString:@"login"] ) {
         if (_isShowBack) {
             [self evSetNavHiddenWithhidden: NO];
