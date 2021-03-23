@@ -54,8 +54,8 @@
     _isShowBack = NO;
     if (TrainStringIsEmpty(webUrl) || webUrl.length <= 8) {
            
-//        self.webUrl = @"https://zk.newvane.com.cn";
-        self.webUrl = @"https://zk.learnking.net";
+        self.webUrl = @"https://zk.newvane.com.cn";   // 周口正式
+//        self.webUrl = @"https://zk.learnking.net";  // 周口测试
     
 
     }else {
