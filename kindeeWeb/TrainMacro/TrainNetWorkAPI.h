@@ -33,8 +33,8 @@
 //#define TrainIP    @"https://101.201.48.193"
 //#define TrainIP    @"http://10.42.0.72:8080"
 //#define TrainIP    @"http://192.168.11.127:8080"
-#define TrainUpdateText      @"https://eln.crb.cn"
-//#define TrainUpdateText      @"https://eln-uat.crb.cn"
+//#define TrainUpdateText      @"https://eln.crb.cn"     // // bundleID :   com.kindee.xuehuaWebApp
+#define TrainUpdateText      @"https://eln-uat.crb.cn"   // bundleID :   com.kindee.xuehuaWebAppUat
 
 
 #else
@@ -44,8 +44,8 @@
 #define TrainWelcomeURL   [TrainUserDefault objectForKey:TrainWebHostText]
 #define TrainIP           TrainWelcomeURL
 
-#define TrainUpdateText      @"https://eln.crb.cn"
-//#define TrainUpdateText      @"https://eln-uat.crb.cn"
+//#define TrainUpdateText      @"https://eln.crb.cn"
+#define TrainUpdateText      @"https://eln-uat.crb.cn"
 
 #endif
 
